@@ -1,0 +1,15 @@
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\bin\Debug\Football_League_Manager.exe.config
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\bin\Debug\Football_League_Manager.exe
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\bin\Debug\Football_League_Manager.pdb
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.csprojAssemblyReference.cache
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\MainWindow.g.cs
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\App.g.cs
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager_MarkupCompile.cache
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager_MarkupCompile.lref
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\MainWindow.baml
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.g.resources
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.Properties.Resources.resources
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.csproj.GenerateResource.cache
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.csproj.CoreCompileInputs.cache
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.exe
+C:\Users\TBN\Desktop\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.pdb
