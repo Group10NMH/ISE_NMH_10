@@ -1,0 +1,47 @@
+﻿<Window x:Class="Football_League_Manager.TongKetMuaGiai"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Football_League_Manager"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="Tổng kết mùa giải" Height="420" Width="380">
+    <Canvas HorizontalAlignment="Left" Width="382" Margin="0,0,-8,0">
+        <TextBlock Text="Đội vô địch:" FontSize="14" Canvas.Left="26" Canvas.Top="24"           
+                   ></TextBlock>
+        <TextBlock Text="Top 3:" FontSize="14" Canvas.Left="26" Canvas.Top="64"
+                   ></TextBlock>
+        <TextBlock Text="Vua phá lưới:" FontSize="14" Canvas.Left="26" Canvas.Top="308"
+                   ></TextBlock>
+        <TextBlock Text="Đội xuống hạng:" FontSize="14" Canvas.Left="26" Canvas.Top="342"
+                   ></TextBlock>
+        <TextBlock x:Name="DoiVoDich_TextBlock"
+                   FontSize="14" 
+                   Height="30" Width="200"
+                   Canvas.Left="128" Canvas.Top="26"
+                   ></TextBlock>
+        <TextBlock x:Name="VuaPhaLuoi_TextBlock"
+                   FontSize="14"
+                   Height="30" Width="200" Canvas.Left="152" Canvas.Top="306"
+                   ></TextBlock>
+        <TextBlock x:Name="DoiXuongHang_TextBlock"
+                   FontSize="14"
+                   Height="30" Width="200" Canvas.Left="152" Canvas.Top="342"
+                   ></TextBlock>
+        <DataGrid AutoGenerateColumns="False" 
+          Height="190" 
+          HorizontalAlignment="Left" 
+          Name="Top4_DataGrid" 
+          VerticalAlignment="Center" 
+          Width="302" Canvas.Left="26" Canvas.Top="89" AlternatingRowBackground="White" 
+          IsReadOnly="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ViTri}" Width="100" CanUserResize="False" Header="Vị trí"/>
+                <DataGridTextColumn Binding="{Binding Path=TenDoi}"  CanUserResize="False" Header="Đội bóng"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Canvas>
+</Window>

@@ -1,0 +1,40 @@
+﻿<Window x:Class="Football_League_Manager.TraCuuBangXepHang"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Football_League_Manager"
+        mc:Ignorable="d"
+        Title="Bảng xếp hạng" Height="439.071" Width="939.202" ResizeMode="CanResize"
+        Loaded="Window_Loaded"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+        
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+    <Canvas>
+        <DataGrid AutoGenerateColumns="False"  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" 
+          Height="403" 
+          HorizontalAlignment="Left" 
+          Name="BXHListView" 
+          VerticalAlignment="Center"
+          Width="921" Canvas.Top="2" AlternatingRowBackground="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ViTri}" Width="60" CanUserResize="False" Header="Vị trí"/>
+                <DataGridTextColumn Binding="{Binding Path=TenDoiBong}" Width="200" CanUserResize="False" Header="Tên đội bóng"/>
+                <DataGridTextColumn Binding="{Binding Path=SoTran}" Width="80" CanUserResize="False" Header="Số trận"/>
+                <DataGridTextColumn Binding="{Binding Path=SoTranThang}" Width="80" CanUserResize="False" Header="Thắng"/>
+                <DataGridTextColumn Binding="{Binding Path=SoTranThua}" Width= "80" CanUserResize="False" Header="Thua"/>
+                <DataGridTextColumn Binding="{Binding Path=SoTranHoa}" Width="80" CanUserResize="False" Header="Hoà"/>
+                <DataGridTextColumn Binding="{Binding Path=SoBanThang}" Width="80" CanUserResize="False" Header="Bàn thắng"/>
+                <DataGridTextColumn Binding="{Binding Path=SoBanThua}" Width="80" CanUserResize="False" Header="Bàn thua"/>
+                <DataGridTextColumn Binding="{Binding Path=HieuSo}" Width="80" CanUserResize="False" Header="Hiệu số"/>
+                <DataGridTextColumn Binding="{Binding Path=Diem}" Width="80" CanUserResize="False" Header="Điểm"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Canvas>
+</Window>

@@ -1,0 +1,62 @@
+﻿<Window x:Class="Football_League_Manager.SapXepLichThiDau"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Football_League_Manager"
+        mc:Ignorable="d"
+   
+        Title="Sắp xếp lịch thi đấu" Height="248.5" Width="584">
+    <Canvas Margin="0,0,2,-5" Height="222" VerticalAlignment="Top">
+        <TextBlock Text="Chọn trận đấu" FontSize="20"
+                   Canvas.Left="244" Canvas.Top="11" Width="136"
+                   ></TextBlock>
+        <ComboBox x:Name="TranDau_ComboBox" Height="30" Width="307"
+                  Canvas.Left="244" Canvas.Top="43" 
+                  SelectionChanged="TranDau_ComboBox_SelectionChanged"
+                  >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding TenDoiA}" 
+                                   Foreground="Red" FontWeight="Bold"
+                                   ></TextBlock>
+                        <TextBlock Text=" - "
+                                   ></TextBlock>
+                        <TextBlock Text="{Binding TenDoiB}"
+                                   ></TextBlock>
+                    </WrapPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox SelectionChanged="VongDau_ComboBox_SelectionChanged" 
+            Loaded="VongDau_ComboBox_Loaded"
+                  x:Name="VongDau_ComboBox"
+                  Height="30" Width="149"
+                  Canvas.Left="50" Canvas.Top="43"
+                  >
+        </ComboBox>
+        <TextBlock Text="Thời gian thi đấu" 
+                   FontSize="20" Canvas.Left="51" Canvas.Top="95"
+                   ></TextBlock>
+        <TextBox FontSize="16" 
+                 x:Name="ThoiGian_TextBox" 
+                 Height="35" Width="202"
+                 Canvas.Left="50" Canvas.Top="127"
+                 ></TextBox>
+        <TextBlock Text="Chọn vòng đấu" FontSize="20"
+                   Canvas.Left="51" Canvas.Top="10"
+                   ></TextBlock>
+        <Button x:Name="ThemLich_Button"
+                Height="40" Width="120"
+                Content="Thêm lịch" FontSize="18" 
+                Canvas.Left="293" Canvas.Top="127"
+                Click="ThemLich_Button_Click"
+                ></Button>
+        <Button Height="40" Width="120"
+                Content="Hoàn tất" FontSize="18"
+                Canvas.Left="431" Canvas.Top="128"
+                ></Button>
+
+    </Canvas>
+</Window>

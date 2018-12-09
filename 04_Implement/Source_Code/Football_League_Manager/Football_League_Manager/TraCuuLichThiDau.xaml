@@ -1,0 +1,32 @@
+﻿<Window x:Class="Football_League_Manager.TraCuuLichThiDau"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Football_League_Manager"
+        mc:Ignorable="d"
+        Title="Tra cứu lịch thi đấu" Height="417" Width="562.135">
+    <Canvas Margin="0,0,2,3">
+        <ComboBox 
+            Loaded="VongDau_ComboBox_Loaded"
+            x:Name="VongDau_ComboBox" Height="35" Width="350"
+            Canvas.Left="48" Canvas.Top="48"
+            ></ComboBox>
+        <Button x:Name="TraCuu_Button" Content="Tra cứu" Height="40" Width="100" FontSize="20" RenderTransformOrigin="4.315,2.055" Canvas.Left="408" Canvas.Top="44" Click="TraCuu_Button_Click"  ></Button>
+        <DataGrid AutoGenerateColumns="False" 
+          Height="191" 
+          HorizontalAlignment="Left" 
+          Name="LichThiDauDataGrid" 
+          VerticalAlignment="Center" 
+          Width="532" Canvas.Left="10" Canvas.Top="116" AlternatingRowBackground="White" 
+          IsReadOnly="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ThoiGian}" Width="160" CanUserResize="False" Header="Thời gian"/>
+                <DataGridTextColumn Binding="{Binding Path=DoiA}" Width="180" CanUserResize="False" Header="Đội chủ nhà"/>
+                <DataGridTextColumn Binding="{Binding Path=DoiB}" Width="180" CanUserResize="False" Header="Đội khách"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Canvas>
+</Window>

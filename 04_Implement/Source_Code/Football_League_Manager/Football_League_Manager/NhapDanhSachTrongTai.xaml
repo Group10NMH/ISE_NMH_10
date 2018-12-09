@@ -1,0 +1,43 @@
+﻿<Window x:Class="Football_League_Manager.NhapDanhSachTrongTai"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Football_League_Manager"
+        mc:Ignorable="d"
+        Background="Silver"
+        Title="Nhập danh sách trọng tài" Height="400" Width="500">
+    <Canvas Margin="0,0,2,-5">
+        <TextBox x:Name="TenTrongTai_TextBox" 
+                 Height="28" Width="311" 
+                 Canvas.Left="97" Canvas.Top="39"
+                 FontSize="16"
+                 ></TextBox>
+        <Button x:Name="Them_Button"
+                Height="34" Width="90"
+                Content="Thêm" FontSize="16" 
+                Canvas.Left="143" Canvas.Top="86"
+                Click="add_Click"
+                ></Button>
+        <Button x:Name="HoanTat_Button"
+                Height="34" Width="90"
+                Content="Hoàn tất" FontSize="15"
+                Canvas.Left="271" Canvas.Top="86" 
+                Click="HoanTat_Button_Click"
+                ></Button>
+        <DataGrid AutoGenerateColumns="False" 
+          Height="191" 
+          HorizontalAlignment="Left" 
+          Name="TrongTaiDataGrid" 
+          VerticalAlignment="Center" 
+          Width="456" Canvas.Left="24" Canvas.Top="148" AlternatingRowBackground="White"
+          Loaded="TrongTaiDataGrid_Loaded"
+          IsReadOnly="True"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=MaTT}" Width="100" CanUserResize="False" Header="Mã số"/>
+                <DataGridTextColumn Binding="{Binding Path=TenTT}" Width="300" CanUserResize="False" Header="Tên trọng tài"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Canvas>
+</Window>
