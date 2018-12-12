@@ -38,16 +38,18 @@ namespace Football_League_Manager
         }
     }
 
-    class DoiBong
+    
+    public class DoiBong
     {
         public string MaDoiBong { get; set; }
+        public string TenDoiBong { get; set; }
         public string SanNha { get; set; }
         public string HuanLuyenVien { get; set; }
         public int SoTran { get; set; }
         public int SoTranThang { get; set; }
         public int SoTranThua { get; set; }
 
-        List<CauThu> CauThus { get; set; }
+        public List<CauThu> CauThus { get; set; }
 
         void LoadDoiBong()
         {
@@ -55,13 +57,21 @@ namespace Football_League_Manager
         }
     }
 
-    class CauThu
+    public class ViTri
+    {
+        public string MaVT { get; set; }
+        public string TenVT { get; set; }
+    }
+    
+    public class CauThu
     {
         public string MaCauThu { get; set; }
         public string TenCauThu { get; set; }
-        public int Tuoi { get; set; }
+        public string NgaySinhCauThu { get; set; }
         public string ViTri { get; set; }
         public int SoAo { get; set; }
+        public string MaVT { get; set; }
+        public string QuocTichCT { get; set; }
     }
 
     class VongDau

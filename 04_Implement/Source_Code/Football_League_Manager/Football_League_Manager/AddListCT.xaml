@@ -1,0 +1,44 @@
+﻿<Window x:Class="Football_League_Manager.AddListCT"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     
+        xmlns:local="clr-namespace:Football_League_Manager"
+        mc:Ignorable="d"
+        Title="Danh sách cầu thủ" Height="450" Width="1000">
+    <Canvas>
+        <TextBox materialDesign:HintAssist.Hint="Tên cầu thủ"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="22" Canvas.Top="20" Width="240" x:Name="name" TextChanged="name_TextChanged" />
+        <DatePicker materialDesign:HintAssist.Hint="Ngày sinh"   
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Canvas.Left="22" Canvas.Top="85" Width="240" x:Name="NgaySinh" />
+        <TextBox materialDesign:HintAssist.Hint="Quốc tịch"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="22" Canvas.Top="150" Width="240" x:Name="QuocTich" />
+        <TextBox  materialDesign:HintAssist.Hint="Số áo"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="22" Canvas.Top="215" Width="240" x:Name="Number" TextChanged="SoAo_TextChanged"/>
+        <ComboBox materialDesign:HintAssist.Hint="Vị trí"
+  Style="{StaticResource MaterialDesignFloatingHintComboBox}" Name="ViTri" Width="240" Loaded="Combobox_loaded" Canvas.Left="22" Canvas.Top="280" />
+        <Button Name = "DeleteButton" Content="Xóa cầu thủ" Canvas.Left="40" Canvas.Top="360" Width="187" Height="40" Background="CadetBlue" Click="Delete_click" Visibility="Hidden" />
+        <Button Name="UpdateButton" Content="Sửa cầu thủ" Canvas.Left="285" Canvas.Top="360" Width="187" Height="40" Background="CadetBlue" Click="Update_click" Visibility="Hidden" />
+        <Button Content="Thêm cầu thủ" Canvas.Left="530" Canvas.Top="360" Width="187" Height="40" Background="CadetBlue" Click="Add_click"/>
+        <Button Content="Hoàn tất" Canvas.Left="775" Canvas.Top="360" Width="187" Height="40" Background="CadetBlue" Click="Done_click"/>
+        <DataGrid AutoGenerateColumns="False"
+          IsReadOnly="True"
+          Height="313" 
+          HorizontalAlignment="Left" 
+          Name="CauThuDataGrid" 
+          VerticalAlignment="Center" 
+          Width="715" Canvas.Left="269" Canvas.Top="11" AlternatingRowBackground="White" 
+          SelectionChanged="CauThuDataGrid_SelectionChanged"
+          ScrollViewer.HorizontalScrollBarVisibility="Disabled"        >
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=STT}" Width="55" CanUserResize="False" Header="STT"/>
+                <DataGridTextColumn Binding="{Binding Path=TenCT}" Width="200" CanUserResize="False" Header="Tên cầu thủ"/>
+                <DataGridTextColumn Binding="{Binding Path=QuocTichCT}" Width="115" CanUserResize="False" Header="Quốc Tịch"/>
+                <DataGridTextColumn Binding="{Binding Path=NgaySinhCT}" Width="115" CanUserResize="False" Header="Ngày sinh"/>
+                <DataGridTextColumn Binding="{Binding Path=ViTriCT}" Width="115" CanUserResize="False" Header="Vị trí"/>
+                <DataGridTextColumn Binding="{Binding Path=SoAoCT}" Width="115" CanUserResize="False" Header="Số áo"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+    </Canvas>
+</Window>

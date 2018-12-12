@@ -1,0 +1,27 @@
+﻿<Window x:Class="Football_League_Manager.ReceiveRecords"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Football_League_Manager"
+        mc:Ignorable="d"
+        Title="Nhận hồ sơ đội bóng" Height="350" Width="700">
+    <Canvas>
+        <TextBox   materialDesign:HintAssist.Hint="Tên đội bóng"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="93" Canvas.Top="40" Width="497" x:Name="TenDB" />
+        <TextBox materialDesign:HintAssist.Hint="Huấn luyện viên"
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="93" Canvas.Top="90" Width="495" x:Name="HLV" />
+        <TextBox   materialDesign:HintAssist.Hint="Sân nhà"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="93" Canvas.Top="140" Width="493" x:Name="SanNha"/>
+        <Button  Style="{StaticResource MaterialDesignRaisedButton}"
+             materialDesign:ButtonProgressAssist.Value="-1"
+             materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+             materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Thêm danh sách cầu thủ" Background="BlueViolet" Foreground="White" Canvas.Left="93" Canvas.Top="203" Height="30" Width="494" Click="Them_cau_thu_Click" />
+        <Button  Style="{StaticResource MaterialDesignRaisedButton}"
+             materialDesign:ButtonProgressAssist.Value="-1"
+             materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+             materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Hoàn tất" Canvas.Left="250" Background="LightBlue" Canvas.Top="256" Height="30" Width="100" Click="Hoan_tat"/>
+
+    </Canvas>
+</Window>
