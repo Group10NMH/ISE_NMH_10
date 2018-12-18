@@ -11,7 +11,7 @@
         <TextBox   materialDesign:HintAssist.Hint="Tên đội bóng"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="93" Canvas.Top="40" Width="497" x:Name="TenDB" />
         <TextBox materialDesign:HintAssist.Hint="Huấn luyện viên"
-             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="93" Canvas.Top="90" Width="495" x:Name="HLV" />
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="93" Canvas.Top="90" Width="495" x:Name="HLV"  />
         <TextBox   materialDesign:HintAssist.Hint="Sân nhà"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="93" Canvas.Top="140" Width="493" x:Name="SanNha"/>
         <Button  Style="{StaticResource MaterialDesignRaisedButton}"
