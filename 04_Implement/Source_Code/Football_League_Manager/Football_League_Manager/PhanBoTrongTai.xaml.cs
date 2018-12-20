@@ -27,7 +27,7 @@ namespace Football_League_Manager
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var iteams = new List<string> { "Vòng 1", "Vòng 2", "Vòng 3", "Vòng 4", "Vòng 5", "Vòng 6", "Vòng 7", "Vòng 8", "Vòng 9" };
+            var iteams = new List<string> { "Vòng 1", "Vòng 2", "Vòng 3", "Vòng 4", "Vòng 5", "Vòng 6", "Vòng 7", "Vòng 8", "Vòng 9","Vòng 10" };
             VDComboBox.ItemsSource = iteams;
         }
         class DataObject
