@@ -4,9 +4,78 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Football_League_Manager"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Canvas>
-        <Button Width="100" Height="100" Content="Click" Click="Button_Click"/>
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="613.35" Width="1125.5" WindowStyle="None"
+        Loaded="Window_Loaded"
+        >
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Canvas Margin="0,0,0,0">
+
+        <DockPanel Width="1126" Height="36" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"/>
+
+        <Button Cursor="Hand" Style="{StaticResource ImageButtonStyle}" Click="ImageButton_Click" Canvas.Left="1075" Height="36" Width="51">
+            <Image Source="D:\power-off.png" Width="20" Canvas.Top="-35" Canvas.Left="1089" Margin="10,0"/>
+        </Button>
+
+
+        <WrapPanel Width="180" Height="613" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" ScrollViewer.VerticalScrollBarVisibility="Visible" >
+            <Image Source="D:\Home.png" Height="77" VerticalAlignment="Center" Margin="54,30,51,10"/>
+
+            <WrapPanel x:Name="PanelQuanLy" Height="50" MaxHeight="250" MinHeight="50" Canvas.Top="242" Width="181" Margin="0,2">
+
+                <Button x:Name="QuanLyButton" Content="Quản lý" Width="181" Height="50" Foreground="White" BorderThickness="0" FontSize="14" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Margin="0,0,0,2" HorizontalContentAlignment="Center" Click="QuanLyButton_Click" FontFamily="Gadugi"></Button>
+
+                <Button Name="ThemDoiBongButton" Click="ThemDoiBongButton_Click" Content="Thêm đội bóng" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button  Click="TraCuuDoiBongButton_Click" Content="Đội bóng" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button  Click="TraCuuLichThiDauButton_Click" Content="Lịch thi đấu" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button  Click="TraCuuKetQuaButton_Click" Content="Kết quả trận đấu" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button  Click="TraCuuTruocTranButton_Click" Content="Thông tin trước trận" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            </WrapPanel>
+
+            <WrapPanel x:Name="PanelTraCuu" Height="50" MaxHeight="330" MinHeight="50" Canvas.Top="242" Width="181" Margin="0,2" >
+
+                <Button x:Name="TraCuuButton" Content="Tra cứu" Height="50" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" Click="TraCuuButton_Click" VerticalContentAlignment="Center"/>
+
+                <Button Name="TraCuuCauThuButton" Click="TraCuuCauThuButton_Click" Content="Cầu thủ" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button Name="TraCuuDoiBongButton" Click="TraCuuDoiBongButton_Click" Content="Đội bóng" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button Name="TraCuuLichThiDauButton" Click="TraCuuLichThiDauButton_Click" Content="Lịch thi đấu" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button Name="TraCuuKetQuaButton" Click="TraCuuKetQuaButton_Click" Content="Kết quả trận đấu" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button Name="TraCuuTruocTranButton" Click="TraCuuTruocTranButton_Click" Content="Thông tin trước trận" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button Click="TraCuuLichThiDauButton_Click" Content="Vua phá lưới" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button Click="TraCuuKetQuaButton_Click" Content="Bảng xếp hạng" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button  Click="TraCuuTruocTranButton_Click" Content="Thông tin trước trận" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            </WrapPanel>
+
+        </WrapPanel>
+        <Border Name="CheckMuc" Width="10" Height="50" Background="#FFB43E3E" />
+
+        <TabControl Name="tabs" Width="941" Height="572" SelectedIndex="{Binding ElementName=ribbon, Path=SelectedTabIndex}" BorderThickness="0" Canvas.Left="185" Canvas.Top="41">
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem"></ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+        </TabControl>
+
     </Canvas>
 </Window>

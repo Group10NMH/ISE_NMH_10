@@ -55,6 +55,12 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.0.0.14576, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.1\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.0.1205, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -75,6 +81,79 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddListCT.xaml.cs">
+      <DependentUpon>AddListCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChinhSuaCauThu.xaml.cs">
+      <DependentUpon>ChinhSuaCauThu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChinhSuaDoiBong.xaml.cs">
+      <DependentUpon>ChinhSuaDoiBong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoiBong.cs" />
+    <Compile Include="NhapDanhSachTrongTai.xaml.cs">
+      <DependentUpon>NhapDanhSachTrongTai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NhapKetQuaTranDau.xaml.cs">
+      <DependentUpon>NhapKetQuaTranDau.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NhapThongSoTranDau.xaml.cs">
+      <DependentUpon>NhapThongSoTranDau.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhanBoTrongTai.xaml.cs">
+      <DependentUpon>PhanBoTrongTai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiveRecords.xaml.cs">
+      <DependentUpon>ReceiveRecords.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SapXepLichThiDau.xaml.cs">
+      <DependentUpon>SapXepLichThiDau.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThayDoiLuatThiDau.xaml.cs">
+      <DependentUpon>ThayDoiLuatThiDau.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TongKetMuaGiai.xaml.cs">
+      <DependentUpon>TongKetMuaGiai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuBangXepHang.xaml.cs">
+      <DependentUpon>TraCuuBangXepHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuCauThu.xaml.cs">
+      <DependentUpon>TraCuuCauThu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuKetQuaTran.xaml.cs">
+      <DependentUpon>TraCuuKetQuaTran.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuLichThiDau.xaml.cs">
+      <DependentUpon>TraCuuLichThiDau.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuTruocTran.xaml.cs">
+      <DependentUpon>TraCuuTruocTran.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuVuaPhaLuoi.xaml.cs">
+      <DependentUpon>TraCuuVuaPhaLuoi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tra_cuu_thong_tin_doi_bong.xaml.cs">
+      <DependentUpon>Tra_cuu_thong_tin_doi_bong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowChangePass.xaml.cs">
+      <DependentUpon>WindowChangePass.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddListCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChinhSuaCauThu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChinhSuaDoiBong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -83,11 +162,78 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DoiBong.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NhapDanhSachTrongTai.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NhapKetQuaTranDau.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NhapThongSoTranDau.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhanBoTrongTai.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReceiveRecords.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SapXepLichThiDau.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ThayDoiLuatThiDau.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TongKetMuaGiai.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TraCuuBangXepHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TraCuuCauThu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TraCuuKetQuaTran.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TraCuuLichThiDau.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TraCuuTruocTran.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="TraCuuVuaPhaLuoi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tra_cuu_thong_tin_doi_bong.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WindowChangePass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -107,6 +253,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

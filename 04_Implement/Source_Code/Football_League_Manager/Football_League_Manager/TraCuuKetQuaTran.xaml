@@ -1,0 +1,51 @@
+﻿<Window x:Class="Football_League_Manager.TraCuuKetQuaTran"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Football_League_Manager"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="TraCuuKetQuaTran" Height="265" Width="590">
+    <Canvas>
+        <TextBlock Text="Chọn vòng đấu" Canvas.Left="48" Canvas.Top="22"/>
+        <ComboBox Name="itemsCombobox" Width="123" Height="30" Canvas.Left="48" Canvas.Top="43"  RenderTransformOrigin="0.927,1.1" SelectionChanged="itemsCombobox_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+
+                        <TextBlock Text="{Binding}"  FontWeight="Bold"></TextBlock>
+
+                    </WrapPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <ComboBox x:Name="itemsCombobox_Copy" SelectionChanged="itemsCombobox_Copy_SelectionChanged" Width="272" Height="30" Canvas.Left="243" Canvas.Top="43" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock x:Name="CTDoiA" Text="{Binding TenDoiA}" FontWeight="Bold"/>
+                        <TextBlock Text=" - "/>
+                        <TextBlock x:Name="CTDoiB" Text="{Binding TenDoiB}" FontWeight="Bold"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Text="Chọn trận đấu" Canvas.Left="243" Canvas.Top="22"/>
+
+        <TextBlock Name="DoiNhaText" TextAlignment="Right" Text="Đội nhà" Canvas.Left="51" Canvas.Top="132" Width="129"/>
+        <TextBlock Name="DoiKhachText"  Text="Đội khách" Canvas.Left="372" Canvas.Top="132" Width="165"/>
+
+        <materialDesign:Card
+            materialDesign:ShadowAssist.ShadowDepth="Depth2"
+            HorizontalAlignment="Center" Padding="13" Canvas.Left="209" Canvas.Top="123" Height="40" Width="50" Name="TiSoA">
+
+        </materialDesign:Card>
+
+        <materialDesign:Card
+            materialDesign:ShadowAssist.ShadowDepth="Depth2"
+            Padding="13" Canvas.Left="301" Canvas.Top="123" Height="40" Width="50" Name="TiSoB"/>
+    </Canvas>
+</Window>

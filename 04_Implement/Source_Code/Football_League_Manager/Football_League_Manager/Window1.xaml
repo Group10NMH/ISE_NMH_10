@@ -19,7 +19,7 @@
         <Button Style="{StaticResource MaterialDesignRaisedButton}"
              materialDesign:ButtonProgressAssist.Value="-1"
              materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-             materialDesign:ButtonProgressAssist.IsIndeterminate="True" Background="Black" Content="Đăng Nhập" HorizontalAlignment="Left" VerticalAlignment="Top" Width="118"  Grid.RowSpan="2" Canvas.Left="193" Canvas.Top="238" RenderTransformOrigin="0.659,1.95" Click="Button_Click" Height="38"/>
+             materialDesign:ButtonProgressAssist.IsIndeterminate="True" Background="Black" Content="Đăng Nhập" HorizontalAlignment="Left" VerticalAlignment="Top" Width="118"  Grid.RowSpan="2" Canvas.Left="189" Canvas.Top="238" RenderTransformOrigin="0.659,1.95" Click="Button_Click" Height="38"/>
         <Image  Source="Cup.png" x:Name="image2" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="42" Grid.RowSpan="2" Canvas.Left="217" Canvas.Top="14"/>
 
     </Canvas>

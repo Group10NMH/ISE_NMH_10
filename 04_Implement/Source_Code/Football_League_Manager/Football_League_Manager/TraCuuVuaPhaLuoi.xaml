@@ -1,0 +1,26 @@
+﻿<Window x:Class="Football_League_Manager.TraCuuVuaPhaLuoi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Football_League_Manager"
+        mc:Ignorable="d"
+        Title="Vua phá lưới" Height="441.06" Width="765.162">
+    <Canvas>
+        <DataGrid AutoGenerateColumns="False"  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" 
+          Height="403" 
+          HorizontalAlignment="Left" 
+          Name="BXHListView" 
+          VerticalAlignment="Center"
+          Width="757" Canvas.Top="2" AlternatingRowBackground="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=STT}" Width="60" CanUserResize="False" Header="STT" />
+                <DataGridTextColumn Binding="{Binding Path=TenCauThu}" Width="150" CanUserResize="False" Header="Tên cầu thủ"/>
+                <DataGridTextColumn Binding="{Binding Path=TenDoiBong}" Width="150" CanUserResize="False" Header="Tên đội bóng"/>
+                <DataGridTextColumn Binding="{Binding Path=ViTri}" Width="100" CanUserResize="False" Header="Vị trí"/>
+                <DataGridTextColumn Binding="{Binding Path=SoTheVang}" Width= "150" CanUserResize="False" Header="Số thẻ vàng"/>
+                <DataGridTextColumn Binding="{Binding Path=SoBanThang}" Width= "150" CanUserResize="False" Header="Số bàn thắng"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Canvas>
+</Window>

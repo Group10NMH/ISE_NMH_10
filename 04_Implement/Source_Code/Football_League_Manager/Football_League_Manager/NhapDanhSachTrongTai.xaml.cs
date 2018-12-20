@@ -59,15 +59,17 @@ namespace Football_League_Manager
                 }
                 i = dstt.DanhSachTrongTais.Count();
                 string maTT;
-                if (i<10)
+                if (i<9)
                 {
-                    maTT = "TT0" + i.ToString();
+                    maTT = "TT0" + (i+1).ToString();
                 }
-                else { maTT = "TT" + i.ToString(); }
+                else { maTT = "TT" + (i+1).ToString(); }
                 list.Add(new DataObject() { MaTT = maTT, TenTT = TenTrongTai_TextBox.Text });
                 TrongTaiDataGrid.ItemsSource = list;
                 DataProvider dataProvider = new DataProvider();
-                dataProvider.ExcuteNonQuery("insert into TrongTai values ( @MaTT , @TenTT )", new object[] {maTT, TenTrongTai_TextBox.Text});
+                int c = dataProvider.ExcuteNonQuery("insert into TrongTai values ( @MaTT , @TenTT )", new object[] {maTT, TenTrongTai_TextBox.Text});
+                MessageBox.Show(c.ToString());
+
                 TenTrongTai_TextBox.Text = "";
             }
         }

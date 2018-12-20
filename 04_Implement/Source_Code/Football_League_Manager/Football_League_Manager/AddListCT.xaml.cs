@@ -56,13 +56,9 @@ namespace Football_League_Manager
         public void Done_click(object sender, RoutedEventArgs e)
         {
             
-            if (list.Count < 16)
+            if (list.Count > 16)
             {
-                MessageBox.Show("Số lượng cầu thủ ít nhất là 16 ");
-            }
-            else if (list.Count > 25)
-            {
-                MessageBox.Show("Số lượng cầu thủ nhiều nhất là 25 ");
+                MessageBox.Show("Số lượng cầu thủ phải từ 16 -> 25 ");
             }
             else
             {
@@ -90,27 +86,6 @@ namespace Football_League_Manager
         
         public void Update_click(object sender, RoutedEventArgs e)
         {
-            bool checkName = true;
-            bool checkQT = true;
-            for (int j = 0; j < name.Text.Length; j++)
-            {
-                if (name.Text[j] == '0' || name.Text[j] == '1' || name.Text[j] == '2' || name.Text[j] == '3' || name.Text[j] == '4' || name.Text[j] == '5' ||
-                       name.Text[j] == '6' || name.Text[j] == '7' || name.Text[j] == '8' || name.Text[j] == '9')
-                {
-                    checkName = false;
-                    break;
-                }
-            }
-            for (int j = 0; j < QuocTich.Text.Length; j++)
-            {
-                if (QuocTich.Text[j] == '0' || QuocTich.Text[j] == '1' || QuocTich.Text[j] == '2' || QuocTich.Text[j] == '3' || QuocTich.Text[j] == '4' || QuocTich.Text[j] == '5' ||
-                       QuocTich.Text[j] == '6' || QuocTich.Text[j] == '7' || QuocTich.Text[j] == '8' || QuocTich.Text[j] == '9')
-                {
-                    checkQT = false;
-                    break;
-                }
-            }
-
             if (name.Text == "")
             {
                 MessageBox.Show("Thêm tên cầu thủ");
@@ -130,14 +105,6 @@ namespace Football_League_Manager
             else if (ViTri.Text == null)
             {
                 MessageBox.Show("Thêm vị trí cầu thủ");
-            }
-            else if(checkName == false)
-            {
-                MessageBox.Show("Tên cầu thủ không được để số");
-            }
-            else if (checkQT == false)
-            {
-                MessageBox.Show("Quốc tịch không được để số ");
             }
             else
             {
@@ -202,7 +169,6 @@ namespace Football_League_Manager
                 list[i] = dataObject;
             }
             CauThuDataGrid.ItemsSource = list;
-            MessageBox.Show("Xóa cầu thủ thành công");
             name.Text = null;
             ViTri.Text = null;
             Number.Text = null;
@@ -213,40 +179,15 @@ namespace Football_League_Manager
 
         public void Add_click(object sender, RoutedEventArgs e)
         {
-
-
             SqlCommand sqlcommand = data.ExcuteQuery("select * from BangThamSo");
             SqlDataReader sqldatareader = sqlcommand.ExecuteReader();
             int i = list.Count + 1;
-            bool check = true;
-            bool checkQT = true;
            
             while (sqldatareader.Read())
             {
                 luatThiDau.SoCauThuToiThieu = sqldatareader.GetInt32(0);
                 luatThiDau.SoCauThuToiDa = sqldatareader.GetInt32(1);
             }
-            
-            for(int j = 0; j < name.Text.Length; j++ )
-            {
-                if(name.Text[j] == '0' || name.Text[j] == '1' || name.Text[j] == '2' || name.Text[j] == '3' || name.Text[j] == '4' || name.Text[j] == '5' ||
-                       name.Text[j] == '6' || name.Text[j] == '7' || name.Text[j] == '8' || name.Text[j] == '9')
-                {
-                    check = false;
-                    break;
-                }
-            }
-
-            for (int j = 0; j < QuocTich.Text.Length; j++)
-            {
-                if (QuocTich.Text[j] == '0' || QuocTich.Text[j] == '1' || QuocTich.Text[j] == '2' || QuocTich.Text[j] == '3' || QuocTich.Text[j] == '4' || QuocTich.Text[j] == '5' ||
-                       QuocTich.Text[j] == '6' || QuocTich.Text[j] == '7' || QuocTich.Text[j] == '8' || QuocTich.Text[j] == '9')
-                {
-                    checkQT = false;
-                    break;
-                }
-            }
-
             if (i <= luatThiDau.SoCauThuToiDa)
             {
                 
@@ -269,14 +210,6 @@ namespace Football_League_Manager
                 else if (ViTri.Text == null)
                 {
                     MessageBox.Show("Thêm vị trí cầu thủ");
-                }
-                else if (check == false)
-                {
-                    MessageBox.Show("Tên cầu thủ không được để số");
-                }
-                else if (checkQT == false)
-                {
-                    MessageBox.Show("Quốc tịch cầu thủ không được để số");
                 }
                 else
                 {
@@ -367,11 +300,13 @@ namespace Football_League_Manager
             }
         }
 
+        private void name_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
+        }
 
-
-        //Kiểm tra tuổi
-        //private void NgaySinh_selectionChanged(object sender, SelectionChangedEventArgs e)
+        //Kiểm tra tuo
+        //private void NgaySinh_selectionChanged(object sender ,SelectionChangedEventArgs e )
         //{
         //    DateTime YearNow = DateTime.Now;
         //    int yearNow = int.Parse(YearNow.ToString("yyyy"));
@@ -387,7 +322,7 @@ namespace Football_League_Manager
         //        luatThiDau.TuoiToiDa = sqldatareader.GetInt32(3);
         //    }
 
-        //    if (kt > luatThiDau.TuoiToiDa || kt < luatThiDau.TuoiToiThieu)
+        //    if (kt > luatThiDau.TuoiToiDa || kt <  luatThiDau.TuoiToiThieu)
         //    {
         //        MessageBox.Show("Số tuổi cầu thủ phải từ 18 -> 26");
         //    }

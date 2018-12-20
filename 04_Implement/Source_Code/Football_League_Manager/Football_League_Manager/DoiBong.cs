@@ -38,7 +38,7 @@ namespace Football_League_Manager
         }
     }
 
-    
+
     public class DoiBong
     {
         public string MaDoiBong { get; set; }
@@ -51,9 +51,25 @@ namespace Football_League_Manager
 
         public List<CauThu> CauThus { get; set; }
 
-        void LoadDoiBong()
+        public void LoadDoiBong(string tenDoiBong)
         {
-            // select * from CauThu where maDB = maDoiBong
+            DataProvider dataProvider = new DataProvider();
+            SqlCommand sql;
+            sql = dataProvider.ExcuteQuery("select db.TenDB, db.TenHLV, ct.TenCT, db.MaDB from CauThu ct join DoiBong db on ct.MaDB = db.MaDB where db.TenDB = @vongdau", new object[] { tenDoiBong });
+            SqlDataReader sqlDataReader = sql.ExecuteReader();
+
+            CauThus = new List<CauThu>();
+
+            while (sqlDataReader.Read())
+            {
+                CauThu cauThu = new CauThu();
+                cauThu.TenCauThu = sqlDataReader.GetString(2);
+                CauThus.Add(cauThu);
+                TenDoiBong = tenDoiBong;
+                HuanLuyenVien = sqlDataReader.GetString(1);
+                MaDoiBong = sqlDataReader.GetString(3);
+            }
+
         }
     }
 
@@ -62,7 +78,7 @@ namespace Football_League_Manager
         public string MaVT { get; set; }
         public string TenVT { get; set; }
     }
-    
+
     public class CauThu
     {
         public string MaCauThu { get; set; }
@@ -72,19 +88,42 @@ namespace Football_League_Manager
         public int SoAo { get; set; }
         public string MaVT { get; set; }
         public string QuocTichCT { get; set; }
+
+        //
+        public string MaDB { get; set; }
+        public int STT { get; set; }
+        public int SoBanThang { get; set; }
+        public int SoTheVang { get; set; }
+        public string TenDoiBong { get; set; }
+        //
     }
 
     class VongDau
     {
         public List<TranDau> TranDaus { get; set; }
 
-        void LoadLichThiDau(int vong)
+        public void LoadLichThiDau(int vong)
         {
+            DataProvider dataProvider = new DataProvider();
 
+            SqlCommand sql = dataProvider.ExcuteQuery("select ltd.MaTran, db1.TenDB, db2.TenDB from LichThiDau ltd join DoiBong db1 on ltd.MaDoi1 = db1.MaDB join DoiBong db2 on ltd.MaDoi2 = db2.MaDB where VongDau = @vongdau", new object[] { vong });
+
+            SqlDataReader sqlDataReader = sql.ExecuteReader();
+
+            TranDaus = new List<TranDau>();
+
+            while (sqlDataReader.Read())
+            {
+                TranDau tranDau = new TranDau();
+                tranDau.MaTranDau = sqlDataReader.GetString(0);
+                tranDau.TenDoiA = sqlDataReader.GetString(1);
+                tranDau.TenDoiB = sqlDataReader.GetString(2);
+                TranDaus.Add(tranDau);
+            }
         }
     }
 
-    class TranDau
+    public class TranDau
     {
         public string MaTranDau { get; set; }
         public string TenDoiA { get; set; }
@@ -93,22 +132,77 @@ namespace Football_League_Manager
         public int TiSoDoiA { get; set; }
         public int TiSoDoiB { get; set; }
 
-        // Thiếu ngày giờ 
+        public DateTime ThoiGian { get; set; }
 
-        public List<CauThu> CauThuBiCams { get; set; }
-        public List<CauThu> CauThuThiDaus { get; set; }
+        public List<CauThu> CauThuBiCamsA { get; set; }
+        public List<CauThu> CauThuBiCamsB { get; set; }
+
+        public override string ToString()
+        {
+            return TenDoiA + " - " + TenDoiB;
+        }
+
+        public void LoadKQTranDau()
+        {
+            DataProvider dataProvider = new DataProvider();
+            SqlCommand sqlCommand = dataProvider.ExcuteQuery("select * from KetQua where MaTran = @matran", new object[] { MaTranDau });
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            while (sqlDataReader.Read())
+            {
+                TiSoDoiA = sqlDataReader.GetInt32(1);
+                TiSoDoiB = sqlDataReader.GetInt32(2);
+            }
+        }
+
+        public void LoadCTBiCam(int vong)
+        {
+            CauThuBiCamsA = new List<CauThu>();
+            CauThuBiCamsB = new List<CauThu>();
+            DataProvider dataProvider = new DataProvider();
+            SqlCommand sqlCommand = dataProvider.ExcuteQuery("select TenCT from CauThu ct join DoiBong db on ct.MaDB = db.MaDB where VongCam = @vong and db.TenDB = @tendoi", new object[] { vong, TenDoiA });
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                CauThu cauThu = new CauThu();
+                cauThu.TenCauThu = sqlDataReader.GetString(0);
+                CauThuBiCamsA.Add(cauThu);
+            }
+
+            dataProvider = new DataProvider();
+            sqlCommand = dataProvider.ExcuteQuery("select TenCT from CauThu ct join DoiBong db on ct.MaDB = db.MaDB where VongCam = @vong and db.TenDB = @tendoi", new object[] { vong, TenDoiB });
+            sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                CauThu cauThu = new CauThu();
+                cauThu.TenCauThu = sqlDataReader.GetString(0);
+                CauThuBiCamsB.Add(cauThu);
+            }
+            sqlDataReader.Close();
+        }
     }
+
+
 
     class DanhSachTrongTai
     {
-        private Dictionary<string, string> DanhSachTrongTais { get; set; }
 
-
-
-        void LoadDSTrongTai()
+        public Dictionary<string, string> DanhSachTrongTais { get; set; }
+        public void LoadDSTrongTai()
         {
+            DataProvider dataProvider = new DataProvider();
+            SqlCommand sqlCommand = dataProvider.ExcuteQuery("select * from TrongTai");
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            DanhSachTrongTais = new Dictionary<string, string>();
+            while (sqlDataReader.Read())
+            {
+                string ma = sqlDataReader.GetString(0);
+                string ten = sqlDataReader.GetString(1);
+                DanhSachTrongTais.Add(ma, ten);
+            }
 
         }
+
     }
 
     class LuatThiDau
@@ -127,7 +221,7 @@ namespace Football_League_Manager
     {
         private static DataProvider instance;
 
-        string ConnectionString = @"Data Source=TBN-PC\SQLEXPRESS;Initial Catalog=QLYGIAI;Integrated Security=True";
+        string ConnectionString = @"Data Source=TBN-PC\SQLEXPRESS;Initial Catalog=GiaiVDQG;Integrated Security=True";
 
         public static DataProvider Instance
         {

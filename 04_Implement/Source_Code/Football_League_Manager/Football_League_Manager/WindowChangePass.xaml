@@ -9,19 +9,13 @@
         Title="Thay đổi mật khẩu" Height="450" Width="800" >
     <Canvas>
         <Image Source="key.png" Canvas.Left="133" Canvas.Top="34" Height="79" Width="462"/>
+        <Label Content="Mật khẩu cũ:" Canvas.Left="65"  Canvas.Top="113"  Height="30"  Width="150" />
+        <Label Content="Mật khẩu mới:" Canvas.Left="65" Canvas.Top="163" Height="30" Width="150"  />
+        <Label Content="Nhập lại mật khẩu mới:" Canvas.Left="65" Canvas.Top= "213" Height=" 30" Width=" 150" />
         <PasswordBox 
-         materialDesign:HintAssist.Hint="Mật khẩu cũ"   x:Name="PassOld" Width="561" Canvas.Left="154" Canvas.Top="113"/>
-        <PasswordBox  materialDesign:HintAssist.Hint="Mật khẩu mới"  x:Name="PassNew"  Width="562" Canvas.Left="153" Canvas.Top="163"/>
-        <PasswordBox  materialDesign:HintAssist.Hint="Nhập lại mật khẩu mới"  x:Name="PassNewagain"  Width="562" Canvas.Left="153" Canvas.Top="213" RenderTransformOrigin="0.5,0.5">
-            <PasswordBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.033"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </PasswordBox.RenderTransform>
-        </PasswordBox>
+         materialDesign:HintAssist.Hint="Password"   x:Name="PassOld" Width="500" Canvas.Left="215" Canvas.Top="113"/>
+        <PasswordBox  materialDesign:HintAssist.Hint="Password"  x:Name="PassNew"  Width="500" Canvas.Left="215" Canvas.Top="163"/>
+        <PasswordBox  materialDesign:HintAssist.Hint="Password"  x:Name="PassNewagain"  Width="500" Canvas.Left="215" Canvas.Top="213"/>
         <Button Content="Thay đổi" Canvas.Left="254" Canvas.Top="287"  Style="{StaticResource MaterialDesignRaisedButton}"
     materialDesign:ButtonProgressAssist.Value="-1"
     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"

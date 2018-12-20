@@ -55,8 +55,8 @@
             x:Name="TT2comboBox" Canvas.Left="190" Canvas.Top="191" Width="197"/>
         <ComboBox SelectionChanged="TT3comboBox_SelectionChanged"
             x:Name="TT3comboBox" Canvas.Left="190" Canvas.Top="227" Width="196"/>
-        <ComboBox x:Name="TT4comboBox" Canvas.Left="189" Canvas.Top="263" Width="196"/>
-        <Button FontSize="16" x:Name="button" Content="Hoàn tất" Canvas.Left="176" Canvas.Top="322" Width="90" Height="35" Background="#FF8B8E91"/>
+        <ComboBox x:Name="TT4comboBox" Canvas.Left="189" Canvas.Top="263" Width="196" SelectionChanged="TT4comboBox_SelectionChanged"/>
+        <Button FontSize="16" x:Name="button" Content="Hoàn tất" Canvas.Left="176" Canvas.Top="322" Width="90" Height="35" Background="#FF8B8E91" Click="button_Click"/>
 
 
 

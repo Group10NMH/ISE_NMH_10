@@ -60,14 +60,17 @@ namespace Football_League_Manager
             TDComboBox.ItemsSource = DSTranDau;
         }
         DanhSachTrongTai TT;
+        string MaTran;
         private void TDComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
             TT = new DanhSachTrongTai();
             TT.LoadDSTrongTai();
 
             TT1comboBox.ItemsSource = TT.DanhSachTrongTais.Values;
 
+            DataObject data = (DataObject)TDComboBox.SelectedItem;
+            MaTran = data.MaTran;
         }
 
 
@@ -91,19 +94,39 @@ namespace Football_League_Manager
             TT3comboBox.ItemsSource = TT.DanhSachTrongTais.Values;
         }
 
+        string[] matt = new string[4];
+
         private void TT3comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
             TT = new DanhSachTrongTai();
             TT.LoadDSTrongTai();
-            string matt = TT.DanhSachTrongTais.ElementAt(TT1comboBox.SelectedIndex).Key;
-            TT.DanhSachTrongTais.Remove(matt);
-            string matt1 = TT.DanhSachTrongTais.ElementAt(TT2comboBox.SelectedIndex).Key;
-            TT.DanhSachTrongTais.Remove(matt1);
-            string matt2 = TT.DanhSachTrongTais.ElementAt(TT3comboBox.SelectedIndex).Key;
-            TT.DanhSachTrongTais.Remove(matt2);
+
+            matt[0] = TT.DanhSachTrongTais.ElementAt(TT1comboBox.SelectedIndex).Key;
+            TT.DanhSachTrongTais.Remove(matt[0]);
+            matt[1] = TT.DanhSachTrongTais.ElementAt(TT2comboBox.SelectedIndex).Key;
+            TT.DanhSachTrongTais.Remove(matt[1]);
+            matt[2] = TT.DanhSachTrongTais.ElementAt(TT3comboBox.SelectedIndex).Key;
+            TT.DanhSachTrongTais.Remove(matt[2]);
 
             TT4comboBox.ItemsSource = TT.DanhSachTrongTais.Values;
+            
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            DataProvider dataProvider = new DataProvider();
+            
+            for (int i = 0; i < 4; i++)
+            {
+                dataProvider.ExcuteNonQuery("insert into LichCamCoi values ( @MaTT , @MaTran )", new object[] { matt[i], MaTran});
+            }
+        }
+
+        private void TT4comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            matt[3] = TT.DanhSachTrongTais.ElementAt(TT4comboBox.SelectedIndex).Key;
+
         }
     }
 }

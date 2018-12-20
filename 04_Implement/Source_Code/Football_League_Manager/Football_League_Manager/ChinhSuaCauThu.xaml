@@ -1,0 +1,61 @@
+﻿<Window x:Class="Football_League_Manager.ChinhSuaCauThu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+        xmlns:local="clr-namespace:Football_League_Manager"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="ChinhSuaCauThu" Height="536.424" Width="1091">
+    <Canvas Margin="0,-2,0,2">
+        <TextBlock Text="Tên cầu thủ:"  Canvas.Left="24"  Width="134" Canvas.Top="38"/>
+        <TextBox Name="TenCauThuText"  Width="212" Height="38" Canvas.Left="98" Canvas.Top="20"/>
+
+        <DataGrid AutoGenerateColumns="False"  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="CauThuDataGrid_SelectionChanged"
+            Height="460" 
+            HorizontalAlignment="Left" 
+            Name="CauThuDataGrid" 
+            VerticalAlignment="Center" 
+            IsReadOnly="True"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                  Width="730" Canvas.Top="20" AlternatingRowBackground="White" Canvas.Left="334">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=TenCauThu}" Width="200" CanUserResize="False" Header="Tên cầu thủ"/>
+                <DataGridTextColumn Binding="{Binding Path=NgaySinh}" Width="150" CanUserResize="False" Header="Ngày sinh"/>
+                <DataGridTextColumn Binding="{Binding Path=SoAo}" Width="100" CanUserResize="False" Header="Số áo"/>
+                <DataGridTextColumn Binding="{Binding Path=QuocTich}" Width="150" CanUserResize="False" Header="Quốc tịch"/>
+                <DataGridTextColumn Binding="{Binding Path=ViTri}" Width="200" CanUserResize="False" Header="Vị trí"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Text="Ngày sinh " Canvas.Left="24"  Width="134" Canvas.Top="120"/>
+        <TextBlock Text="Số áo: " Canvas.Left="24"  Width="134" Canvas.Top="206"/>
+        <TextBox x:Name="SoAoText" Width="212" Height="38" Canvas.Left="98" Canvas.Top="186"/>
+        <TextBlock Text="Vị trí: " Canvas.Left="24"  Width="134" Canvas.Top="382"/>
+
+        <TextBlock Text="Quốc tịch: " Canvas.Left="24"  Width="134" Canvas.Top="298"/>
+        <TextBox x:Name="QuocTichText" Width="212" Height="38" Canvas.Left="98" Canvas.Top="277"/>
+
+        <DatePicker Width="212" Name="NgaySinhDatePicker" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Canvas.Left="98" Canvas.Top="101" />
+        <ComboBox Name="itemsCombobox" Width="212" Height="30" Canvas.Left="98" Canvas.Top="370" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+
+                        <TextBlock Text="{Binding TenVT}"  FontWeight="Bold"></TextBlock>
+
+                    </WrapPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Content="Thêm" x:Name="ThemButton" Width="91" Height="30" Canvas.Left="114" Canvas.Top="450" Click="ThemButton_Click" />
+        <Button Content="Xoá" Visibility="Hidden" x:Name="XoaButton" Width="91" Height="30" Canvas.Left="114" Canvas.Top="450" Click="XoaButton_Click"/>
+        <Button Content="Sửa" Visibility="Hidden" x:Name="SuaButton" Width="91" Height="30" Canvas.Left="10" Canvas.Top="450" Click="SuaButton_Click"/>
+        <Button Content="Kết thúc" x:Name="HoanTatButton" Width="92" Height="30" Canvas.Left="218" Canvas.Top="450"/>
+        <Button Content="Huỷ bỏ" Visibility="Hidden" Click="HuyBoButton_Click" x:Name="HuyBoButton" Width="92" Height="30" Canvas.Left="218" Canvas.Top="450"/>
+
+    </Canvas>
+</Window>
