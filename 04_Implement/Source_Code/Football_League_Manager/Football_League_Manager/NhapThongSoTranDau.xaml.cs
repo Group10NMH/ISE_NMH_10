@@ -23,6 +23,7 @@ namespace Football_League_Manager
         public NhapThongSoTranDau()
         {
             InitializeComponent();
+            int a;
         }
 
         public string TenDoiNha { get; set; }
