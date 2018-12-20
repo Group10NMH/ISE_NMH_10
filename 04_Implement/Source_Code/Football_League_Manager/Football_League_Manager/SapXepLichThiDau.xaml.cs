@@ -54,7 +54,7 @@ namespace Football_League_Manager
             while (sqlDataReader.Read())
             {
                 var dt = new TranDau();
-                
+
                 dt.TenDoiA = sqlDataReader.GetString(0);
                 dt.TenDoiB = sqlDataReader.GetString(1);
                 dt.MaTranDau = sqlDataReader.GetString(2);
@@ -67,30 +67,51 @@ namespace Football_League_Manager
 
         private void ThemLich_Button_Click(object sender, RoutedEventArgs e)
         {
-            string maTD = "";
-            DataProvider dataProvider = new DataProvider();
-            if (vongDau * dsTranDau.Count() < 10)
+            if (dsTranDau == null)
             {
-                maTD = "TD0" + ((vongDau-1) * dsTranDau.Count() + TranDau_ComboBox.SelectedIndex).ToString();
+                MessageBox.Show("Bạn chưa chọn vòng đấu");
             }
             else
             {
-                maTD = "TD" + ((vongDau-1) * dsTranDau.Count() + TranDau_ComboBox.SelectedIndex).ToString();
-            }
-            string a = TranDau_ComboBox.SelectedIndex.ToString();
-           
-            dataProvider.ExcuteNonQuery("update LichThiDau set ThoiGian = @thoiGian" +
-                " where MaTran= @maTran ", new object[] { Convert.ToDateTime(ThoiGian_TextBox.Text), maTD });
-            var i = TranDau_ComboBox.SelectedIndex;
-            dsTranDau[i].ThoiGian = Convert.ToDateTime(ThoiGian_TextBox.Text);
-            MessageBox.Show("Thay đổi thời gian thi đấu thành công!");
 
+                string maTD = "";
+
+                if (vongDau * dsTranDau.Count() < 10)
+                {
+                    maTD = "TD0" + ((vongDau - 1) * dsTranDau.Count() + TranDau_ComboBox.SelectedIndex).ToString();
+                }
+                else
+                {
+                    maTD = "TD" + ((vongDau - 1) * dsTranDau.Count() + TranDau_ComboBox.SelectedIndex).ToString();
+                }
+                try
+                {
+                    DataProvider dataProvider = new DataProvider();
+                    dataProvider.ExcuteNonQuery("update LichThiDau set ThoiGian = @thoiGian" +
+                        " where MaTran= @maTran ", new object[] { Convert.ToDateTime(ThoiGian_TextBox.Text), maTD });
+                    var i = TranDau_ComboBox.SelectedIndex;
+                    dsTranDau[i].ThoiGian = Convert.ToDateTime(ThoiGian_TextBox.Text);
+                    MessageBox.Show("Thay đổi thời gian thi đấu thành công!");
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ban chưa chọn trận đấu");
+                }
+            }
         }
 
         private void TranDau_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var i = TranDau_ComboBox.SelectedIndex;
-            ThoiGian_TextBox.Text = dsTranDau[i].ThoiGian.ToString();
+            if (i != -1)
+            {
+                ThoiGian_TextBox.Text = dsTranDau[i].ThoiGian.ToString();
+            }
+            else
+            {
+                ThoiGian_TextBox.Text = "";
+            }
         }
     }
 }
