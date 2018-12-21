@@ -24,61 +24,7 @@ namespace Football_League_Manager
         {
             InitializeComponent();
             bangXepHangs = new List<DataObject>();
-        }
 
-        List<TranDau> TranDaus;
-        public List<DataObject> bangXepHangs { get; set; }
-        public class DataObject
-        {
-            public int ViTri { get; set; }
-            public string TenDoiBong { get; set; }
-            public int SoTran { get; set; }
-            public int SoTranThang { get; set; }
-            public int SoTranThua { get; set; }
-            public int SoTranHoa { get; set; }
-            public int SoBanThang { get; set; }
-            public int SoBanThua { get; set; }
-            public int HieuSo { get; set; }
-            public int Diem { get; set; }
-
-            public int SoSanh(DataObject d)
-            {
-                if (Diem > d.Diem)
-                {
-                    return 1;
-                }
-                else if (Diem < d.Diem)
-                {
-                    return -1;
-                }
-                else
-                {
-                    if (HieuSo > d.HieuSo)
-                    {
-                        return 1;
-                    }
-                    else if (HieuSo < d.HieuSo)
-                    {
-                        return -1;
-                    }
-                    else
-                    {
-                        if (SoBanThang > d.SoBanThang)
-                        {
-                            return 1;
-                        }
-                        else if (SoBanThang < d.SoBanThang)
-                        {
-                            return -1;
-                        }
-                        else return 0;
-                    }
-                }
-            }
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
             DataProvider dataProvider = new DataProvider();
             SqlCommand sqlCommand = dataProvider.ExcuteQuery("select TenDB from DoiBong");
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
@@ -194,6 +140,59 @@ namespace Football_League_Manager
                 BXHListView.ItemsSource = list;
                 bangXepHangs = list;
             }
+
         }
+
+        List<TranDau> TranDaus;
+        public List<DataObject> bangXepHangs { get; set; }
+        public class DataObject
+        {
+            public int ViTri { get; set; }
+            public string TenDoiBong { get; set; }
+            public int SoTran { get; set; }
+            public int SoTranThang { get; set; }
+            public int SoTranThua { get; set; }
+            public int SoTranHoa { get; set; }
+            public int SoBanThang { get; set; }
+            public int SoBanThua { get; set; }
+            public int HieuSo { get; set; }
+            public int Diem { get; set; }
+
+            public int SoSanh(DataObject d)
+            {
+                if (Diem > d.Diem)
+                {
+                    return 1;
+                }
+                else if (Diem < d.Diem)
+                {
+                    return -1;
+                }
+                else
+                {
+                    if (HieuSo > d.HieuSo)
+                    {
+                        return 1;
+                    }
+                    else if (HieuSo < d.HieuSo)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        if (SoBanThang > d.SoBanThang)
+                        {
+                            return 1;
+                        }
+                        else if (SoBanThang < d.SoBanThang)
+                        {
+                            return -1;
+                        }
+                        else return 0;
+                    }
+                }
+            }
+        }
+
     }
 }

@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:Football_League_Manager"
         mc:Ignorable="d"
         Title="Bảng xếp hạng" Height="439.071" Width="939.202" ResizeMode="CanResize"
-        Loaded="Window_Loaded"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"
