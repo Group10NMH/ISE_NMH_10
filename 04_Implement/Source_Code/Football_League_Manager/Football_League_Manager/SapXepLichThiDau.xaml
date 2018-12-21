@@ -9,7 +9,7 @@
         Title="Sắp xếp lịch thi đấu" Height="248.5" Width="584">
     <Canvas Margin="0,0,2,-5" Height="222" VerticalAlignment="Top">
         <TextBlock Text="Chọn trận đấu" FontSize="20"
-                   Canvas.Left="244" Canvas.Top="11" Width="136"
+                   Canvas.Left="244" Canvas.Top="12" Width="136"
                    ></TextBlock>
         <ComboBox x:Name="TranDau_ComboBox" Height="30" Width="307"
                   Canvas.Left="244" Canvas.Top="43" 
@@ -45,7 +45,7 @@
                  Canvas.Left="50" Canvas.Top="127"
                  ></TextBox>
         <TextBlock Text="Chọn vòng đấu" FontSize="20"
-                   Canvas.Left="51" Canvas.Top="10"
+                   Canvas.Left="51" Canvas.Top="12"
                    ></TextBlock>
         <Button x:Name="ThemLich_Button"
                 Height="40" Width="120"

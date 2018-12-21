@@ -12,9 +12,9 @@
                    ></TextBlock>
         <TextBlock Text="Top 3:" FontSize="14" Canvas.Left="26" Canvas.Top="64"
                    ></TextBlock>
-        <TextBlock Text="Vua phá lưới:" FontSize="14" Canvas.Left="26" Canvas.Top="308"
+        <TextBlock Text="Vua phá lưới:" FontSize="14" Canvas.Left="26" Canvas.Top="298"
                    ></TextBlock>
-        <TextBlock Text="Đội xuống hạng:" FontSize="14" Canvas.Left="26" Canvas.Top="342"
+        <TextBlock Text="Đội xuống hạng:" FontSize="14" Canvas.Left="26" Canvas.Top="332"
                    ></TextBlock>
         <TextBlock x:Name="DoiVoDich_TextBlock"
                    FontSize="14" 
@@ -23,11 +23,11 @@
                    ></TextBlock>
         <TextBlock x:Name="VuaPhaLuoi_TextBlock"
                    FontSize="14"
-                   Height="30" Width="200" Canvas.Left="152" Canvas.Top="306"
+                   Height="30" Width="200" Canvas.Left="152" Canvas.Top="296"
                    ></TextBlock>
         <TextBlock x:Name="DoiXuongHang_TextBlock"
                    FontSize="14"
-                   Height="30" Width="200" Canvas.Left="152" Canvas.Top="342"
+                   Height="30" Width="200" Canvas.Left="152" Canvas.Top="332"
                    ></TextBlock>
         <DataGrid AutoGenerateColumns="False" 
           Height="190" 
@@ -43,5 +43,6 @@
             </DataGrid.Columns>
 
         </DataGrid>
+        <TextBlock x:Name="ChuaKetThuc_TextBlock"  FontSize="30" Canvas.Left="10" Canvas.Top="10" Background="White"  ></TextBlock>
     </Canvas>
 </Window>

@@ -39,19 +39,30 @@ namespace Football_League_Manager
             {
                 list.Add(new DataObject() { MaTT = item.Key, TenTT = item.Value });
             }
-  
+
             TrongTaiDataGrid.ItemsSource = list;
 
         }
-
-
+        bool kiemTraKieuDuLieu(string Ten)
+        {
+            for (int i = 0; i < Ten.Count(); i++)
+            {
+                if (Ten[i] < 58 && Ten[i]>47 )
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         private void add_Click(object sender, RoutedEventArgs e)
         {
+
             ObservableCollection<DataObject> list = new ObservableCollection<DataObject>();
             DanhSachTrongTai dstt = new DanhSachTrongTai();
             dstt.LoadDSTrongTai();
+
             int i = 0;
-            if ( TenTrongTai_TextBox.Text != null )
+            if (TenTrongTai_TextBox.Text != "" && kiemTraKieuDuLieu(TenTrongTai_TextBox.Text))
             {
                 foreach (KeyValuePair<string, string> item in dstt.DanhSachTrongTais)
                 {
@@ -59,23 +70,25 @@ namespace Football_League_Manager
                 }
                 i = dstt.DanhSachTrongTais.Count();
                 string maTT;
-                if (i<9)
+                if (i < 10)
                 {
-                    maTT = "TT0" + (i+1).ToString();
+                    maTT = "TT0" + i.ToString();
                 }
-                else { maTT = "TT" + (i+1).ToString(); }
+                else { maTT = "TT" + i.ToString(); }
                 list.Add(new DataObject() { MaTT = maTT, TenTT = TenTrongTai_TextBox.Text });
                 TrongTaiDataGrid.ItemsSource = list;
                 DataProvider dataProvider = new DataProvider();
-                int c = dataProvider.ExcuteNonQuery("insert into TrongTai values ( @MaTT , @TenTT )", new object[] {maTT, TenTrongTai_TextBox.Text});
-                MessageBox.Show(c.ToString());
-
+                dataProvider.ExcuteNonQuery("insert into TrongTai values ( @MaTT , @TenTT )", new object[] { maTT, TenTrongTai_TextBox.Text });
                 TenTrongTai_TextBox.Text = "";
             }
+            else
+            {
+                MessageBox.Show("Bạn chưa nhập tên trọng tài!");
+            }
         }
-       
 
-       
+
+
         private void HoanTat_Button_Click(object sender, RoutedEventArgs e)
         {
             Close();

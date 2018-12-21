@@ -25,11 +25,12 @@ namespace Football_League_Manager
         {
             InitializeComponent();
         }
-        public class Data {
+        public class Data
+        {
             public int ViTri { get; set; }
             public string TenDoi { get; set; }
         }
-        
+
         public class Data1
         {
             public int SoBan { get; set; }
@@ -41,32 +42,42 @@ namespace Football_League_Manager
             TraCuuBangXepHang traCuuBangXepHang = new TraCuuBangXepHang();
             traCuuBangXepHang.Show();
             traCuuBangXepHang.Hide();
-            DoiVoDich_TextBlock.Text = traCuuBangXepHang.bangXepHangs[0].TenDoiBong;
-            DoiXuongHang_TextBlock.Text = traCuuBangXepHang.bangXepHangs[traCuuBangXepHang.bangXepHangs.Count() - 1].TenDoiBong;
-            ObservableCollection<Data> list = new ObservableCollection<Data>();
-            for (int i = 0; i < 3; i++)
+            if (traCuuBangXepHang.bangXepHangs.Count() == 10)
             {
-                Data data = new Data();
-                data.ViTri = i + 1;
-                data.TenDoi = traCuuBangXepHang.bangXepHangs[i].TenDoiBong;
-                list.Add(data);
+                DoiVoDich_TextBlock.Text = traCuuBangXepHang.bangXepHangs[0].TenDoiBong;
+                DoiXuongHang_TextBlock.Text = traCuuBangXepHang.bangXepHangs[traCuuBangXepHang.bangXepHangs.Count() - 1].TenDoiBong;
+                ObservableCollection<Data> list = new ObservableCollection<Data>();
+                for (int i = 0; i < 3; i++)
+                {
+                    Data data = new Data();
+                    data.ViTri = i + 1;
+                    data.TenDoi = traCuuBangXepHang.bangXepHangs[i].TenDoiBong;
+                    list.Add(data);
+                }
+                Top4_DataGrid.ItemsSource = list;
+                traCuuBangXepHang.Close();
+                DataProvider dataProvider = new DataProvider();
+                SqlCommand sql = dataProvider.ExcuteQuery("select GhiBan.MaCT, GhiBan.MaDB, GhiBan.SoBan from GhiBan");
+                SqlDataReader sqlDataReader = sql.ExecuteReader();
+                List<Data1> DanhSachGhiBan = new List<Data1>();
+                while (sqlDataReader.Read())
+                {
+                    Data1 dt = new Data1();
+                    dt.MaCT = sqlDataReader.GetString(0);
+                    dt.MaDB = sqlDataReader.GetString(1);
+                    dt.SoBan = sqlDataReader.GetInt32(2);
+                    DanhSachGhiBan.Add(dt);
+                }
+                for (int i = 0; i < DanhSachGhiBan.Count(); i++)
+                {
+
+                }
             }
-            Top4_DataGrid.ItemsSource = list;
-            traCuuBangXepHang.Close();
-            DataProvider dataProvider = new DataProvider();
-            SqlCommand sql = dataProvider.ExcuteQuery("select GhiBan.MaCT, GhiBan.MaDB, GhiBan.SoBan from GhiBan");
-            SqlDataReader sqlDataReader = sql.ExecuteReader();
-            List<Data1> DanhSachGhiBan = new List<Data1>();
-            while (sqlDataReader.Read())
+            else
             {
-                Data1 dt = new Data1();
-                dt.MaCT = sqlDataReader.GetString(0);
-                dt.MaDB = sqlDataReader.GetString(1);
-                dt.SoBan = sqlDataReader.GetInt32(2);
-                DanhSachGhiBan.Add(dt);
-            }
-            for (int i = 0; i < DanhSachGhiBan.Count(); i++)
-            {
+                ChuaKetThuc_TextBlock.Text = "Mùa giải chưa kết thúc!!";
+                ChuaKetThuc_TextBlock.Height = 420;
+                ChuaKetThuc_TextBlock.Width = 380;
 
             }
         }

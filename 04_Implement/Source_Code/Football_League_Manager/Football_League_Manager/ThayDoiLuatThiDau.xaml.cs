@@ -34,8 +34,8 @@ namespace Football_League_Manager
             while (sqlDataReader.Read())
             {
                 luatThiDau.DiemThang = sqlDataReader.GetInt32(5);
-                luatThiDau.DiemThua = sqlDataReader.GetInt32(6);
-                luatThiDau.DiemHoa = sqlDataReader.GetInt32(7);
+                luatThiDau.DiemThua = sqlDataReader.GetInt32(7);
+                luatThiDau.DiemHoa = sqlDataReader.GetInt32(6);
                 luatThiDau.TuoiToiDa = sqlDataReader.GetInt32(3);
                 luatThiDau.TuoiToiThieu = sqlDataReader.GetInt32(2);
                 luatThiDau.SoCauThuToiDa = sqlDataReader.GetInt32(1);
@@ -88,6 +88,7 @@ namespace Football_League_Manager
 
         private void Luu_Button_Click(object sender, RoutedEventArgs e)
         {
+
             luatThiDau.DiemThang = int.Parse(DiemThang_TextBox.Text);
             luatThiDau.DiemHoa = int.Parse(DiemHoa_TextBox.Text);
             luatThiDau.DiemThua = int.Parse(DiemThua_TextBox.Text);
@@ -96,17 +97,22 @@ namespace Football_League_Manager
             luatThiDau.SoCauThuToiDa = int.Parse(SoCauThuMax_TextBox.Text);
             luatThiDau.SoCauThuToiThieu = int.Parse(SoCauThuMin_TextBox.Text);
             luatThiDau.SoTheVang = int.Parse(SoThe_TextBox.Text);
-
-            DataProvider dataProvider = new DataProvider();
-            int dem = dataProvider.ExcuteNonQuery(" update LuatThiDau set DiemThang= @DiemThang , DiemThua= @b , DiemHoa= @c , TuoiToiDa= @d ," +
-                " TuoiToiThieu = @e , SoCauThuToiDa = @f ,SoCauThuToiThieu = @g , SoTheVang = @h ", new object[] { luatThiDau.DiemThang, luatThiDau.DiemThua, luatThiDau.DiemHoa, luatThiDau.TuoiToiDa, luatThiDau.TuoiToiThieu, luatThiDau.SoCauThuToiDa, luatThiDau.SoCauThuToiThieu, luatThiDau.SoTheVang });
-
-            MessageBox.Show("Thay đổi thành công" + dem.ToString());
-            Diem_CheckBox.IsChecked = false;
-            The_CheckBox.IsChecked = false;
-            SoCauThu_CheckBox.IsChecked = false;
-            Tuoi_CheckBox.IsChecked = false;
-
+            if (luatThiDau.DiemThang > luatThiDau.DiemHoa && luatThiDau.DiemHoa > luatThiDau.DiemThua &&
+                luatThiDau.TuoiToiDa > luatThiDau.TuoiToiThieu && luatThiDau.SoCauThuToiDa > luatThiDau.SoCauThuToiThieu)
+            {
+                DataProvider dataProvider = new DataProvider();
+                int dem = dataProvider.ExcuteNonQuery(" update LuatThiDau set DiemThang= @DiemThang , DiemThua= @b , DiemHoa= @c , TuoiToiDa= @d ," +
+                    " TuoiToiThieu = @e , SoCauThuToiDa = @f ,SoCauThuToiThieu = @g , SoTheVang = @h ", new object[] { luatThiDau.DiemThang, luatThiDau.DiemThua, luatThiDau.DiemHoa, luatThiDau.TuoiToiDa, luatThiDau.TuoiToiThieu, luatThiDau.SoCauThuToiDa, luatThiDau.SoCauThuToiThieu, luatThiDau.SoTheVang });
+                if (dem == 1)
+                {
+                    MessageBox.Show("Thay đổi thành công");
+                }
+                Diem_CheckBox.IsChecked = false;
+                The_CheckBox.IsChecked = false;
+                SoCauThu_CheckBox.IsChecked = false;
+                Tuoi_CheckBox.IsChecked = false;
+            }
+            else { MessageBox.Show("LƯU KHÔNG THÀNH CÔNG!!! \nĐiểm thắng > Điểm hòa > Điểm thua \nSố cầu thủ tối đa > số cầu thủ tối thiểu \nSố thẻ tối đa > số thẻ tối thiểu", "Thông Báo!"); }
         }
 
         private void HoanTat_Button_Click(object sender, RoutedEventArgs e)
@@ -147,6 +153,134 @@ namespace Football_League_Manager
         {
             SoThe_TextBox.Text = luatThiDau.SoTheVang.ToString();
             SoThe_TextBox.IsEnabled = false;
+        }
+
+        private void DiemThang_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (DiemThang_TextBox.Text != "")
+                {
+                    int.Parse(DiemThang_TextBox.Text);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kiểu dữ liệu bạn nhập phải là số tự nhiên!");
+                DiemThang_TextBox.Text = luatThiDau.DiemThang.ToString();
+            }
+        }
+
+        private void DiemHoa_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (DiemHoa_TextBox.Text != "")
+                {
+                    int.Parse(DiemHoa_TextBox.Text);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kiểu dữ liệu bạn nhập phải là số tự nhiên!");
+                DiemHoa_TextBox.Text = luatThiDau.DiemHoa.ToString();
+            }
+        }
+
+        private void DiemThua_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (DiemThua_TextBox.Text != "")
+                {
+                    int.Parse(DiemThua_TextBox.Text);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kiểu dữ liệu bạn nhập phải là số tự nhiên!");
+                DiemThua_TextBox.Text = luatThiDau.DiemThua.ToString();
+            }
+        }
+
+        private void TuoiMax_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (TuoiMax_TextBox.Text != "")
+                {
+                    int.Parse(TuoiMax_TextBox.Text);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kiểu dữ liệu bạn nhập phải là số tự nhiên!");
+                TuoiMax_TextBox.Text = luatThiDau.TuoiToiDa.ToString();
+            }
+        }
+
+        private void TuoiMin_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (TuoiMin_TextBox.Text != "")
+                {
+                    int.Parse(TuoiMin_TextBox.Text);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kiểu dữ liệu bạn nhập phải là số tự nhiên!");
+                TuoiMin_TextBox.Text = luatThiDau.TuoiToiThieu.ToString();
+            }
+        }
+
+        private void SoCauThuMax_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (SoCauThuMax_TextBox.Text != "")
+                {
+                    int.Parse(SoCauThuMax_TextBox.Text);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kiểu dữ liệu bạn nhập phải là số tự nhiên!");
+                SoCauThuMax_TextBox.Text = luatThiDau.SoCauThuToiDa.ToString();
+            }
+        }
+
+        private void SoCauThuMin_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (SoCauThuMin_TextBox.Text != "")
+                {
+                    int.Parse(SoCauThuMin_TextBox.Text);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kiểu dữ liệu bạn nhập phải là số tự nhiên!");
+                SoCauThuMin_TextBox.Text = luatThiDau.SoCauThuToiThieu.ToString();
+            }
+        }
+
+        private void SoThe_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (SoThe_TextBox.Text != "")
+                {
+                    int.Parse(SoThe_TextBox.Text);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kiểu dữ liệu bạn nhập phải là số tự nhiên!");
+                SoThe_TextBox.Text = luatThiDau.SoTheVang.ToString();
+            }
         }
     }
 }

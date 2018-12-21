@@ -28,13 +28,13 @@ namespace Football_League_Manager
         List<string> dsVongDau;
         class DataObject
         {
-           
+
             public string DoiA { get; set; }
             public string DoiB { get; set; }
             public DateTime ThoiGian { get; set; }
         };
         List<DataObject> dsTranDau;
-     
+
         private void VongDau_ComboBox_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -69,6 +69,6 @@ namespace Football_League_Manager
             LichThiDauDataGrid.ItemsSource = list;
         }
 
-        
+
     }
 }
