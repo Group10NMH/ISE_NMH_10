@@ -56,22 +56,24 @@ namespace Football_League_Manager
                 }
                 Top4_DataGrid.ItemsSource = list;
                 traCuuBangXepHang.Close();
-                DataProvider dataProvider = new DataProvider();
-                SqlCommand sql = dataProvider.ExcuteQuery("select GhiBan.MaCT, GhiBan.MaDB, GhiBan.SoBan from GhiBan");
-                SqlDataReader sqlDataReader = sql.ExecuteReader();
-                List<Data1> DanhSachGhiBan = new List<Data1>();
-                while (sqlDataReader.Read())
-                {
-                    Data1 dt = new Data1();
-                    dt.MaCT = sqlDataReader.GetString(0);
-                    dt.MaDB = sqlDataReader.GetString(1);
-                    dt.SoBan = sqlDataReader.GetInt32(2);
-                    DanhSachGhiBan.Add(dt);
-                }
-                for (int i = 0; i < DanhSachGhiBan.Count(); i++)
-                {
+                TraCuuVuaPhaLuoi traCuuVuaPhaLuoi = new TraCuuVuaPhaLuoi();
+                VuaPhaLuoi_TextBlock.Text = traCuuVuaPhaLuoi.cauThus[0].TenCauThu;
+                //DataProvider dataProvider = new DataProvider();
+                //SqlCommand sql = dataProvider.ExcuteQuery("select GhiBan.MaCT, GhiBan.MaDB, GhiBan.SoBan from GhiBan");
+                //SqlDataReader sqlDataReader = sql.ExecuteReader();
+                //List<Data1> DanhSachGhiBan = new List<Data1>();
+                //while (sqlDataReader.Read())
+                //{
+                //    Data1 dt = new Data1();
+                //    dt.MaCT = sqlDataReader.GetString(0);
+                //    dt.MaDB = sqlDataReader.GetString(1);
+                //    dt.SoBan = sqlDataReader.GetInt32(2);
+                //    DanhSachGhiBan.Add(dt);
+                //}
+                //for (int i = 0; i < DanhSachGhiBan.Count(); i++)
+                //{
 
-                }
+                //}
             }
             else
             {
