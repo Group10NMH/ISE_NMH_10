@@ -57,11 +57,17 @@ namespace Football_League_Manager
 
                 TranDau tranDau = new TranDau();
                 tranDau.MaTranDau = vongDau.TranDaus[itemsCombobox_Copy.SelectedIndex].MaTranDau;
-                tranDau.LoadKQTranDau();
+                bool check = tranDau.LoadKQTranDau();
 
-                TiSoA.Content = tranDau.TiSoDoiA.ToString();
-
-                TiSoB.Content = tranDau.TiSoDoiB.ToString();
+                if (check == true)
+                {
+                    TiSoA.Content = tranDau.TiSoDoiA.ToString();
+                    TiSoB.Content = tranDau.TiSoDoiB.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Trận đấu chưa được diễn ra, vui lòng trở lại sau");
+                }
             }
         }
     }

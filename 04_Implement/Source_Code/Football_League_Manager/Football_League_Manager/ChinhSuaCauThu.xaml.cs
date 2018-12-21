@@ -147,17 +147,26 @@ namespace Football_League_Manager
 
         private void XoaButton_Click(object sender, RoutedEventArgs e)
         {
-            DataProvider dataProvider = new DataProvider();
-            int check = dataProvider.ExcuteNonQuery("delete CauThu where MaCT = @ma", new object[] { row_list.MaCauThu });
-            if (1 == check) MessageBox.Show("Ngon");
+            MessageBoxResult messageBoxResult = MessageBox.Show("Xoá cầu thủ này khỏi đội bóng", "Cảnh báo", MessageBoxButton.OKCancel);
 
-            cauThus.RemoveAt(CauThuDataGrid.SelectedIndex);
+            if (messageBoxResult == MessageBoxResult.OK)
+            {
+                DataProvider dataProvider = new DataProvider();
+                int check = dataProvider.ExcuteNonQuery("delete CauThu where MaCT = @ma", new object[] { row_list.MaCauThu });
+                if (1 == check) MessageBox.Show("Ngon");
 
-            CauThuDataGrid.ItemsSource = cauThus;
+                cauThus.RemoveAt(CauThuDataGrid.SelectedIndex);
 
-            XoaButton.Visibility = Visibility.Hidden;
-            SuaButton.Visibility = Visibility.Hidden;
-            HuyBoButton.Visibility = Visibility.Hidden;
+                CauThuDataGrid.ItemsSource = cauThus;
+
+                XoaButton.Visibility = Visibility.Hidden;
+                SuaButton.Visibility = Visibility.Hidden;
+                HuyBoButton.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                HuyBoButton_Click(null, null);
+            }
         }
  
         private void SuaButton_Click(object sender, RoutedEventArgs e)
@@ -198,6 +207,61 @@ namespace Football_League_Manager
             itemsCombobox.SelectedIndex = -1;
 
             TenCauThuText.IsEnabled = true;
+        }
+
+        private void TenCauThuText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string check = "0123456789";
+            if (TenCauThuText.Text != "" && check.Contains(TenCauThuText.Text[TenCauThuText.Text.Length-1]))
+            {
+                MessageBox.Show("Tên cầu thủ không được phép chứa số!");
+                TenCauThuText.Text = TenCauThuText.Text.Substring(0, TenCauThuText.Text.Length - 1);
+            }
+        }
+
+        private void NgaySinhDatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            DateTime ns = (DateTime)NgaySinhDatePicker.SelectedDate;
+
+            if (KiemTraNSHopLe(now, ns) == false)
+            {
+                MessageBox.Show("Ngày sinh cầu thủ không hợp lệ!");
+                //NgaySinhDatePicker.SelectedDate = null;
+            }
+        }
+
+        bool KiemTraNSHopLe(DateTime now, DateTime ns)
+        {
+            if (ns.Year > now.Year) return false;
+
+            if (ns.Year < now.Year) return true;
+
+            if (ns.Month > now.Month) return false;
+
+            if (ns.Month < now.Month) return true;
+
+            if (ns.Day > now.Day) return false;
+
+            if (ns.Day < now.Day) return true;
+
+            return true;
+        }
+
+        private void SoAoText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (SoAoText.Text != "")
+            {
+                try
+                {
+                    int.Parse(SoAoText.Text);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Số áo cầu thủ phải là số nguyên");
+                    SoAoText.Text = "";
+                }
+            }
         }
     }
 }

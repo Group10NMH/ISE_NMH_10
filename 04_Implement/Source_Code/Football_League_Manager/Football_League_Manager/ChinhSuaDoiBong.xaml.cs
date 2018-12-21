@@ -57,14 +57,21 @@ namespace Football_League_Manager
         {
             //doiBongs[itemsCombobox.SelectedIndex].CauThus = new List<CauThu>();
 
-            Hide();
+            if (itemsCombobox.SelectedIndex != -1)
+            {
+                Hide();
 
-            ChinhSuaCauThu chinhSuaCauThu = new ChinhSuaCauThu();
-            chinhSuaCauThu.MaDoiBong = doiBongs[itemsCombobox.SelectedIndex].MaDoiBong;
+                ChinhSuaCauThu chinhSuaCauThu = new ChinhSuaCauThu();
+                chinhSuaCauThu.MaDoiBong = doiBongs[itemsCombobox.SelectedIndex].MaDoiBong;
 
-            chinhSuaCauThu.ShowDialog();
+                chinhSuaCauThu.ShowDialog();
 
-            Show();
+                Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn đội bóng trước khi muốn sửa danh sách cầu thủ!");
+            }
         }
 
         private void LuuButton_Click(object sender, RoutedEventArgs e)
@@ -76,9 +83,25 @@ namespace Football_League_Manager
 
         private void XoaButton_Click(object sender, RoutedEventArgs e)
         {
-            DataProvider dataProvider = new DataProvider();
-            dataProvider.ExcuteNonQuery("delete DoiBong where MaDB = @madb", new object[] { doiBongs[itemsCombobox.SelectedIndex].MaDoiBong });
-            doiBongs.RemoveAt(itemsCombobox.SelectedIndex);
+            if (itemsCombobox.SelectedIndex != -1)
+            {
+                MessageBoxResult messageBoxResult = MessageBox.Show("Xoá đội bóng này khỏi mùa giải", "Cảnh báo", MessageBoxButton.OKCancel);
+
+                if (messageBoxResult == MessageBoxResult.OK)
+                {
+                    DataProvider dataProvider = new DataProvider();
+                    dataProvider.ExcuteNonQuery("delete DoiBong where MaDB = @madb", new object[] { doiBongs[itemsCombobox.SelectedIndex].MaDoiBong });
+                    doiBongs.RemoveAt(itemsCombobox.SelectedIndex);
+                }
+                else
+                {
+                    MessageBox.Show("Thao tác đã được huỷ bỏ");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn đội bóng trước khi muốn xoá đội bóng!");
+            }
         }
 
     }

@@ -142,17 +142,20 @@ namespace Football_League_Manager
             return TenDoiA + " - " + TenDoiB;
         }
 
-        public void LoadKQTranDau()
+        public bool LoadKQTranDau()
         {
             DataProvider dataProvider = new DataProvider();
             SqlCommand sqlCommand = dataProvider.ExcuteQuery("select * from KetQua where MaTran = @matran", new object[] { MaTranDau });
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-
+            bool check = false;
             while (sqlDataReader.Read())
             {
+                check = true;
                 TiSoDoiA = sqlDataReader.GetInt32(1);
                 TiSoDoiB = sqlDataReader.GetInt32(2);
             }
+
+            return check;
         }
 
         public void LoadCTBiCam(int vong)

@@ -269,7 +269,8 @@ namespace Football_League_Manager
 
         private void ImageButton_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            
+            this.Close();
         }
 
         private void TraCuuButton_Click(object sender, RoutedEventArgs e)
@@ -292,6 +293,9 @@ namespace Football_League_Manager
             var lo = TraCuuCauThuButton.TranslatePoint(new Point(0, 0), this);
             CheckMuc.Margin = new Thickness() { Top = lo.Y };
             CheckMuc.Height = TraCuuCauThuButton.Height;
+
+            TraCuuCauThu traCuuCauThu = new TraCuuCauThu();
+            traCuuCauThu.ShowDialog();
         }
 
         private void TraCuuDoiBongButton_Click(object sender, RoutedEventArgs e)
@@ -299,6 +303,9 @@ namespace Football_League_Manager
             var lo = TraCuuDoiBongButton.TranslatePoint(new Point(0, 0), this);
             CheckMuc.Margin = new Thickness() { Top = lo.Y };
             CheckMuc.Height = TraCuuDoiBongButton.Height;
+
+            Tra_cuu_thong_tin_doi_bong tra_Cuu_Thong_Tin_Doi_Bong = new Tra_cuu_thong_tin_doi_bong();
+            tra_Cuu_Thong_Tin_Doi_Bong.ShowDialog();
         }
 
         private void TraCuuLichThiDauButton_Click(object sender, RoutedEventArgs e)
@@ -306,6 +313,9 @@ namespace Football_League_Manager
             var lo = TraCuuLichThiDauButton.TranslatePoint(new Point(0, 0), this);
             CheckMuc.Margin = new Thickness() { Top = lo.Y };
             CheckMuc.Height = TraCuuLichThiDauButton.Height;
+
+            TraCuuLichThiDau traCuuLichThiDau = new TraCuuLichThiDau();
+            traCuuLichThiDau.ShowDialog();
         }
 
         private void TraCuuKetQuaButton_Click(object sender, RoutedEventArgs e)
@@ -313,6 +323,9 @@ namespace Football_League_Manager
             var lo = TraCuuKetQuaButton.TranslatePoint(new Point(0, 0), this);
             CheckMuc.Margin = new Thickness() { Top = lo.Y };
             CheckMuc.Height = TraCuuKetQuaButton.Height;
+
+            TraCuuKetQuaTran traCuuKetQuaTran = new TraCuuKetQuaTran();
+            traCuuKetQuaTran.ShowDialog();
         }
 
         private void TraCuuTruocTranButton_Click(object sender, RoutedEventArgs e)
@@ -320,11 +333,75 @@ namespace Football_League_Manager
             var lo = TraCuuTruocTranButton.TranslatePoint(new Point(0, 0), this);
             CheckMuc.Margin = new Thickness() { Top = lo.Y };
             CheckMuc.Height = TraCuuTruocTranButton.Height;
+
+            TraCuuTruocTran traCuuTruocTran = new TraCuuTruocTran();
+            traCuuTruocTran.ShowDialog();
         }
 
         private void ThemDoiBongButton_Click(object sender, RoutedEventArgs e)
         {
-            tabs.SelectedIndex = 0;
+            ReceiveRecords receiveRecords = new ReceiveRecords();
+            receiveRecords.ShowDialog();
+        }
+
+        private void ChinhSuaDoiBongButton_Click(object sender, RoutedEventArgs e)
+        {
+            ChinhSuaDoiBong chinhSuaDoiBong = new ChinhSuaDoiBong();
+            chinhSuaDoiBong.ShowDialog();
+        }
+
+        private void NhapDanhSachTrongTaiButton_Click(object sender, RoutedEventArgs e)
+        {
+            NhapDanhSachTrongTai nhapDanhSachTrongTai = new NhapDanhSachTrongTai();
+            nhapDanhSachTrongTai.ShowDialog();
+        }
+
+        private void NhapKetQuaTranButton_Click(object sender, RoutedEventArgs e)
+        {
+            NhapKetQuaTranDau nhapKetQuaTranDau = new NhapKetQuaTranDau();
+            nhapKetQuaTranDau.ShowDialog();
+        }
+
+        private void PhanBoTrongTaiButton_Click(object sender, RoutedEventArgs e)
+        {
+            PhanBoTrongTai phanBoTrongTai = new PhanBoTrongTai();
+            phanBoTrongTai.ShowDialog();
+        }
+
+        private void SapXepLichThiDauButton_Click(object sender, RoutedEventArgs e)
+        {
+            SapXepLichThiDau sapXepLichThiDau = new SapXepLichThiDau();
+            sapXepLichThiDau.ShowDialog();
+        }
+
+        private void ThayDoiLuatButton_Click(object sender, RoutedEventArgs e)
+        {
+            ThayDoiLuatThiDau thayDoiLuatThiDau = new ThayDoiLuatThiDau();
+            thayDoiLuatThiDau.ShowDialog();
+        }
+
+        private void TongKetMuaGiaiButton_Click(object sender, RoutedEventArgs e)
+        {
+            TongKetMuaGiai tongKetMuaGiai = new TongKetMuaGiai();
+            tongKetMuaGiai.ShowDialog();
+        }
+
+        private void VuaPhaLuoiButton_Click(object sender, RoutedEventArgs e)
+        {
+            TraCuuVuaPhaLuoi traCuuVuaPhaLuoi = new TraCuuVuaPhaLuoi();
+            traCuuVuaPhaLuoi.ShowDialog();
+        }
+
+        private void BangXepHangButton_Click(object sender, RoutedEventArgs e)
+        {
+            TraCuuBangXepHang traCuuBangXepHang = new TraCuuBangXepHang();
+            traCuuBangXepHang.ShowDialog();
+        }
+
+        private void ThongTinTruocTran_Click(object sender, RoutedEventArgs e)
+        {
+            TraCuuTruocTran traCuuTruocTran = new TraCuuTruocTran();
+            traCuuTruocTran.ShowDialog();
         }
     }
 }

@@ -52,7 +52,14 @@ namespace Football_League_Manager
                 cauThus.Add(cauThu);
             }
 
-            BXHListView.ItemsSource = cauThus;
+            if (i != 1)
+            {
+                BXHListView.ItemsSource = cauThus;
+            }
+            else
+            {
+                MessageBox.Show("Chưa có cầu thủ nào ghi bàn nên chưa thể thống kê vua phá lưới!");
+            }
         }
     }
 }

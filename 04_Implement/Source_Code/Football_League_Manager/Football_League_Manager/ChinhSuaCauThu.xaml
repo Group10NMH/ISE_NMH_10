@@ -11,7 +11,7 @@
         Title="ChinhSuaCauThu" Height="536.424" Width="1091">
     <Canvas Margin="0,-2,0,2">
         <TextBlock Text="Tên cầu thủ:"  Canvas.Left="24"  Width="134" Canvas.Top="38"/>
-        <TextBox Name="TenCauThuText"  Width="212" Height="38" Canvas.Left="98" Canvas.Top="20"/>
+        <TextBox Name="TenCauThuText"  Width="212" Height="38" Canvas.Left="98" Canvas.Top="20" TextChanged="TenCauThuText_TextChanged"/>
 
         <DataGrid AutoGenerateColumns="False"  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="CauThuDataGrid_SelectionChanged"
             Height="460" 
@@ -33,13 +33,13 @@
 
         <TextBlock Text="Ngày sinh " Canvas.Left="24"  Width="134" Canvas.Top="120"/>
         <TextBlock Text="Số áo: " Canvas.Left="24"  Width="134" Canvas.Top="206"/>
-        <TextBox x:Name="SoAoText" Width="212" Height="38" Canvas.Left="98" Canvas.Top="186"/>
+        <TextBox x:Name="SoAoText" Width="212" Height="38" Canvas.Left="98" Canvas.Top="186" TextChanged="SoAoText_TextChanged"/>
         <TextBlock Text="Vị trí: " Canvas.Left="24"  Width="134" Canvas.Top="382"/>
 
         <TextBlock Text="Quốc tịch: " Canvas.Left="24"  Width="134" Canvas.Top="298"/>
         <TextBox x:Name="QuocTichText" Width="212" Height="38" Canvas.Left="98" Canvas.Top="277"/>
 
-        <DatePicker Width="212" Name="NgaySinhDatePicker" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Canvas.Left="98" Canvas.Top="101" />
+        <DatePicker Width="212" Name="NgaySinhDatePicker" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Canvas.Left="98" Canvas.Top="101" SelectedDateChanged="NgaySinhDatePicker_SelectedDateChanged"/>
         <ComboBox Name="itemsCombobox" Width="212" Height="30" Canvas.Left="98" Canvas.Top="370" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
