@@ -40,8 +40,7 @@ namespace Football_League_Manager
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             TraCuuBangXepHang traCuuBangXepHang = new TraCuuBangXepHang();
-            traCuuBangXepHang.Show();
-            traCuuBangXepHang.Hide();
+            
             if (traCuuBangXepHang.bangXepHangs.Count() == 10)
             {
                 DoiVoDich_TextBlock.Text = traCuuBangXepHang.bangXepHangs[0].TenDoiBong;
@@ -58,6 +57,7 @@ namespace Football_League_Manager
                 traCuuBangXepHang.Close();
                 TraCuuVuaPhaLuoi traCuuVuaPhaLuoi = new TraCuuVuaPhaLuoi();
                 VuaPhaLuoi_TextBlock.Text = traCuuVuaPhaLuoi.cauThus[0].TenCauThu;
+                traCuuVuaPhaLuoi.Close();
                 //DataProvider dataProvider = new DataProvider();
                 //SqlCommand sql = dataProvider.ExcuteQuery("select GhiBan.MaCT, GhiBan.MaDB, GhiBan.SoBan from GhiBan");
                 //SqlDataReader sqlDataReader = sql.ExecuteReader();

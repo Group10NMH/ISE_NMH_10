@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿Football_League_Manager
 
 
@@ -19,25 +18,3 @@ AddListCT.xaml;ChinhSuaCauThu.xaml;ChinhSuaDoiBong.xaml;MainWindow.xaml;NhapDanh
 
 False
 
-=======
-﻿Football_League_Manager
-
-
-winexe
-C#
-.cs
-E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\
-Football_League_Manager
-none
-false
-DEBUG;TRACE
-E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\App.xaml
-21-1891336958
-
-261243155296
-15377036715
-AddListCT.xaml;ChinhSuaCauThu.xaml;ChinhSuaDoiBong.xaml;MainWindow.xaml;NhapDanhSachTrongTai.xaml;NhapKetQuaTranDau.xaml;NhapThongSoTranDau.xaml;PhanBoTrongTai.xaml;ReceiveRecords.xaml;SapXepLichThiDau.xaml;ThayDoiLuatThiDau.xaml;TongKetMuaGiai.xaml;TraCuuBangXepHang.xaml;TraCuuCauThu.xaml;TraCuuKetQuaTran.xaml;TraCuuLichThiDau.xaml;TraCuuTruocTran.xaml;TraCuuVuaPhaLuoi.xaml;Tra_cuu_thong_tin_doi_bong.xaml;Window1.xaml;WindowChangePass.xaml;
-
-False
-
->>>>>>> master
