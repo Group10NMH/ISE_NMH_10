@@ -30,7 +30,7 @@
 
         <TextBlock Text="Danh sách cầu thủ: " Canvas.Left="118" Canvas.Top="240" Width="135"/>
         <Button Content="Chỉnh sửa danh sách cầu thủ" Name="DanhSachCauThuButton" Width="271" Height="30" Canvas.Left="290" Canvas.Top="231" Click="DanhSachCauThuButton_Click"/>
-        <Button Content="Lưu lại" x:Name="LuuButton" Width="124" Height="30" Canvas.Left="437" Canvas.Top="285" Click="LuuButton_Click" />
+        <Button Content="Cập nhật" x:Name="LuuButton" Width="124" Height="30" Canvas.Left="437" Canvas.Top="285" Click="LuuButton_Click" />
         <Button Content="Xoá đội bóng" x:Name="XoaButton" Width="124" Height="30" Canvas.Left="290" Canvas.Top="285" Click="XoaButton_Click" />
 
     </Canvas>
