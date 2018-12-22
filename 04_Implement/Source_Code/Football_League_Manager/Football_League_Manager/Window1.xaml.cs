@@ -21,7 +21,7 @@ namespace Football_League_Manager
     public partial class Window1 : Window
     {
         DataProvider dataProvider = new DataProvider();
-             
+        public bool isLogin = false;     
         public Window1()
         {
             InitializeComponent();
@@ -41,11 +41,12 @@ namespace Football_League_Manager
             if(txtFullName.Text == admin.Username.Trim() && txtPassW.Password == admin.Password.Trim())
             {
                 MessageBox.Show("Hưng đẹp trai vãi");
+                isLogin = true;
             }
             else
             {
                 MessageBox.Show("sai");
-        
+                isLogin = false;
             }
 
         }

@@ -224,7 +224,7 @@ namespace Football_League_Manager
     {
         private static DataProvider instance;
 
-        string ConnectionString = @"Data Source=DESKTOP-NPIHQPS;Initial Catalog=GiaiVDQG;Integrated Security=True";
+        string ConnectionString = @"Data Source=TBN-PC\SQLEXPRESS;Initial Catalog=GiaiVDQG;Integrated Security=True";
 
         public static DataProvider Instance
         {

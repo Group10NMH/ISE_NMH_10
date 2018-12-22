@@ -5,7 +5,6 @@ E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Ma
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\MaterialDesignThemes.Wpf.dll
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\MaterialDesignThemes.Wpf.pdb
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\MaterialDesignThemes.Wpf.xml
-E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.csprojAssemblyReference.cache
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\AddListCT.g.cs
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ChinhSuaCauThu.g.cs
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ChinhSuaDoiBong.g.cs

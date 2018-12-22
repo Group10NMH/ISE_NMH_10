@@ -32,9 +32,8 @@
         </Button>
 
 
-        <WrapPanel Width="180" Height="535" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" ScrollViewer.VerticalScrollBarVisibility="Visible" >
+        <WrapPanel Width="180" Height="535" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}">
             <Image Source="D:\Home.png" Height="77" VerticalAlignment="Center" Margin="54,30,51,10"/>
-
             <WrapPanel x:Name="PanelQuanLy" Height="50" MaxHeight="370" MinHeight="50" Canvas.Top="242" Width="181" Margin="0,2">
 
                 <Button x:Name="QuanLyButton" Content="Quản lý" Width="181" Height="50" Foreground="White" BorderThickness="0" FontSize="14" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Margin="0,0,0,2" HorizontalContentAlignment="Center" Click="QuanLyButton_Click" FontFamily="Gadugi"></Button>
@@ -65,6 +64,7 @@
             </WrapPanel>
 
         </WrapPanel>
+
         <Border Name="CheckMuc" Width="10" Height="50" Background="#FFB43E3E" />
 
         <TabControl Name="tabs" Width="817" Height="496" SelectedIndex="{Binding ElementName=ribbon, Path=SelectedTabIndex}" BorderThickness="0" Canvas.Left="185" Canvas.Top="41">
@@ -82,5 +82,14 @@
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="535" BorderBrush="Orange" VerticalAlignment="Top" Width="1002">
             <Border BorderBrush="Orange" BorderThickness="1" Margin="-1,-1,821,-1"/>
         </Border>
-    </Canvas>
+
+        <TextBlock Name="DangNhapTextBlock" Visibility="Visible" Text="" Foreground="White" Canvas.Left="56" Canvas.Top="509"> 
+            <Hyperlink Foreground="DarkBlue" Click="Hyperlink1_Click">Đăng nhập?</Hyperlink>
+        </TextBlock>
+
+        <TextBlock Name="DangXuatTextBlock" Visibility="Hidden" Text="" Foreground="White" Canvas.Left="56" Canvas.Top="509"> 
+            <Hyperlink Foreground="DarkBlue" Click="Hyperlink2_Click">Đăng xuất?</Hyperlink>
+        </TextBlock>
+
+        </Canvas>
 </Window>

@@ -403,5 +403,27 @@ namespace Football_League_Manager
             TraCuuTruocTran traCuuTruocTran = new TraCuuTruocTran();
             traCuuTruocTran.ShowDialog();
         }
+
+        bool isLogin = false;
+        private void Hyperlink1_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 window1 = new Window1();
+            window1.ShowDialog();
+
+            isLogin = window1.isLogin;
+
+            if (isLogin)
+            {
+                DangNhapTextBlock.Visibility = Visibility.Hidden;
+                DangXuatTextBlock.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void Hyperlink2_Click(object sender, RoutedEventArgs e)
+        {
+            isLogin = false;
+            DangNhapTextBlock.Visibility = Visibility.Visible;
+            DangXuatTextBlock.Visibility = Visibility.Hidden;
+        }
     }
 }
