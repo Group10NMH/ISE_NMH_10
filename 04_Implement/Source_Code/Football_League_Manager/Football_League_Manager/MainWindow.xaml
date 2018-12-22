@@ -28,12 +28,12 @@
         <DockPanel Width="1002" Height="36" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"/>
 
         <Button Cursor="Hand" Style="{StaticResource ImageButtonStyle}" Click="ImageButton_Click" Canvas.Left="951" Height="36" Width="51">
-            <Image  Width="20" Canvas.Top="-35" Canvas.Left="1089" Margin="10,0"/>
+            <Image Source="D:\power-off.png" Width="20" Canvas.Top="-35" Canvas.Left="1089" Margin="10,0"/>
         </Button>
 
 
         <WrapPanel Width="180" Height="535" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" ScrollViewer.VerticalScrollBarVisibility="Visible" >
-            <Image  Height="77" VerticalAlignment="Center" Margin="54,30,51,10"/>
+            <Image Source="D:\Home.png" Height="77" VerticalAlignment="Center" Margin="54,30,51,10"/>
 
             <WrapPanel x:Name="PanelQuanLy" Height="50" MaxHeight="370" MinHeight="50" Canvas.Top="242" Width="181" Margin="0,2">
 
