@@ -21,7 +21,7 @@ namespace Football_League_Manager
     public partial class Window1 : Window
     {
         DataProvider dataProvider = new DataProvider();
-        public bool isLogin = false;     
+             
         public Window1()
         {
             InitializeComponent();
@@ -29,6 +29,8 @@ namespace Football_League_Manager
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            bool ktTK = true;
+            bool KTPass = true;
             SqlCommand sqlCommand = dataProvider.ExcuteQuery("select * from Admin");
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
@@ -38,15 +40,46 @@ namespace Football_League_Manager
                 admin.Username = sqlDataReader.GetString(0);
                 admin.Password = sqlDataReader.GetString(1);
             }
-            if(txtFullName.Text == admin.Username.Trim() && txtPassW.Password == admin.Password.Trim())
+            for (int i = 0; i < txtFullName.Text.Length; i++)
             {
-                MessageBox.Show("Hưng đẹp trai vãi");
-                isLogin = true;
+                if (txtFullName.Text[i] == ' ')
+                {
+                    ktTK = false;
+                    break;
+                }
             }
+            for (int i = 0; i < txtPassW.Password.Length; i++)
+            {
+                if (txtPassW.Password[i] == ' ')
+                {
+                    KTPass = false;
+                    break;
+                }
+            }
+            if (txtFullName.Text == "")
+            {
+                MessageBox.Show("Tên tài khoản không được để trống");
+            }
+            else if (txtPassW.Password == "")
+            {
+                MessageBox.Show("Mật khẩu không được để trống");
+            }
+            else if (txtFullName.Text == admin.Username.Trim() && txtPassW.Password == admin.Password.Trim())
+            {
+                MessageBox.Show("Đăng nhập thành công");
+            }
+            else if (ktTK == false)
+            {
+                MessageBox.Show("Tài khoảng không được có khoảng trắng");
+            }
+            else if (KTPass == false)
+            {
+                MessageBox.Show("Mật khẩu không được có khoảng trắng");
+            }
+
             else
             {
-                MessageBox.Show("sai");
-                isLogin = false;
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
             }
 
         }

@@ -82,23 +82,24 @@ namespace Football_League_Manager
                 ct = new cauThu();
                 if (MaDB == sqlDatareader.GetString(1))
                 {
-                    ct.STT = int.Parse(sqlDatareader.GetString(0).Substring(2,2)) + 1;    
+                    ct.STT = int.Parse(sqlDatareader.GetString(0).Substring(2, 2));
                     ct.TenCT = sqlDatareader.GetString(2);
                     ct.NgaySinhCT = sqlDatareader.GetDateTime(3).ToString();
                     ct.QuocTichCT = sqlDatareader.GetString(4);
                     ct.SoAo = sqlDatareader.GetInt32(5).ToString();
-                    vtri= sqlDatareader.GetString(6);
-                    if(vtri == "TM") { ct.ViTri = "Thủ môn"; }
-                    if(vtri == "TV") { ct.ViTri = "Tiền vệ"; }
-                    if(vtri == "HV") { ct.ViTri = "Hậu vệ"; }
-                    if(vtri == "TD") { ct.ViTri = "Tiền đạo"; }
-                    
+                    vtri = sqlDatareader.GetString(6);
+                    if (vtri == "TM") { ct.ViTri = "Thủ môn"; }
+                    if (vtri == "TV") { ct.ViTri = "Tiền vệ"; }
+                    if (vtri == "HV") { ct.ViTri = "Hậu vệ"; }
+                    if (vtri == "TD") { ct.ViTri = "Tiền đạo"; }
+
                     demCT++;
                     listCT.Add(ct);
                 }
             }
             SoLuongCauThu.Text = demCT.ToString();
             CauThuDataGrid.ItemsSource = listCT;
+
         }
 
 

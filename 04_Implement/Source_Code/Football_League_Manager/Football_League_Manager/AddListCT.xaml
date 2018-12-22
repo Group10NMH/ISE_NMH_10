@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Danh sách cầu thủ" Height="450" Width="1000">
     <Canvas>
-        <TextBox materialDesign:HintAssist.Hint="Tên cầu thủ"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="22" Canvas.Top="20" Width="240" x:Name="name" TextChanged="name_TextChanged" />
+        <TextBox materialDesign:HintAssist.Hint="Tên cầu thủ"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="22" Canvas.Top="20" Width="240" x:Name="name"  />
         <DatePicker materialDesign:HintAssist.Hint="Ngày sinh"   
   Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Canvas.Left="22" Canvas.Top="85" Width="240" x:Name="NgaySinh" />
         <TextBox materialDesign:HintAssist.Hint="Quốc tịch"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="22" Canvas.Top="150" Width="240" x:Name="QuocTich" />
