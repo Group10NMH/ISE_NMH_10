@@ -21,12 +21,13 @@ namespace Football_League_Manager
     public partial class WindowChangePass : Window
     {
 
-        DataProvider dataProvider = new DataProvider();
+        
         public WindowChangePass()
         {
             InitializeComponent();
         }
 
+        DataProvider dataProvider = new DataProvider();
         private void Change_Password_click(object sender, RoutedEventArgs e)
         {
             SqlCommand sqlCommand = dataProvider.ExcuteQuery("select * from Admin");
@@ -106,9 +107,6 @@ namespace Football_League_Manager
                 PassNewagain.Password = null; 
 
             }
-
-
-
         }
     }
 }

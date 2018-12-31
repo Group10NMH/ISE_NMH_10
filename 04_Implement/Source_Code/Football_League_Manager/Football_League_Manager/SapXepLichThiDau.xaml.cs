@@ -21,11 +21,12 @@ namespace Football_League_Manager
     /// </summary>
     public partial class SapXepLichThiDau : Window
     {
-        List<string> dsVongDau;
+        
         public SapXepLichThiDau()
         {
             InitializeComponent();
         }
+        List<string> dsVongDau;
         class DataObject
         {
             public string MaTran { get; set; }

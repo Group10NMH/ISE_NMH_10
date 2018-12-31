@@ -20,13 +20,14 @@ namespace Football_League_Manager
     /// </summary>
     public partial class Window1 : Window
     {
-        DataProvider dataProvider = new DataProvider();
-             
+        
         public Window1()
         {
             InitializeComponent();
         }
 
+        DataProvider dataProvider = new DataProvider();
+        public bool isLogin = false;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             bool ktTK = true;
@@ -67,6 +68,7 @@ namespace Football_League_Manager
             else if (txtFullName.Text == admin.Username.Trim() && txtPassW.Password == admin.Password.Trim())
             {
                 MessageBox.Show("Đăng nhập thành công");
+                isLogin = true;
             }
             else if (ktTK == false)
             {
@@ -80,6 +82,7 @@ namespace Football_League_Manager
             else
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+                isLogin = false;
             }
 
         }

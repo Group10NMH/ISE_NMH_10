@@ -5,69 +5,93 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Football_League_Manager"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d"
+         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="535.35" Width="1001.5" WindowStyle="None"
-        Loaded="Window_Loaded"
+        Title="Quản lý giải vô địch quốc gia" Height="535.35" Width="1001.5"
+        WindowStyle="None" 
         >
 
     <Window.Resources>
-        <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <ContentPresenter/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <ContentPresenter/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+            </Style>
+            <Color x:Key="Color1">Black</Color>
+        </ResourceDictionary>
     </Window.Resources>
+
     <Canvas>
 
-        <DockPanel Width="1002" Height="36" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"/>
-
-        <Button Cursor="Hand" Style="{StaticResource ImageButtonStyle}" Click="ImageButton_Click" Canvas.Left="951" Height="36" Width="51">
+        <Button Cursor="Hand" Style="{StaticResource ImageButtonStyle}" Click="PowerOffButton_Click" Canvas.Left="951" Height="36" Width="51">
             <Image Source="D:\power-off.png" Width="20" Canvas.Top="-35" Canvas.Left="1089" Margin="10,0"/>
         </Button>
 
+        <DockPanel Width="174" Height="533" Canvas.Left="1" Canvas.Top="1" Background="#FF292728"/>
 
-        <WrapPanel Width="180" Height="535" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}">
-            <Image Source="D:\Home.png" Height="77" VerticalAlignment="Center" Margin="54,30,51,10"/>
-            <WrapPanel x:Name="PanelQuanLy" Height="50" MaxHeight="370" MinHeight="50" Canvas.Top="242" Width="181" Margin="0,2">
+        <Image Source="D:\Home.png" Height="150" VerticalAlignment="Center" Canvas.Top="20" Canvas.Left="20"/>
 
-                <Button x:Name="QuanLyButton" Content="Quản lý" Width="181" Height="50" Foreground="White" BorderThickness="0" FontSize="14" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Margin="0,0,0,2" HorizontalContentAlignment="Center" Click="QuanLyButton_Click" FontFamily="Gadugi"></Button>
-
-                <Button Name="ThemDoiBongButton" Click="ThemDoiBongButton_Click" Content="Thêm đội bóng" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="ChinhSuaDoiBongButton" Content="Chỉnh sửa đội bóng" Click="ChinhSuaDoiBongButton_Click" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="NhapDanhSachTrongTaiButton" Content="Nhập danh sách trọng tài" Click="NhapDanhSachTrongTaiButton_Click" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="NhapKetQuaTranButton" Click="NhapKetQuaTranButton_Click" Content="Nhập kết quả trận đấu" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="PhanBoTrongTaiButton" Click="PhanBoTrongTaiButton_Click" Content="Phẩn bổ trọng tài" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="SapXepLichThiDauButton" Click="SapXepLichThiDauButton_Click" Content="Sắp xếp lịch thi đấu" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="ThayDoiLuatButton" Click="ThayDoiLuatButton_Click" Content="Thay đổi luật thi đấu" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="TongKetMuaGiaiButton" Click="TongKetMuaGiaiButton_Click" Content="Tổng kết mùa giải" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-
+        <Button Name="QuanLyButton" Width="175" Height="60" Canvas.Left="0" Canvas.Top="190" Background="#292728" BorderThickness="1" materialDesign:ShadowAssist.ShadowDepth="Depth0">
+            <WrapPanel Orientation="Horizontal">
+                <Image Source="D:\quanly.png" Margin="0, 2, 12,0" Height="30"/>
+                <TextBlock Text="Quản lý" Margin="0,5" FontSize="17" Foreground="White"/>
             </WrapPanel>
+        </Button>
 
-            <WrapPanel x:Name="PanelTraCuu" Height="50" MaxHeight="330" MinHeight="50" Canvas.Top="242" Width="181" Margin="0,2" >
+        <materialDesign:PopupBox Opened="PopupBox_Opened" PlacementMode="RightAndAlignTopEdges" StaysOpen="False" HorizontalAlignment="Right" Canvas.Top="190" Height="58" Width="174" Canvas.Left="1">
 
-                <Button x:Name="TraCuuButton" Content="Tra cứu" Height="50" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" Click="TraCuuButton_Click" VerticalContentAlignment="Center"/>
+            <materialDesign:PopupBox.ToggleContent>
+                <Image Width="180" Height="58"></Image>
+            </materialDesign:PopupBox.ToggleContent>
 
-                <Button Name="TraCuuCauThuButton" Click="TraCuuCauThuButton_Click" Content="Cầu thủ" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="TraCuuDoiBongButton" Click="TraCuuDoiBongButton_Click" Content="Đội bóng" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="TraCuuLichThiDauButton" Click="TraCuuLichThiDauButton_Click" Content="Lịch thi đấu" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="TraCuuKetQuaButton" Click="TraCuuKetQuaButton_Click" Content="Kết quả trận đấu" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="TraCuuTruocTranButton" Click="TraCuuTruocTranButton_Click" Content="Thông tin trước trận" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="VuaPhaLuoiButton" Click="VuaPhaLuoiButton_Click" Content="Vua phá lưới" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Name="BangXepHangButton" Click="BangXepHangButton_Click" Content="Bảng xếp hạng" Height="40" Padding="0" Foreground="White" FontFamily="Gadugi" BorderThickness="0" FontSize="14" Background="#FF4D4C4C" BorderBrush="White" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="181" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <StackPanel >
+                <Button Name="ThemDoiBongButton" Click="ThemDoiBongButton_Click" Content="Thêm đội bóng"></Button>
+                <Button Content="Thêm trọng tài"></Button>
+                <Button Content="Tạo lịch thi đấu"></Button>
+                <Button Content="Sắp xếp lịch thi đấu"></Button>
+                <Button Content="Phân bổ trọng tài"></Button>
+                <Button Content="Nhập kết quả trận đấu"></Button>
+                <Button Content="Tổng kết mùa giải"></Button>
+                <Button Content="Chỉnh sửa đội bóng"></Button>
+                <Button Content="Thay đổi luật thi đấu"></Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
 
+        <Button x:Name="TraCuuButton" Width="175" Height="60" Canvas.Left="0" Canvas.Top="255" Background="#292728" BorderThickness="1" materialDesign:ShadowAssist.ShadowDepth="Depth0">
+            <WrapPanel Orientation="Horizontal">
+                <Image Source="D:/tracuu.png" Height="30" Margin="0, 2, 12,0"/>
+                <TextBlock Text="Tra cứu" Margin="0,5" FontSize="17" Foreground="White"/>
             </WrapPanel>
+        </Button>
 
-        </WrapPanel>
+        <materialDesign:PopupBox PlacementMode="RightAndAlignTopEdges" StaysOpen="False" HorizontalAlignment="Right" Canvas.Top="255" Height="60" Width="175" Canvas.Left="0">
 
-        <Border Name="CheckMuc" Width="10" Height="50" Background="#FFB43E3E" />
+            <materialDesign:PopupBox.ToggleContent>
+                <Image Width="97" Height="70"></Image>
+            </materialDesign:PopupBox.ToggleContent>
 
-        <TabControl Name="tabs" Width="817" Height="496" SelectedIndex="{Binding ElementName=ribbon, Path=SelectedTabIndex}" BorderThickness="0" Canvas.Left="185" Canvas.Top="41">
+            <StackPanel>
+                <Button Content="Tra cứu thông tin đội"></Button>
+                <Button Content="Tra cứu cầu thủ"></Button>
+                <Button Content="Tra cứu lịch thi đấu"></Button>
+                <Button Content="Tra cứu kết quả trận"></Button>
+                <Button Content="Tra cứu trước trận đấu"></Button>
+                <Button Content="Tra cứu vua phá lưới"></Button>
+                <Button Content="Tra cứu bảng xếp hạng"></Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+
+        <Border BorderThickness="2" Height="535" Width="1002" BorderBrush="DarkBlue"></Border>
+        <Border BorderThickness="2" Height="535" Width="175" BorderBrush="DarkBlue"></Border>
+
+        <TabControl Name="tabs" Width="817" Height="484" SelectedIndex="{Binding ElementName=ribbon, Path=SelectedTabIndex}" BorderThickness="0" Canvas.Left="175" Canvas.Top="41">
             <TabControl.Resources>
                 <Style TargetType="TabItem">
                     <Setter Property="Template">
@@ -77,19 +101,28 @@
                     </Setter>
                 </Style>
             </TabControl.Resources>
-
         </TabControl>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="535" BorderBrush="Orange" VerticalAlignment="Top" Width="1002">
-            <Border BorderBrush="Orange" BorderThickness="1" Margin="-1,-1,821,-1"/>
-        </Border>
 
-        <TextBlock Name="DangNhapTextBlock" Visibility="Visible" Text="" Foreground="White" Canvas.Left="56" Canvas.Top="509"> 
-            <Hyperlink Foreground="DarkBlue" Click="Hyperlink1_Click">Đăng nhập?</Hyperlink>
+
+        <materialDesign:PopupBox Name="SettingPopup" PlacementMode="RightAndAlignBottomEdges" StaysOpen="False" HorizontalAlignment="Right" Canvas.Top="500" Height="25" Width="25" Canvas.Left="140" Visibility="Hidden">
+
+            <materialDesign:PopupBox.ToggleContent>
+                <Image Source="D:\setting.png" Height="25" Width="25" Canvas.Left="125" Canvas.Top="485"></Image>
+            </materialDesign:PopupBox.ToggleContent>
+
+            <StackPanel>
+                <Button Content="Đổi mật khẩu"/>
+                <Button Name="DangXuatButton" Content="Đăng xuất" Click="DangXuatButton_Click"/>
+            </StackPanel>
+        </materialDesign:PopupBox>
+
+        <TextBlock Name="DangNhapTextBlock" Visibility="Visible" Text="" Foreground="White" Canvas.Left="56" Canvas.Top="505"> 
+            <Hyperlink Foreground="White" Click="Hyperlink_Click">Đăng nhập?</Hyperlink>
         </TextBlock>
 
-        <TextBlock Name="DangXuatTextBlock" Visibility="Hidden" Text="" Foreground="White" Canvas.Left="56" Canvas.Top="509"> 
-            <Hyperlink Foreground="DarkBlue" Click="Hyperlink2_Click">Đăng xuất?</Hyperlink>
-        </TextBlock>
-
-        </Canvas>
+        <WrapPanel Name="AcountInfo" Visibility="Hidden" Orientation="Vertical" Canvas.Top="420" Canvas.Left="47">
+            <Image Name="AcountImage" Source="D:/TH.png" Height="83" Width="82" Canvas.Left="43" Canvas.Top="430"></Image>
+            <TextBlock Text="Admin" TextAlignment="Center" Foreground="White"/>
+        </WrapPanel>
+    </Canvas>
 </Window>

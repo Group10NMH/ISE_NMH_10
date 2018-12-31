@@ -189,223 +189,89 @@ namespace Football_League_Manager
     {
         public TabControl tab;
 
-        DispatcherTimer timerTraCuu = new DispatcherTimer();
-        private bool isCollapsedTraCuu = true;
-
-        DispatcherTimer timerQuanLy = new DispatcherTimer();
-        private bool isCollapsedQuanLy = true;
-
         public MainWindow()
         {
             InitializeComponent();
 
-            timerTraCuu.Tick += new EventHandler(timerTraCuu_Tick);
-            timerTraCuu.Interval = new TimeSpan(10000);
-
-            timerQuanLy.Tick += new EventHandler(timerQuanLy_Tick);
-            timerQuanLy.Interval = new TimeSpan(10000);
-
-            tab = tabs;
-        }
-
-        private void timerQuanLy_Tick(object sender, EventArgs e)
-        {
-            if (isCollapsedQuanLy)
-            {
-                //button5.Image = Resources.Collapse_Arrow_20px;
-                PanelQuanLy.Height += 20;
-                if (PanelQuanLy.Height == PanelQuanLy.MaxHeight)
-                {
-                    timerQuanLy.Stop();
-                    isCollapsedQuanLy = false;
-                }
-            }
-            else
-            {
-                //button5.Image = Resources.Expand_Arrow_20px;
-                PanelQuanLy.Height -= 20;
-                if (PanelQuanLy.Height == PanelQuanLy.MinHeight)
-                {
-                    timerQuanLy.Stop();
-                    isCollapsedQuanLy = true;
-                }
-            }
-        }
-
-        private void QuanLyButton_Click(object sender, RoutedEventArgs e)
-        {
-            //TraCuuButton_Click(null, null);
-
-            var lo = QuanLyButton.TranslatePoint(new Point(0, 0), this);
-            CheckMuc.Margin = new Thickness() { Top = lo.Y };
-            CheckMuc.Height = QuanLyButton.Height;
-
-            timerQuanLy.Start();
-        }
-
-        private void timerTraCuu_Tick(object sender, EventArgs e)
-        {
-            if (isCollapsedTraCuu)
-            {
-                //button5.Image = Resources.Collapse_Arrow_20px;
-                PanelTraCuu.Height += 20;
-                if (PanelTraCuu.Height == PanelTraCuu.MaxHeight)
-                {
-                    timerTraCuu.Stop();
-                    isCollapsedTraCuu = false;
-                }
-            }
-            else
-            {
-                //button5.Image = Resources.Expand_Arrow_20px;
-                PanelTraCuu.Height -= 20;
-                if (PanelTraCuu.Height == PanelTraCuu.MinHeight)
-                {
-                    timerTraCuu.Stop();
-                    isCollapsedTraCuu = true;
-                }
-            }
-        }
-
-        private void ImageButton_Click(object sender, RoutedEventArgs e)
-        {
             
+            //var screens = new ObservableCollection<TabItem>()
+            //{
+            //    new TabItem() {
+            //        Header ="Loại sản phẩm",
+            //        Content = new Frame() {
+            //            Content = new UserControlQuanLy()
+            //        },
+            //    }
+            // };
+
+            //tabs.ItemsSource = screens;
+            //tabs.SelectedIndex = 0;
+
+        }
+
+        //private void timerQuanLy_Tick(object sender, EventArgs e)
+        //{
+        //    if (isCollapsedQuanLy)
+        //    {
+        //        //button5.Image = Resources.Collapse_Arrow_20px;
+        //        PanelQuanLy.Height += 20;
+        //        if (PanelQuanLy.Height == PanelQuanLy.MaxHeight)
+        //        {
+        //            timerQuanLy.Stop();
+        //            isCollapsedQuanLy = false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        //button5.Image = Resources.Expand_Arrow_20px;
+        //        PanelQuanLy.Height -= 20;
+        //        if (PanelQuanLy.Height == PanelQuanLy.MinHeight)
+        //        {
+        //            timerQuanLy.Stop();
+        //            isCollapsedQuanLy = true;
+        //        }
+        //    }
+        //}
+
+        //private void QuanLyButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    //TraCuuButton_Click(null, null);
+        //    if (isLogin)
+        //    {
+
+        //    }
+        //}
+
+        //private void timerTraCuu_Tick(object sender, EventArgs e)
+        //{
+        //    if (isCollapsedTraCuu)
+        //    {
+
+        //    }
+        //    else
+        //    {
+        //        //button5.Image = Resources.Expand_Arrow_20px;
+        //        PanelTraCuu.Height -= 20;
+        //        if (PanelTraCuu.Height == PanelTraCuu.MinHeight)
+        //        {
+        //            timerTraCuu.Stop();
+        //            isCollapsedTraCuu = true;
+        //        }
+        //    }
+        //}
+
+        private void PowerOffButton_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
 
-        private void TraCuuButton_Click(object sender, RoutedEventArgs e)
-        {
-            //QuanLyButton_Click(null, null);
-            timerTraCuu.Start();
-            Point lo = TraCuuButton.TranslatePoint(new Point(0, 0), this);
-
-            CheckMuc.Margin = new Thickness() { Top = lo.Y };
-            CheckMuc.Height = TraCuuButton.Height;
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            CheckMuc.Margin = new Thickness() { Top = QuanLyButton.TranslatePoint(new Point(0, 0), this).Y };
-        }
-
-        private void TraCuuCauThuButton_Click(object sender, RoutedEventArgs e)
-        {
-            var lo = TraCuuCauThuButton.TranslatePoint(new Point(0, 0), this);
-            CheckMuc.Margin = new Thickness() { Top = lo.Y };
-            CheckMuc.Height = TraCuuCauThuButton.Height;
-
-            TraCuuCauThu traCuuCauThu = new TraCuuCauThu();
-            traCuuCauThu.ShowDialog();
-        }
-
-        private void TraCuuDoiBongButton_Click(object sender, RoutedEventArgs e)
-        {
-            var lo = TraCuuDoiBongButton.TranslatePoint(new Point(0, 0), this);
-            CheckMuc.Margin = new Thickness() { Top = lo.Y };
-            CheckMuc.Height = TraCuuDoiBongButton.Height;
-
-            Tra_cuu_thong_tin_doi_bong tra_Cuu_Thong_Tin_Doi_Bong = new Tra_cuu_thong_tin_doi_bong();
-            tra_Cuu_Thong_Tin_Doi_Bong.ShowDialog();
-        }
-
-        private void TraCuuLichThiDauButton_Click(object sender, RoutedEventArgs e)
-        {
-            var lo = TraCuuLichThiDauButton.TranslatePoint(new Point(0, 0), this);
-            CheckMuc.Margin = new Thickness() { Top = lo.Y };
-            CheckMuc.Height = TraCuuLichThiDauButton.Height;
-
-            TraCuuLichThiDau traCuuLichThiDau = new TraCuuLichThiDau();
-            traCuuLichThiDau.ShowDialog();
-        }
-
-        private void TraCuuKetQuaButton_Click(object sender, RoutedEventArgs e)
-        {
-            var lo = TraCuuKetQuaButton.TranslatePoint(new Point(0, 0), this);
-            CheckMuc.Margin = new Thickness() { Top = lo.Y };
-            CheckMuc.Height = TraCuuKetQuaButton.Height;
-
-            TraCuuKetQuaTran traCuuKetQuaTran = new TraCuuKetQuaTran();
-            traCuuKetQuaTran.ShowDialog();
-        }
-
-        private void TraCuuTruocTranButton_Click(object sender, RoutedEventArgs e)
-        {
-            var lo = TraCuuTruocTranButton.TranslatePoint(new Point(0, 0), this);
-            CheckMuc.Margin = new Thickness() { Top = lo.Y };
-            CheckMuc.Height = TraCuuTruocTranButton.Height;
-
-            TraCuuTruocTran traCuuTruocTran = new TraCuuTruocTran();
-            traCuuTruocTran.ShowDialog();
-        }
-
-        private void ThemDoiBongButton_Click(object sender, RoutedEventArgs e)
-        {
-            ReceiveRecords receiveRecords = new ReceiveRecords();
-            receiveRecords.ShowDialog();
-        }
-
-        private void ChinhSuaDoiBongButton_Click(object sender, RoutedEventArgs e)
-        {
-            ChinhSuaDoiBong chinhSuaDoiBong = new ChinhSuaDoiBong();
-            chinhSuaDoiBong.ShowDialog();
-        }
-
-        private void NhapDanhSachTrongTaiButton_Click(object sender, RoutedEventArgs e)
-        {
-            NhapDanhSachTrongTai nhapDanhSachTrongTai = new NhapDanhSachTrongTai();
-            nhapDanhSachTrongTai.ShowDialog();
-        }
-
-        private void NhapKetQuaTranButton_Click(object sender, RoutedEventArgs e)
-        {
-            NhapKetQuaTranDau nhapKetQuaTranDau = new NhapKetQuaTranDau();
-            nhapKetQuaTranDau.ShowDialog();
-        }
-
-        private void PhanBoTrongTaiButton_Click(object sender, RoutedEventArgs e)
-        {
-            PhanBoTrongTai phanBoTrongTai = new PhanBoTrongTai();
-            phanBoTrongTai.ShowDialog();
-        }
-
-        private void SapXepLichThiDauButton_Click(object sender, RoutedEventArgs e)
-        {
-            SapXepLichThiDau sapXepLichThiDau = new SapXepLichThiDau();
-            sapXepLichThiDau.ShowDialog();
-        }
-
-        private void ThayDoiLuatButton_Click(object sender, RoutedEventArgs e)
-        {
-            ThayDoiLuatThiDau thayDoiLuatThiDau = new ThayDoiLuatThiDau();
-            thayDoiLuatThiDau.ShowDialog();
-        }
-
-        private void TongKetMuaGiaiButton_Click(object sender, RoutedEventArgs e)
-        {
-            TongKetMuaGiai tongKetMuaGiai = new TongKetMuaGiai();
-            tongKetMuaGiai.ShowDialog();
-        }
-
-        private void VuaPhaLuoiButton_Click(object sender, RoutedEventArgs e)
-        {
-            TraCuuVuaPhaLuoi traCuuVuaPhaLuoi = new TraCuuVuaPhaLuoi();
-            traCuuVuaPhaLuoi.ShowDialog();
-        }
-
-        private void BangXepHangButton_Click(object sender, RoutedEventArgs e)
-        {
-            TraCuuBangXepHang traCuuBangXepHang = new TraCuuBangXepHang();
-            traCuuBangXepHang.ShowDialog();
-        }
-
-        private void ThongTinTruocTran_Click(object sender, RoutedEventArgs e)
-        {
-            TraCuuTruocTran traCuuTruocTran = new TraCuuTruocTran();
-            traCuuTruocTran.ShowDialog();
-        }
-
         bool isLogin = false;
-        private void Hyperlink1_Click(object sender, RoutedEventArgs e)
+        private void PopupBox_Opened(object sender, RoutedEventArgs e)
+        {
+            if (!isLogin) MessageBox.Show("Bạn hãy đăng nhập để sử dụng chức năng quản lý nhé");
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
             Window1 window1 = new Window1();
             window1.ShowDialog();
@@ -414,16 +280,180 @@ namespace Football_League_Manager
 
             if (isLogin)
             {
+                SettingPopup.Visibility = Visibility.Visible;
                 DangNhapTextBlock.Visibility = Visibility.Hidden;
-                DangXuatTextBlock.Visibility = Visibility.Visible;
+                AcountInfo.Visibility = Visibility.Visible;
             }
         }
 
-        private void Hyperlink2_Click(object sender, RoutedEventArgs e)
+        private void ThemDoiBongButton_Click(object sender, RoutedEventArgs e)
+        {
+            ReceiveRecords receiveRecords = new ReceiveRecords();
+            receiveRecords.ShowDialog();
+        }
+
+        private void DangXuatButton_Click(object sender, RoutedEventArgs e)
         {
             isLogin = false;
+            SettingPopup.Visibility = Visibility.Hidden;
             DangNhapTextBlock.Visibility = Visibility.Visible;
-            DangXuatTextBlock.Visibility = Visibility.Hidden;
+            AcountInfo.Visibility = Visibility.Hidden;
         }
+
+
+        //private void TraCuuButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    //QuanLyButton_Click(null, null);
+        //    timerTraCuu.Start();
+        //    Point lo = TraCuuButton.TranslatePoint(new Point(0, 0), this);
+
+        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
+        //    CheckMuc.Height = TraCuuButton.Height;
+        //}
+
+        //private void Window_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    CheckMuc.Margin = new Thickness() { Top = QuanLyButton.TranslatePoint(new Point(0, 0), this).Y };
+        //}
+
+        //private void TraCuuCauThuButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var lo = TraCuuCauThuButton.TranslatePoint(new Point(0, 0), this);
+        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
+        //    CheckMuc.Height = TraCuuCauThuButton.Height;
+
+        //    TraCuuCauThu traCuuCauThu = new TraCuuCauThu();
+        //    traCuuCauThu.ShowDialog();
+        //}
+
+        //private void TraCuuDoiBongButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var lo = TraCuuDoiBongButton.TranslatePoint(new Point(0, 0), this);
+        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
+        //    CheckMuc.Height = TraCuuDoiBongButton.Height;
+
+        //    Tra_cuu_thong_tin_doi_bong tra_Cuu_Thong_Tin_Doi_Bong = new Tra_cuu_thong_tin_doi_bong();
+        //    tra_Cuu_Thong_Tin_Doi_Bong.ShowDialog();
+        //}
+
+        //private void TraCuuLichThiDauButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var lo = TraCuuLichThiDauButton.TranslatePoint(new Point(0, 0), this);
+        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
+        //    CheckMuc.Height = TraCuuLichThiDauButton.Height;
+
+        //    TraCuuLichThiDau traCuuLichThiDau = new TraCuuLichThiDau();
+        //    traCuuLichThiDau.ShowDialog();
+        //}
+
+        //private void TraCuuKetQuaButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var lo = TraCuuKetQuaButton.TranslatePoint(new Point(0, 0), this);
+        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
+        //    CheckMuc.Height = TraCuuKetQuaButton.Height;
+
+        //    TraCuuKetQuaTran traCuuKetQuaTran = new TraCuuKetQuaTran();
+        //    traCuuKetQuaTran.ShowDialog();
+        //}
+
+        //private void TraCuuTruocTranButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var lo = TraCuuTruocTranButton.TranslatePoint(new Point(0, 0), this);
+        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
+        //    CheckMuc.Height = TraCuuTruocTranButton.Height;
+
+        //    TraCuuTruocTran traCuuTruocTran = new TraCuuTruocTran();
+        //    traCuuTruocTran.ShowDialog();
+        //}
+
+        //private void ThemDoiBongButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ReceiveRecords receiveRecords = new ReceiveRecords();
+        //    receiveRecords.ShowDialog();
+        //}
+
+        //private void ChinhSuaDoiBongButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ChinhSuaDoiBong chinhSuaDoiBong = new ChinhSuaDoiBong();
+        //    chinhSuaDoiBong.ShowDialog();
+        //}
+
+        //private void NhapDanhSachTrongTaiButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    NhapDanhSachTrongTai nhapDanhSachTrongTai = new NhapDanhSachTrongTai();
+        //    nhapDanhSachTrongTai.ShowDialog();
+        //}
+
+        //private void NhapKetQuaTranButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    NhapKetQuaTranDau nhapKetQuaTranDau = new NhapKetQuaTranDau();
+        //    nhapKetQuaTranDau.ShowDialog();
+        //}
+
+        //private void PhanBoTrongTaiButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    PhanBoTrongTai phanBoTrongTai = new PhanBoTrongTai();
+        //    phanBoTrongTai.ShowDialog();
+        //}
+
+        //private void SapXepLichThiDauButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    SapXepLichThiDau sapXepLichThiDau = new SapXepLichThiDau();
+        //    sapXepLichThiDau.ShowDialog();
+        //}
+
+        //private void ThayDoiLuatButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ThayDoiLuatThiDau thayDoiLuatThiDau = new ThayDoiLuatThiDau();
+        //    thayDoiLuatThiDau.ShowDialog();
+        //}
+
+        //private void TongKetMuaGiaiButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    TongKetMuaGiai tongKetMuaGiai = new TongKetMuaGiai();
+        //    tongKetMuaGiai.ShowDialog();
+        //}
+
+        //private void VuaPhaLuoiButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    TraCuuVuaPhaLuoi traCuuVuaPhaLuoi = new TraCuuVuaPhaLuoi();
+        //    traCuuVuaPhaLuoi.ShowDialog();
+        //}
+
+        //private void BangXepHangButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    TraCuuBangXepHang traCuuBangXepHang = new TraCuuBangXepHang();
+        //    traCuuBangXepHang.ShowDialog();
+        //}
+
+        //private void ThongTinTruocTran_Click(object sender, RoutedEventArgs e)
+        //{
+        //    TraCuuTruocTran traCuuTruocTran = new TraCuuTruocTran();
+        //    traCuuTruocTran.ShowDialog();
+        //}
+
+        //bool isLogin = false;
+        //private void Hyperlink1_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Window1 window1 = new Window1();
+        //    window1.ShowDialog();
+
+        //    isLogin = window1.isLogin;
+
+        //    if (isLogin)
+        //    {
+        //        DangNhapTextBlock.Visibility = Visibility.Hidden;
+        //        DangXuatTextBlock.Visibility = Visibility.Visible;
+        //    }
+        //}
+
+        //private void Hyperlink2_Click(object sender, RoutedEventArgs e)
+        //{
+        //    isLogin = false;
+        //    DangNhapTextBlock.Visibility = Visibility.Visible;
+        //    DangXuatTextBlock.Visibility = Visibility.Hidden;
+        //}
+
+
     }
 }
