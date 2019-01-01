@@ -1,4 +1,5 @@
 ﻿
+<<<<<<< HEAD
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\App.xaml;;
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\AddListCT.xaml;;
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\BangXepHangUserControl.xaml;;
@@ -21,4 +22,28 @@ FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_M
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\ThayDoiLuatUserControl.xaml;;
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\ThemDoiBongUserControl.xaml;;
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\TongKetMuaGiaiUserControl.xaml;;
+=======
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\App.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\AddListCT.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\ChinhSuaCauThu.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\DangNhapUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\MainWindow.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\NhapThongSoTranDau.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\ChinhSuaDoiBongUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\DoiMatKhauUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\NhapKetQua.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\NhapTrongTaiUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\PhanBoTrongTaiUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\ThemDoiBongUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\SapLichThiDauUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\ThayDoiLuatUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\BangXepHangUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\TCCauThuUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\TCKetQuaTranUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\TCLichThiDauUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\TCThongTinDoiUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\TCTruocTranUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\TCVuaPhaLuoiUserControl.xaml;;
+FC:\Users\TBN\Desktop\Source_Code\Football_League_Manager\Football_League_Manager\TongKetMuaGiaiUserControl.xaml;;
+>>>>>>> master
 
