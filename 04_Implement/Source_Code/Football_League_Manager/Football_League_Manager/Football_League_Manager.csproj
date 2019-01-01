@@ -84,76 +84,79 @@
     <Compile Include="AddListCT.xaml.cs">
       <DependentUpon>AddListCT.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BangXepHangUserControl.xaml.cs">
+      <DependentUpon>BangXepHangUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ChinhSuaCauThu.xaml.cs">
       <DependentUpon>ChinhSuaCauThu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ChinhSuaDoiBong.xaml.cs">
-      <DependentUpon>ChinhSuaDoiBong.xaml</DependentUpon>
+    <Compile Include="ChinhSuaDoiBongUserControl.xaml.cs">
+      <DependentUpon>ChinhSuaDoiBongUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhapUserControl.xaml.cs">
+      <DependentUpon>DangNhapUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoiBong.cs" />
-    <Compile Include="NhapDanhSachTrongTai.xaml.cs">
-      <DependentUpon>NhapDanhSachTrongTai.xaml</DependentUpon>
+    <Compile Include="DoiMatKhauUserControl.xaml.cs">
+      <DependentUpon>DoiMatKhauUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NhapKetQuaTranDau.xaml.cs">
-      <DependentUpon>NhapKetQuaTranDau.xaml</DependentUpon>
+    <Compile Include="NhapKetQua.xaml.cs">
+      <DependentUpon>NhapKetQua.xaml</DependentUpon>
     </Compile>
     <Compile Include="NhapThongSoTranDau.xaml.cs">
       <DependentUpon>NhapThongSoTranDau.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PhanBoTrongTai.xaml.cs">
-      <DependentUpon>PhanBoTrongTai.xaml</DependentUpon>
+    <Compile Include="SapLichThiDauUserControl.xaml.cs">
+      <DependentUpon>SapLichThiDauUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ReceiveRecords.xaml.cs">
-      <DependentUpon>ReceiveRecords.xaml</DependentUpon>
+    <Compile Include="TCCauThuUserControl.xaml.cs">
+      <DependentUpon>TCCauThuUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SapXepLichThiDau.xaml.cs">
-      <DependentUpon>SapXepLichThiDau.xaml</DependentUpon>
+    <Compile Include="TCKetQuaTranUserControl.xaml.cs">
+      <DependentUpon>TCKetQuaTranUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ThayDoiLuatThiDau.xaml.cs">
-      <DependentUpon>ThayDoiLuatThiDau.xaml</DependentUpon>
+    <Compile Include="TCLichThiDauUserControl.xaml.cs">
+      <DependentUpon>TCLichThiDauUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TongKetMuaGiai.xaml.cs">
-      <DependentUpon>TongKetMuaGiai.xaml</DependentUpon>
+    <Compile Include="TCThongTinDoiUserControl.xaml.cs">
+      <DependentUpon>TCThongTinDoiUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TraCuuBangXepHang.xaml.cs">
-      <DependentUpon>TraCuuBangXepHang.xaml</DependentUpon>
+    <Compile Include="TCTruocTranUserControl.xaml.cs">
+      <DependentUpon>TCTruocTranUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TraCuuCauThu.xaml.cs">
-      <DependentUpon>TraCuuCauThu.xaml</DependentUpon>
+    <Compile Include="TCVuaPhaLuoiUserControl.xaml.cs">
+      <DependentUpon>TCVuaPhaLuoiUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TraCuuKetQuaTran.xaml.cs">
-      <DependentUpon>TraCuuKetQuaTran.xaml</DependentUpon>
+    <Compile Include="ThayDoiLuatUserControl.xaml.cs">
+      <DependentUpon>ThayDoiLuatUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TraCuuLichThiDau.xaml.cs">
-      <DependentUpon>TraCuuLichThiDau.xaml</DependentUpon>
+    <Compile Include="ThemDoiBongUserControl.xaml.cs">
+      <DependentUpon>ThemDoiBongUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TraCuuTruocTran.xaml.cs">
-      <DependentUpon>TraCuuTruocTran.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TraCuuVuaPhaLuoi.xaml.cs">
-      <DependentUpon>TraCuuVuaPhaLuoi.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Tra_cuu_thong_tin_doi_bong.xaml.cs">
-      <DependentUpon>Tra_cuu_thong_tin_doi_bong.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlQuanLy.xaml.cs">
-      <DependentUpon>UserControlQuanLy.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowChangePass.xaml.cs">
-      <DependentUpon>WindowChangePass.xaml</DependentUpon>
+    <Compile Include="TongKetMuaGiaiUserControl.xaml.cs">
+      <DependentUpon>TongKetMuaGiaiUserControl.xaml</DependentUpon>
     </Compile>
     <Page Include="AddListCT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="BangXepHangUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ChinhSuaCauThu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ChinhSuaDoiBong.xaml">
+    <Page Include="ChinhSuaDoiBongUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DangNhapUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoiMatKhauUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,80 +172,70 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NhapDanhSachTrongTai.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="NhapKetQua.xaml">
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="NhapKetQuaTranDau.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="NhapThongSoTranDau.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PhanBoTrongTai.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ReceiveRecords.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="SapXepLichThiDau.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ThayDoiLuatThiDau.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TongKetMuaGiai.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TraCuuBangXepHang.xaml">
+    <Page Include="NhapTrongTaiUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TraCuuCauThu.xaml">
+    <Page Include="PhanBoTrongTaiUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TraCuuKetQuaTran.xaml">
+    <Page Include="SapLichThiDauUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TraCuuLichThiDau.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TraCuuTruocTran.xaml">
-      <SubType>Designer</SubType>
-      <Generator>XamlIntelliSenseFileGenerator</Generator>
-    </Page>
-    <Page Include="TraCuuVuaPhaLuoi.xaml">
+    <Page Include="TCCauThuUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tra_cuu_thong_tin_doi_bong.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControlQuanLy.xaml">
+    <Page Include="TCKetQuaTranUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window1.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="TCLichThiDauUserControl.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowChangePass.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="TCThongTinDoiUserControl.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TCTruocTranUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TCVuaPhaLuoiUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThayDoiLuatUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemDoiBongUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TongKetMuaGiaiUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NhapTrongTaiUserControl.xaml.cs">
+      <DependentUpon>NhapTrongTaiUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhanBoTrongTaiUserControl.xaml.cs">
+      <DependentUpon>PhanBoTrongTaiUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -271,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\cr7.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

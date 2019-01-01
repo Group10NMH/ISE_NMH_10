@@ -56,7 +56,7 @@ namespace Football_League_Manager
         public void Done_click(object sender, RoutedEventArgs e)
         {
             
-            if (list.Count < 16)
+            if (list.Count < 1)
             {
                 MessageBox.Show("Số lượng cầu thủ ít nhất là 16 ");
             }
@@ -82,10 +82,11 @@ namespace Football_League_Manager
                     if (ct.ViTriCT == "Tiền vệ") { CT.MaVT = "TV"; }
                     if (ct.ViTriCT == "Thủ môn") { CT.MaVT = "TM"; }
                     cauThus.Add(CT);
+                    this.Close();
                 }
                 
             }
-            this.Close();
+            
         }
         
         public void Update_click(object sender, RoutedEventArgs e)

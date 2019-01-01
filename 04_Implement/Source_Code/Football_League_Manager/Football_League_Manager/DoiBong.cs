@@ -276,9 +276,10 @@ namespace Football_League_Manager
                         }
                     }
                 }
-
-
+                                
+                
                 return sqlCommand;
+
             }
             catch (Exception)
             {
