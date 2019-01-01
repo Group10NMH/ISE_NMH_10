@@ -188,108 +188,51 @@ namespace Football_League_Manager
     public partial class MainWindow : Window
     {
         public TabControl tab;
+        static public MaterialDesignThemes.Wpf.PopupBox st;
+        static public TextBlock dn;
+        static public WrapPanel ai;
+
 
         public MainWindow()
         {
             InitializeComponent();
+            st = SettingPopup;
+            dn = DangNhapTextBlock;
+            ai = AcountInfo;
 
-            
-            //var screens = new ObservableCollection<TabItem>()
-            //{
-            //    new TabItem() {
-            //        Header ="Loại sản phẩm",
-            //        Content = new Frame() {
-            //            Content = new UserControlQuanLy()
-            //        },
-            //    }
-            // };
-
-            //tabs.ItemsSource = screens;
-            //tabs.SelectedIndex = 0;
+            tabs.SelectedIndex = 1;
 
         }
-
-        //private void timerQuanLy_Tick(object sender, EventArgs e)
-        //{
-        //    if (isCollapsedQuanLy)
-        //    {
-        //        //button5.Image = Resources.Collapse_Arrow_20px;
-        //        PanelQuanLy.Height += 20;
-        //        if (PanelQuanLy.Height == PanelQuanLy.MaxHeight)
-        //        {
-        //            timerQuanLy.Stop();
-        //            isCollapsedQuanLy = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        //button5.Image = Resources.Expand_Arrow_20px;
-        //        PanelQuanLy.Height -= 20;
-        //        if (PanelQuanLy.Height == PanelQuanLy.MinHeight)
-        //        {
-        //            timerQuanLy.Stop();
-        //            isCollapsedQuanLy = true;
-        //        }
-        //    }
-        //}
-
-        //private void QuanLyButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    //TraCuuButton_Click(null, null);
-        //    if (isLogin)
-        //    {
-
-        //    }
-        //}
-
-        //private void timerTraCuu_Tick(object sender, EventArgs e)
-        //{
-        //    if (isCollapsedTraCuu)
-        //    {
-
-        //    }
-        //    else
-        //    {
-        //        //button5.Image = Resources.Expand_Arrow_20px;
-        //        PanelTraCuu.Height -= 20;
-        //        if (PanelTraCuu.Height == PanelTraCuu.MinHeight)
-        //        {
-        //            timerTraCuu.Stop();
-        //            isCollapsedTraCuu = true;
-        //        }
-        //    }
-        //}
 
         private void PowerOffButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            App.Current.Shutdown();
         }
 
-        bool isLogin = false;
+        public static bool isLogin = true;
         private void PopupBox_Opened(object sender, RoutedEventArgs e)
         {
-            if (!isLogin) MessageBox.Show("Bạn hãy đăng nhập để sử dụng chức năng quản lý nhé");
+            if (!isLogin)
+            {
+                MessageBoxResult messageBoxResult = MessageBox.Show("Bạn hãy đăng nhập để sử dụng chức năng quản lý nhé", "Thông báo" ,  MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    TittleTextBlock.Text = "Đăng nhập";
+                    tabs.SelectedIndex = 0;
+                }
+            }
         }
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
-            Window1 window1 = new Window1();
-            window1.ShowDialog();
-
-            isLogin = window1.isLogin;
-
-            if (isLogin)
-            {
-                SettingPopup.Visibility = Visibility.Visible;
-                DangNhapTextBlock.Visibility = Visibility.Hidden;
-                AcountInfo.Visibility = Visibility.Visible;
-            }
+            TittleTextBlock.Text = "Đăng nhập";
+            tabs.SelectedIndex = 0;
         }
 
         private void ThemDoiBongButton_Click(object sender, RoutedEventArgs e)
         {
-            ReceiveRecords receiveRecords = new ReceiveRecords();
-            receiveRecords.ShowDialog();
+            TittleTextBlock.Text = "Thêm đội bóng mới vào mùa giải";
+            tabs.SelectedIndex = 2;
         }
 
         private void DangXuatButton_Click(object sender, RoutedEventArgs e)
@@ -300,160 +243,93 @@ namespace Football_League_Manager
             AcountInfo.Visibility = Visibility.Hidden;
         }
 
+        private void ThemTrongTaiButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Thêm trọng tài";
+            tabs.SelectedIndex = 3;
+        }
 
-        //private void TraCuuButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    //QuanLyButton_Click(null, null);
-        //    timerTraCuu.Start();
-        //    Point lo = TraCuuButton.TranslatePoint(new Point(0, 0), this);
+        private void TaoLichThiDauButton_Click(object sender, RoutedEventArgs e)
+        {
 
-        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
-        //    CheckMuc.Height = TraCuuButton.Height;
-        //}
+        }
 
-        //private void Window_Loaded(object sender, RoutedEventArgs e)
-        //{
-        //    CheckMuc.Margin = new Thickness() { Top = QuanLyButton.TranslatePoint(new Point(0, 0), this).Y };
-        //}
+        private void SapXepLichThiDauButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Sắp xếp lịch thi đấu";
+            tabs.SelectedIndex = 4;
+        }
 
-        //private void TraCuuCauThuButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var lo = TraCuuCauThuButton.TranslatePoint(new Point(0, 0), this);
-        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
-        //    CheckMuc.Height = TraCuuCauThuButton.Height;
+        private void PhanBoTrongTaiButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Phẩn bổ trọng tài";
+            tabs.SelectedIndex = 5;
+        }
 
-        //    TraCuuCauThu traCuuCauThu = new TraCuuCauThu();
-        //    traCuuCauThu.ShowDialog();
-        //}
+        private void NhapKetQuaButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Nhập kết quả trận đấu";
+            tabs.SelectedIndex = 6;
+        }
 
-        //private void TraCuuDoiBongButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var lo = TraCuuDoiBongButton.TranslatePoint(new Point(0, 0), this);
-        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
-        //    CheckMuc.Height = TraCuuDoiBongButton.Height;
+        private void TongKetMuaGiaiButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Tổng kết mùa giải";
+            tabs.SelectedIndex = 7;
+        }
 
-        //    Tra_cuu_thong_tin_doi_bong tra_Cuu_Thong_Tin_Doi_Bong = new Tra_cuu_thong_tin_doi_bong();
-        //    tra_Cuu_Thong_Tin_Doi_Bong.ShowDialog();
-        //}
+        private void ChinhSuaDoiBongButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Chỉnh sửa đội bóng";
+            tabs.SelectedIndex = 8;
+        }
 
-        //private void TraCuuLichThiDauButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var lo = TraCuuLichThiDauButton.TranslatePoint(new Point(0, 0), this);
-        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
-        //    CheckMuc.Height = TraCuuLichThiDauButton.Height;
+        private void ThayDoiLuatButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Thay đổi luật thi đấu";
+            tabs.SelectedIndex = 9;
+        }
 
-        //    TraCuuLichThiDau traCuuLichThiDau = new TraCuuLichThiDau();
-        //    traCuuLichThiDau.ShowDialog();
-        //}
+        private void TraCuuDoiBongButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Tra cứu thông tin đội bóng";
+            tabs.SelectedIndex = 10;
+        }
 
-        //private void TraCuuKetQuaButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var lo = TraCuuKetQuaButton.TranslatePoint(new Point(0, 0), this);
-        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
-        //    CheckMuc.Height = TraCuuKetQuaButton.Height;
+        private void TraCuuCauThuButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Tra cứu cầu thủ";
+            tabs.SelectedIndex = 11;
+        }
 
-        //    TraCuuKetQuaTran traCuuKetQuaTran = new TraCuuKetQuaTran();
-        //    traCuuKetQuaTran.ShowDialog();
-        //}
+        private void TraCuuLichButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Tra cứu lịch thi đấu";
+            tabs.SelectedIndex = 12;
+        }
 
-        //private void TraCuuTruocTranButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var lo = TraCuuTruocTranButton.TranslatePoint(new Point(0, 0), this);
-        //    CheckMuc.Margin = new Thickness() { Top = lo.Y };
-        //    CheckMuc.Height = TraCuuTruocTranButton.Height;
+        private void TraCuuKetQuaButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Tra cứu kết quả thi đấu";
+            tabs.SelectedIndex = 13;
+        }
 
-        //    TraCuuTruocTran traCuuTruocTran = new TraCuuTruocTran();
-        //    traCuuTruocTran.ShowDialog();
-        //}
+        private void TraCuuTruocTranButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Tra cứu thông tin trước trận đấu";
+            tabs.SelectedIndex = 14;
+        }
 
-        //private void ThemDoiBongButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    ReceiveRecords receiveRecords = new ReceiveRecords();
-        //    receiveRecords.ShowDialog();
-        //}
+        private void TraCuuVuaPhaLuoiButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Bảng xếp hạng vua phá lưới";
+            tabs.SelectedIndex = 15;
+        }
 
-        //private void ChinhSuaDoiBongButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    ChinhSuaDoiBong chinhSuaDoiBong = new ChinhSuaDoiBong();
-        //    chinhSuaDoiBong.ShowDialog();
-        //}
-
-        //private void NhapDanhSachTrongTaiButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    NhapDanhSachTrongTai nhapDanhSachTrongTai = new NhapDanhSachTrongTai();
-        //    nhapDanhSachTrongTai.ShowDialog();
-        //}
-
-        //private void NhapKetQuaTranButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    NhapKetQuaTranDau nhapKetQuaTranDau = new NhapKetQuaTranDau();
-        //    nhapKetQuaTranDau.ShowDialog();
-        //}
-
-        //private void PhanBoTrongTaiButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    PhanBoTrongTai phanBoTrongTai = new PhanBoTrongTai();
-        //    phanBoTrongTai.ShowDialog();
-        //}
-
-        //private void SapXepLichThiDauButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    SapXepLichThiDau sapXepLichThiDau = new SapXepLichThiDau();
-        //    sapXepLichThiDau.ShowDialog();
-        //}
-
-        //private void ThayDoiLuatButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    ThayDoiLuatThiDau thayDoiLuatThiDau = new ThayDoiLuatThiDau();
-        //    thayDoiLuatThiDau.ShowDialog();
-        //}
-
-        //private void TongKetMuaGiaiButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    TongKetMuaGiai tongKetMuaGiai = new TongKetMuaGiai();
-        //    tongKetMuaGiai.ShowDialog();
-        //}
-
-        //private void VuaPhaLuoiButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    TraCuuVuaPhaLuoi traCuuVuaPhaLuoi = new TraCuuVuaPhaLuoi();
-        //    traCuuVuaPhaLuoi.ShowDialog();
-        //}
-
-        //private void BangXepHangButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    TraCuuBangXepHang traCuuBangXepHang = new TraCuuBangXepHang();
-        //    traCuuBangXepHang.ShowDialog();
-        //}
-
-        //private void ThongTinTruocTran_Click(object sender, RoutedEventArgs e)
-        //{
-        //    TraCuuTruocTran traCuuTruocTran = new TraCuuTruocTran();
-        //    traCuuTruocTran.ShowDialog();
-        //}
-
-        //bool isLogin = false;
-        //private void Hyperlink1_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Window1 window1 = new Window1();
-        //    window1.ShowDialog();
-
-        //    isLogin = window1.isLogin;
-
-        //    if (isLogin)
-        //    {
-        //        DangNhapTextBlock.Visibility = Visibility.Hidden;
-        //        DangXuatTextBlock.Visibility = Visibility.Visible;
-        //    }
-        //}
-
-        //private void Hyperlink2_Click(object sender, RoutedEventArgs e)
-        //{
-        //    isLogin = false;
-        //    DangNhapTextBlock.Visibility = Visibility.Visible;
-        //    DangXuatTextBlock.Visibility = Visibility.Hidden;
-        //}
-
-
+        private void TraCuuBangXepHangButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Bảng xếp hạng mùa giải";
+            tabs.SelectedIndex = 16;
+        }
     }
 }

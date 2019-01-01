@@ -11,7 +11,6 @@
         Title="Quản lý giải vô địch quốc gia" Height="535.35" Width="1001.5"
         WindowStyle="None" 
         >
-
     <Window.Resources>
         <ResourceDictionary>
             <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
@@ -25,20 +24,18 @@
 
             </Style>
             <Color x:Key="Color1">Black</Color>
+
         </ResourceDictionary>
     </Window.Resources>
 
     <Canvas>
 
-        <Button Cursor="Hand" Style="{StaticResource ImageButtonStyle}" Click="PowerOffButton_Click" Canvas.Left="951" Height="36" Width="51">
-            <Image Source="D:\power-off.png" Width="20" Canvas.Top="-35" Canvas.Left="1089" Margin="10,0"/>
-        </Button>
 
         <DockPanel Width="174" Height="533" Canvas.Left="1" Canvas.Top="1" Background="#FF292728"/>
 
         <Image Source="D:\Home.png" Height="150" VerticalAlignment="Center" Canvas.Top="20" Canvas.Left="20"/>
 
-        <Button Name="QuanLyButton" Width="175" Height="60" Canvas.Left="0" Canvas.Top="190" Background="#292728" BorderThickness="1" materialDesign:ShadowAssist.ShadowDepth="Depth0">
+        <Button Name="QuanLyButton" Width="175" Height="60" Canvas.Left="0" Canvas.Top="190" Background="#292728" BorderThickness="1" materialDesign:ShadowAssist.ShadowDepth="Depth0" >
             <WrapPanel Orientation="Horizontal">
                 <Image Source="D:\quanly.png" Margin="0, 2, 12,0" Height="30"/>
                 <TextBlock Text="Quản lý" Margin="0,5" FontSize="17" Foreground="White"/>
@@ -53,14 +50,14 @@
 
             <StackPanel >
                 <Button Name="ThemDoiBongButton" Click="ThemDoiBongButton_Click" Content="Thêm đội bóng"></Button>
-                <Button Content="Thêm trọng tài"></Button>
-                <Button Content="Tạo lịch thi đấu"></Button>
-                <Button Content="Sắp xếp lịch thi đấu"></Button>
-                <Button Content="Phân bổ trọng tài"></Button>
-                <Button Content="Nhập kết quả trận đấu"></Button>
-                <Button Content="Tổng kết mùa giải"></Button>
-                <Button Content="Chỉnh sửa đội bóng"></Button>
-                <Button Content="Thay đổi luật thi đấu"></Button>
+                <Button Name="ThemTrongTaiButton" Click="ThemTrongTaiButton_Click" Content="Thêm trọng tài"></Button>
+                <Button Name="TaoLichThiDauButton" IsEnabled="False" Click="TaoLichThiDauButton_Click" Content="Tạo lịch thi đấu"></Button>
+                <Button Name="SapXepLichThiDauButton" Click="SapXepLichThiDauButton_Click" Content="Sắp xếp lịch thi đấu"></Button>
+                <Button Name="PhanBoTrongTaiButton" Click="PhanBoTrongTaiButton_Click" Content="Phân bổ trọng tài"></Button>
+                <Button Name="NhapKetQuaButton" Click="NhapKetQuaButton_Click" Content="Nhập kết quả trận đấu"></Button>
+                <Button Name="TongKetMuaGiaiButton" Click="TongKetMuaGiaiButton_Click" Content="Tổng kết mùa giải"></Button>
+                <Button Name="ChinhSuaDoiBongButton" Click="ChinhSuaDoiBongButton_Click" Content="Chỉnh sửa đội bóng"></Button>
+                <Button Name="ThayDoiLuatButton" Click="ThayDoiLuatButton_Click" Content="Thay đổi luật thi đấu"></Button>
             </StackPanel>
         </materialDesign:PopupBox>
 
@@ -78,31 +75,134 @@
             </materialDesign:PopupBox.ToggleContent>
 
             <StackPanel>
-                <Button Content="Tra cứu thông tin đội"></Button>
-                <Button Content="Tra cứu cầu thủ"></Button>
-                <Button Content="Tra cứu lịch thi đấu"></Button>
-                <Button Content="Tra cứu kết quả trận"></Button>
-                <Button Content="Tra cứu trước trận đấu"></Button>
-                <Button Content="Tra cứu vua phá lưới"></Button>
-                <Button Content="Tra cứu bảng xếp hạng"></Button>
+                <Button Name="TraCuuDoiBongButton" Click="TraCuuDoiBongButton_Click" Content="Tra cứu thông tin đội"></Button>
+                <Button Name="TraCuuCauThuButton" Click="TraCuuCauThuButton_Click" Content="Tra cứu cầu thủ"></Button>
+                <Button Name="TraCuuLichButton" Click="TraCuuLichButton_Click" Content="Tra cứu lịch thi đấu"></Button>
+                <Button Name="TraCuuKetQuaButton" Click="TraCuuKetQuaButton_Click" Content="Tra cứu kết quả trận"></Button>
+                <Button Name="TraCuuTruocTranButton" Click="TraCuuTruocTranButton_Click" Content="Tra cứu trước trận đấu"></Button>
+                <Button Name="TraCuuVuaPhaLuoiButton" Click="TraCuuVuaPhaLuoiButton_Click" Content="Tra cứu vua phá lưới"></Button>
+                <Button Name="TraCuuBangXepHangButton" Click="TraCuuBangXepHangButton_Click" Content="Tra cứu bảng xếp hạng"></Button>
             </StackPanel>
         </materialDesign:PopupBox>
 
         <Border BorderThickness="2" Height="535" Width="1002" BorderBrush="DarkBlue"></Border>
+
         <Border BorderThickness="2" Height="535" Width="175" BorderBrush="DarkBlue"></Border>
 
-        <TabControl Name="tabs" Width="817" Height="484" SelectedIndex="{Binding ElementName=ribbon, Path=SelectedTabIndex}" BorderThickness="0" Canvas.Left="175" Canvas.Top="41">
-            <TabControl.Resources>
-                <Style TargetType="TabItem">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="TabItem"></ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
+        <TabControl Name="tabs" Width="824" Height="498" BorderThickness="0" Canvas.Left="175" Canvas.Top="36">
+            <TabControl.ItemContainerStyle>
+                <Style TargetType="{x:Type TabItem}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
                 </Style>
-            </TabControl.Resources>
-        </TabControl>
+            </TabControl.ItemContainerStyle>
 
+            <!--0 Đăng nhập-->
+            <TabItem Name="DangNhap">
+                <Grid>
+                    <Frame Source="DangNhapUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--1 Đổi mật khẩu-->
+            <TabItem Name="DoiMatKhau">
+                <Grid>
+                    <Frame Source="DoiMatKhauUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--2 Thêm đội bóng-->
+            <TabItem Name="ThemDoiBong">
+                <Grid>
+                    <Frame Source="ThemDoiBongUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--3 Thêm trọng tài-->
+            <TabItem Name="NhapTrongTai">
+                <Grid>
+                    <Frame Source="NhapTrongTaiUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--4 Sắp xếp lịch thi đấu-->
+            <TabItem Name="SapXepLich">
+                <Grid>
+                    <Frame Source="SapLichThiDauUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--5 Phân bổ trọng tài-->
+            <TabItem Name="PhanBoTrongTai">
+                <Grid>
+                    <Frame Source="PhanBoTrongTaiUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--6 Nhập kết quả trận đấu-->
+            <TabItem Name="NhapKetQua">
+                <Grid>
+                    <Frame Source="NhapKetQua.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--7 Tổng kết mùa giải-->
+            <TabItem Name="TongKetMuaGiai">
+                <Grid>
+                    <Frame Source="TongKetMuaGiaiUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--8 Chỉnh sửa đội bóng-->
+            <TabItem Name="ChinhSuaDoiBong">
+                <Grid>
+                    <Frame Source="ChinhSuaDoiBongUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--9 Thay đổi luật thi đấu-->
+            <TabItem Name="ThayDoiLuat">
+                <Grid>
+                    <Frame Source="ThayDoiLuatUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--10 Tra cứu thông tin đội-->
+            <TabItem Name="TraCuuThongTinDoi">
+                <Grid>
+                    <Frame Source="TCThongTinDoiUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--11 Tra cứu cầu thủ-->
+            <TabItem Name="TraCuuCauThu">
+                <Grid>
+                    <Frame Source="TCCauThuUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--12 Tra cứu lịch thi đấu-->
+            <TabItem Name="TraCuuLich">
+                <Grid>
+                    <Frame Source="TCLichThiDauUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--13 Tra cứu kết quả trận-->
+            <TabItem Name="TraCuuKetQuaTran">
+                <Grid>
+                    <Frame Source="TCKetQuaTranUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--14 Tra cứu trước trận-->
+            <TabItem Name="TraCuuTruocTran">
+                <Grid>
+                    <Frame Source="TCTruocTranUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--15 Tra cứu vua phá lưới-->
+            <TabItem Name="TraCuuVuaPhaLuoi">
+                <Grid>
+                    <Frame Source="TCVuaPhaLuoiUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+            <!--16 Tra cứu bảng xếp hạng-->
+            <TabItem Name="TraCuuBangXepHang">
+                <Grid>
+                    <Frame Source="BangXepHangUserControl.xaml"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <Border Width="827" Height="36" Canvas.Left="174" BorderThickness="1" BorderBrush="DarkBlue"/>
+
+        <TextBlock Name="TittleTextBlock" Text="Phần mềm quản lý giải vô địch quốc gia" FontSize="16" Width="827" Height="36" Canvas.Left="174" Canvas.Top="6" FontWeight="Bold" TextAlignment="Center"/>
 
         <materialDesign:PopupBox Name="SettingPopup" PlacementMode="RightAndAlignBottomEdges" StaysOpen="False" HorizontalAlignment="Right" Canvas.Top="500" Height="25" Width="25" Canvas.Left="140" Visibility="Hidden">
 
@@ -124,5 +224,10 @@
             <Image Name="AcountImage" Source="D:/TH.png" Height="83" Width="82" Canvas.Left="43" Canvas.Top="430"></Image>
             <TextBlock Text="Admin" TextAlignment="Center" Foreground="White"/>
         </WrapPanel>
+
+        <Button Cursor="Hand" Style="{StaticResource ImageButtonStyle}" Click="PowerOffButton_Click" Canvas.Left="959" Height="36" Width="43">
+            <Image Source="D:\power-off.png" Width="20" Canvas.Top="-35" Canvas.Left="1089" Margin="10,0"/>
+        </Button>
+
     </Canvas>
 </Window>
