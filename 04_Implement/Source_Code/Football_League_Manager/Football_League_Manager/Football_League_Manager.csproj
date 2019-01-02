@@ -55,6 +55,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=18.12.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.18.12.0\lib\net40\Aspose.Cells.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.0.0.14576, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.1\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -267,6 +270,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image\cr7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\Cup.png" />
+    <Resource Include="image\Home.png" />
+    <Resource Include="image\key.png" />
+    <Resource Include="image\power-off.png" />
+    <Resource Include="image\quanly.png" />
+    <Resource Include="image\setting.png" />
+    <Resource Include="image\tracuu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\fp.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

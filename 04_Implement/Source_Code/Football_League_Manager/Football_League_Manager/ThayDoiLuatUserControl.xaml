@@ -7,94 +7,96 @@
              mc:Ignorable="d" 
              d:DesignHeight="498" d:DesignWidth="824" Loaded="Window_Loaded">
     <Canvas>
+        <Image Source="image/fp.jpg" Height="546" Width="824" Canvas.Top="-42"/>
+
         <TextBlock Text="Chọn quy định cần thay đổi"
-                   FontSize="14" Canvas.Top="29" Canvas.Left="251" Height="22"
+                   FontSize="14" Canvas.Top="32" Canvas.Left="96" Height="22"
                    ></TextBlock>
-        <TextBlock Text="Thắng" FontSize="14" Canvas.Left="249" Canvas.Top="103" Height="22"
+        <TextBlock Text="Thắng" FontSize="14" Canvas.Left="94" Canvas.Top="106" Height="22"
                    ></TextBlock>
-        <TextBlock Text="Hòa" FontSize="14" Canvas.Left="369" Canvas.Top="103" Height="22"
+        <TextBlock Text="Hòa" FontSize="14" Canvas.Left="214" Canvas.Top="106" Height="22"
                    ></TextBlock>
-        <TextBlock Text="Thua" FontSize="14" Canvas.Left="491" Canvas.Top="103" Height="22"
+        <TextBlock Text="Thua" FontSize="14" Canvas.Left="336" Canvas.Top="106" Height="22"
                    ></TextBlock>
-        <TextBlock Text="Tối đa" FontSize="14" Canvas.Left="249" Canvas.Top="213" Height="22"
+        <TextBlock Text="Tối đa" FontSize="14" Canvas.Left="94" Canvas.Top="216" Height="22"
                    ></TextBlock>
-        <TextBlock Text="Tối thiểu" FontSize="14" Canvas.Left="435" Canvas.Top="213" Height="22"
+        <TextBlock Text="Tối thiểu" FontSize="14" Canvas.Left="280" Canvas.Top="216" Height="22"
                    ></TextBlock>
-        <TextBlock Text="Tối đa" FontSize="14" Canvas.Left="249" Canvas.Top="300" Height="21"
+        <TextBlock Text="Tối đa" FontSize="14" Canvas.Left="94" Canvas.Top="303" Height="21"
                    />
-        <TextBlock Text="Tối thiểu" FontSize="14" Canvas.Left="435" Canvas.Top="300" Height="21"
+        <TextBlock Text="Tối thiểu" FontSize="14" Canvas.Left="280" Canvas.Top="303" Height="21"
                    />
         <CheckBox Content="Số điểm cộng sau mỗi trận đấu"
-                  FontSize="14" Canvas.Left="249" Canvas.Top="65"
+                  FontSize="14" Canvas.Left="94" Canvas.Top="68"
                   x:Name="Diem_CheckBox" Checked="Diem_CheckBox_Checked"
                   Unchecked="Diem_CheckBox_Unchecked" Height="24"
                   ></CheckBox>
         <CheckBox Content="Tuổi tối đa, tối thiểu của một cầu thủ"
-                  FontSize="14" Canvas.Left="249" Canvas.Top="170"
+                  FontSize="14" Canvas.Left="94" Canvas.Top="173"
                   x:Name="Tuoi_CheckBox" Checked="Tuoi_CheckBox_Checked"
                   Unchecked="Tuoi_CheckBox_Unchecked" Height="25"
                   ></CheckBox>
         <CheckBox Content="Số cầu thủ tối đa, tối thiểu của một đội bóng:"
-                  FontSize="14" Canvas.Left="249" Canvas.Top="259"
+                  FontSize="14" Canvas.Left="94" Canvas.Top="262"
                   x:Name="SoCauThu_CheckBox" Checked="SoCauThu_CheckBox_Checked"
                   Unchecked="SoCauThu_CheckBox_Unchecked" Height="25"
                   ></CheckBox>
         <CheckBox Content="Số thẻ vàng bị cấm thi đấu"
-                  FontSize="14" Canvas.Left="249" Canvas.Top="353"
+                  FontSize="14" Canvas.Left="94" Canvas.Top="356"
                   x:Name="The_CheckBox" Checked="The_CheckBox_Checked"   
                   Unchecked="The_CheckBox_Unchecked" Height="24"
                   ></CheckBox>
         <TextBox  x:Name="DiemThang_TextBox"
                   Height="34" Width="50"
-                  Canvas.Left="293" Canvas.Top="92"
+                  Canvas.Left="138" Canvas.Top="95"
                   TextAlignment="Center"
                   TextChanged="DiemThang_TextBox_TextChanged"
                   ></TextBox>
         <TextBox  x:Name="DiemThua_TextBox"
                   Height="34" Width="50"
                   TextAlignment="Center"
-                  Canvas.Left="533" Canvas.Top="92" RenderTransformOrigin="5.2,1.367" TextChanged="DiemThua_TextBox_TextChanged"
+                  Canvas.Left="378" Canvas.Top="95" RenderTransformOrigin="5.2,1.367" TextChanged="DiemThua_TextBox_TextChanged"
                   />
         <TextBox  x:Name="DiemHoa_TextBox"
                   Height="34" Width="50" 
-                  Canvas.Left="407" Canvas.Top="92"
+                  Canvas.Left="252" Canvas.Top="95"
                   TextAlignment="Center" TextChanged="DiemHoa_TextBox_TextChanged"
                   />
         <TextBox x:Name="TuoiMax_TextBox"
                  Height="35" Width="70"
-                 Canvas.Left="307" Canvas.Top="197"
+                 Canvas.Left="152" Canvas.Top="200"
                  TextAlignment="Center" TextChanged="TuoiMax_TextBox_TextChanged"
                  ></TextBox>
         <TextBox x:Name="TuoiMin_TextBox"
                  Height="35" Width="70"
-                 Canvas.Left="513" Canvas.Top="197"
+                 Canvas.Left="358" Canvas.Top="200"
                  RenderTransformOrigin="0.229,0.033"
                  TextAlignment="Center" TextChanged="TuoiMin_TextBox_TextChanged"
                  />
         <TextBox x:Name="SoCauThuMin_TextBox"
                  Height="35" Width="70"
-                 Canvas.Left="513" Canvas.Top="286"
+                 Canvas.Left="358" Canvas.Top="289"
                  TextAlignment="Center" TextChanged="SoCauThuMin_TextBox_TextChanged"
                  />
         <TextBox x:Name="SoCauThuMax_TextBox"
                  Height="35" Width="70"
-                 Canvas.Left="307" Canvas.Top="286"
+                 Canvas.Left="152" Canvas.Top="289"
                  TextAlignment="Center" TextChanged="SoCauThuMax_TextBox_TextChanged"
                  />
         <TextBox x:Name="SoThe_TextBox"
                  Height="35" Width="70"
-                 Canvas.Left="479" Canvas.Top="344"
+                 Canvas.Left="324" Canvas.Top="347"
                  TextAlignment="Center" TextChanged="SoThe_TextBox_TextChanged"
                  />
         <Button Content="Lưu"
                 FontSize="14"
-                Height="40" Width="95" Canvas.Left="323" Canvas.Top="409"
+                Height="40" Width="95" Canvas.Left="168" Canvas.Top="412"
                x:Name="Luu_Button" Click="Luu_Button_Click" 
                 ></Button>
         <Button Content="Hoàn tất"
                 FontSize="14"
                 Height="40" Width="95"
-                x:Name="HoanTat_Button" Canvas.Left="432" Canvas.Top="409" Click="HoanTat_Button_Click"
+                x:Name="HoanTat_Button" Canvas.Left="277" Canvas.Top="412" Click="HoanTat_Button_Click"
                 ></Button>
 
 

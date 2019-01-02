@@ -8,20 +8,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="498" d:DesignWidth="824">
     <Canvas>
+        <Image Source="image/fp.jpg" Height="546" Width="824" Canvas.Top="-45"/>
+
         <TextBox   materialDesign:HintAssist.Hint="Tên đội bóng"
-            Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="185" Canvas.Top="119" Width="497" x:Name="TenDB" />
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="84" Canvas.Top="79" Width="364" x:Name="TenDB" />
         <TextBox materialDesign:HintAssist.Hint="Huấn luyện viên"
-             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="185" Canvas.Top="169" Width="495" x:Name="HLV"  />
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="84" Canvas.Top="129" Width="363" x:Name="HLV"  />
         <TextBox   materialDesign:HintAssist.Hint="Sân nhà"
-  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="185" Canvas.Top="219" Width="493" x:Name="SanNha"/>
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="84" Canvas.Top="179" Width="361" x:Name="SanNha"/>
         <Button  Style="{StaticResource MaterialDesignRaisedButton}"
              materialDesign:ButtonProgressAssist.Value="-1"
              materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-             materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Thêm danh sách cầu thủ" Background="BlueViolet" Foreground="White" Canvas.Left="185" Canvas.Top="282" Height="30" Width="494" Click="Them_cau_thu_Click" />
+             materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Thêm danh sách cầu thủ" Background="BlueViolet" Foreground="White" Canvas.Left="84" Canvas.Top="242" Height="30" Width="362" Click="Them_cau_thu_Click" />
         <Button  Style="{StaticResource MaterialDesignRaisedButton}"
              materialDesign:ButtonProgressAssist.Value="-1"
              materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-             materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Hoàn tất" Canvas.Left="382" Background="LightBlue" Canvas.Top="335" Height="30" Width="100" Click="Hoan_tat"/>
+             materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Hoàn tất" Canvas.Left="231" Background="LightBlue" Canvas.Top="318" Height="30" Width="100" Click="Hoan_tat"/>
 
     </Canvas>
 </UserControl>

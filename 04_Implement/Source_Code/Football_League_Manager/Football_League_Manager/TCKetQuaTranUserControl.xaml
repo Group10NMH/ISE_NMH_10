@@ -9,8 +9,10 @@
              Loaded="Window_Loaded"
              d:DesignHeight="498" d:DesignWidth="824">
     <Canvas>
-        <TextBlock Text="Chọn vòng đấu" Canvas.Left="186" Canvas.Top="163"/>
-        <ComboBox Name="itemsCombobox" Width="123" Height="30" Canvas.Left="186" Canvas.Top="184"  RenderTransformOrigin="0.927,1.1" SelectionChanged="itemsCombobox_SelectionChanged">
+        <Image Source="image/fp.jpg" Height="546" Width="824" Canvas.Top="-48" Canvas.Left="-1"/>
+
+        <TextBlock Text="Chọn vòng đấu" Canvas.Left="17" Canvas.Top="121"/>
+        <ComboBox Name="itemsCombobox" Width="123" Height="30" Canvas.Left="17" Canvas.Top="142"  RenderTransformOrigin="0.927,1.1" SelectionChanged="itemsCombobox_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -22,7 +24,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <ComboBox x:Name="itemsCombobox_Copy" SelectionChanged="itemsCombobox_Copy_SelectionChanged" Width="272" Height="30" Canvas.Left="381" Canvas.Top="184" >
+        <ComboBox x:Name="itemsCombobox_Copy" SelectionChanged="itemsCombobox_Copy_SelectionChanged" Width="272" Height="30" Canvas.Left="212" Canvas.Top="142" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -33,20 +35,20 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBlock Text="Chọn trận đấu" Canvas.Left="381" Canvas.Top="163"/>
+        <TextBlock Text="Chọn trận đấu" Canvas.Left="212" Canvas.Top="121"/>
 
-        <TextBlock Name="DoiNhaText" TextAlignment="Right" Text="Đội nhà" Canvas.Left="189" Canvas.Top="273" Width="129"/>
-        <TextBlock Name="DoiKhachText"  Text="Đội khách" Canvas.Left="510" Canvas.Top="273" Width="165"/>
+        <TextBlock Name="DoiNhaText" TextAlignment="Right" Text="Đội nhà" Canvas.Left="20" Canvas.Top="231" Width="129"/>
+        <TextBlock Name="DoiKhachText"  Text="Đội khách" Canvas.Left="341" Canvas.Top="231" Width="165"/>
 
         <materialDesign:Card
             materialDesign:ShadowAssist.ShadowDepth="Depth2"
-            HorizontalAlignment="Center" Padding="13" Canvas.Left="347" Canvas.Top="264" Height="40" Width="50" Name="TiSoA">
+            HorizontalAlignment="Center" Padding="13" Canvas.Left="178" Canvas.Top="222" Height="40" Width="50" Name="TiSoA">
 
         </materialDesign:Card>
 
         <materialDesign:Card
             materialDesign:ShadowAssist.ShadowDepth="Depth2"
-            Padding="13" Canvas.Left="439" Canvas.Top="264" Height="40" Width="50" Name="TiSoB"/>
+            Padding="13" Canvas.Left="270" Canvas.Top="222" Height="40" Width="50" Name="TiSoB"/>
 
     </Canvas>
 </UserControl>

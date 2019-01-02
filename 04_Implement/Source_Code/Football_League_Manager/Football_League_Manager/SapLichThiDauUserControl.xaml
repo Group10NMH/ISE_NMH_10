@@ -8,11 +8,13 @@
                 mc:Ignorable="d" 
              d:DesignHeight="498" d:DesignWidth="824">
     <Canvas>
+        <Image Source="image/fp.jpg" Height="546" Width="824" Canvas.Top="-42"/>
+
         <TextBlock Text="Chọn trận đấu" FontSize="14"
-                   Canvas.Left="219" Canvas.Top="170" Width="136"
+                   Canvas.Left="141" Canvas.Top="164" Width="136"
                    ></TextBlock>
         <ComboBox x:Name="TranDau_ComboBox" Height="30" Width="307"
-                  Canvas.Left="219" Canvas.Top="197" 
+                  Canvas.Left="141" Canvas.Top="191" 
                   SelectionChanged="TranDau_ComboBox_SelectionChanged" FontSize="14"
                   >
             <ComboBox.ItemTemplate>
@@ -33,42 +35,42 @@
             Loaded="VongDau_ComboBox_Loaded"
                   x:Name="VongDau_ComboBox"
                   Height="30" Width="149"
-                  Canvas.Left="221" Canvas.Top="99" FontSize="14"
+                  Canvas.Left="143" Canvas.Top="93" FontSize="14"
                   >
         </ComboBox>
         <TextBlock Text="Thời gian thi đấu" 
-                   FontSize="14" Canvas.Left="220" Canvas.Top="272"
+                   FontSize="14" Canvas.Left="142" Canvas.Top="266"
                    ></TextBlock>
         <TextBlock Text="Chọn vòng đấu" FontSize="14"
-                   Canvas.Left="222" Canvas.Top="74"
+                   Canvas.Left="144" Canvas.Top="68"
                    ></TextBlock>
         <Button x:Name="ThemLich_Button"
                 Height="40" Width="120"
                 Content="Thêm lịch" FontSize="14" 
-                Canvas.Left="278" Canvas.Top="393"
+                Canvas.Left="200" Canvas.Top="387"
                 Click="ThemLich_Button_Click"
                 ></Button>
         <Button Height="40" Width="120"
                 Content="Hoàn tất" FontSize="14"
-                Canvas.Left="435" Canvas.Top="393" RenderTransformOrigin="-0.529,0.862"
+                Canvas.Left="357" Canvas.Top="387" RenderTransformOrigin="-0.529,0.862"
                 ></Button>
 
         <DatePicker Name="NgayThiDauDP"
-  Width="174"
+  Width="132"
   materialDesign:HintAssist.Hint=""
-  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Canvas.Left="223" Canvas.Top="292" />
-       
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Canvas.Left="145" Canvas.Top="286" />
+
 
         <materialDesign:TimePicker Name="GioThiDauDP"
   materialDesign:HintAssist.Hint="Validates"
   IsInvalidTextAllowed="True"
   Is24Hours="True"
-  Width="100">
+  Width="100" Canvas.Left="318" Margin="0" Canvas.Top="298">
             <materialDesign:TimePicker.Text>
                 <Binding
       Path="ValidatingTime"
       UpdateSourceTrigger="PropertyChanged">
-                    
+
                 </Binding>
             </materialDesign:TimePicker.Text>
         </materialDesign:TimePicker>

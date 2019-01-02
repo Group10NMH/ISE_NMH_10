@@ -7,18 +7,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="498" d:DesignWidth="824">
     <Canvas>
+        <Image Source="image/fp.jpg" Height="546" Width="824" Canvas.Top="-42"/>
+
         <ComboBox 
             Loaded="VongDau_ComboBox_Loaded"
             x:Name="VongDau_ComboBox" Height="35" Width="350"
-            Canvas.Left="202" Canvas.Top="82"
+            Canvas.Left="70" Canvas.Top="49"
             ></ComboBox>
-        <Button x:Name="TraCuu_Button" Content="Tra cứu" Height="40" Width="100" FontSize="20" RenderTransformOrigin="4.315,2.055" Canvas.Left="562" Canvas.Top="78" Click="TraCuu_Button_Click"  ></Button>
+        <Button x:Name="TraCuu_Button" Content="Tra cứu" Height="40" Width="100" FontSize="20" RenderTransformOrigin="4.315,2.055" Canvas.Left="430" Canvas.Top="45" Click="TraCuu_Button_Click"  ></Button>
         <DataGrid AutoGenerateColumns="False"  BorderThickness="1"
           Height="312" 
           HorizontalAlignment="Left" 
           Name="LichThiDauDataGrid" 
           VerticalAlignment="Center" 
-          Width="532" Canvas.Left="164" Canvas.Top="150" AlternatingRowBackground="White" 
+          Width="532" Canvas.Left="32" Canvas.Top="117" AlternatingRowBackground="White" 
           IsReadOnly="True"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <DataGrid.Columns>

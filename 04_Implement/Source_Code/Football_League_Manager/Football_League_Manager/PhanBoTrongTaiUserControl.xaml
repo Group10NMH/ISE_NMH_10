@@ -8,10 +8,12 @@
              Loaded="Window_Loaded"
              d:DesignHeight="498" d:DesignWidth="824">
     <Canvas>
-        <TextBlock FontSize="14" x:Name="textBlock" Canvas.Left="152" TextWrapping="Wrap" Text="Chọn vòng đấu" Canvas.Top="51" Height="25" Width="117"/>
-        <TextBlock FontSize="14" x:Name="textBlock1" Canvas.Left="361" TextWrapping="Wrap" Canvas.Top="50" Text="Chọn trận đấu" Height="25" Width="110"/>
+        <Image Source="image/fp.jpg" Height="546" Width="824" Canvas.Top="-42" Canvas.Left="-3"/>
+
+        <TextBlock FontSize="14" x:Name="textBlock" Canvas.Left="92" TextWrapping="Wrap" Text="Chọn vòng đấu" Canvas.Top="51" Height="25" Width="117"/>
+        <TextBlock FontSize="14" x:Name="textBlock1" Canvas.Left="301" TextWrapping="Wrap" Canvas.Top="50" Text="Chọn trận đấu" Height="25" Width="110"/>
         <ComboBox SelectionChanged="VDComboBox_SelectionChanged"
-            Name="VDComboBox" Width="131" Height="32" Canvas.Left="152" Canvas.Top="82" FontSize="14" >
+            Name="VDComboBox" Width="131" Height="32" Canvas.Left="92" Canvas.Top="82" FontSize="14" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -22,7 +24,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <ComboBox SelectionChanged="TDComboBox_SelectionChanged"
-            FontSize="14" x:Name="TDComboBox" Canvas.Left="361" Canvas.Top="75" Width="329" Height="39"
+            FontSize="14" x:Name="TDComboBox" Canvas.Left="301" Canvas.Top="75" Width="329" Height="39"
                   >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -35,13 +37,13 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBlock FontSize="14" x:Name="textBlock2" Canvas.Left="268" TextWrapping="Wrap" Text="Trọng tài 1" Canvas.Top="201" Height="25" Width="84"/>
-        <TextBlock FontSize="14" x:Name="textBlock3" Canvas.Left="268" TextWrapping="Wrap" Text="Trọng tài 2" Canvas.Top="248" Height="25" Width="84"/>
-        <TextBlock FontSize="14" x:Name="textBlock4" Canvas.Left="268" TextWrapping="Wrap" Text="Trọng tài 3" Canvas.Top="291" Height="25" Width="84"/>
-        <TextBlock FontSize="14" x:Name="textBlock5" Canvas.Left="266" TextWrapping="Wrap" Text="Trọng tài 4" Canvas.Top="334" RenderTransformOrigin="0.498,-0.551" Height="25" Width="83"/>
-        <TextBlock FontSize="14" x:Name="textBlock6" Canvas.Left="220" TextWrapping="Wrap" Text="Chọn tổ trọng tài" Canvas.Top="156" FontWeight="Bold" Height="25" Width="133"/>
+        <TextBlock FontSize="14" x:Name="textBlock2" Canvas.Left="139" TextWrapping="Wrap" Text="Trọng tài 1" Canvas.Top="198" Height="25" Width="84"/>
+        <TextBlock FontSize="14" x:Name="textBlock3" Canvas.Left="139" TextWrapping="Wrap" Text="Trọng tài 2" Canvas.Top="245" Height="25" Width="84"/>
+        <TextBlock FontSize="14" x:Name="textBlock4" Canvas.Left="139" TextWrapping="Wrap" Text="Trọng tài 3" Canvas.Top="288" Height="25" Width="84"/>
+        <TextBlock FontSize="14" x:Name="textBlock5" Canvas.Left="137" TextWrapping="Wrap" Text="Trọng tài 4" Canvas.Top="331" RenderTransformOrigin="0.498,-0.551" Height="25" Width="83"/>
+        <TextBlock FontSize="14" x:Name="textBlock6" Canvas.Left="91" TextWrapping="Wrap" Text="Chọn tổ trọng tài" Canvas.Top="153" FontWeight="Bold" Height="25" Width="133"/>
         <ComboBox FontSize="14" SelectionChanged="TT1comboBox_SelectionChanged_1" 
-            x:Name="TT1comboBox" Canvas.Left="382" Canvas.Top="186" Width="214" Height="35">
+            x:Name="TT1comboBox" Canvas.Left="253" Canvas.Top="183" Width="214" Height="35">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -52,10 +54,10 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <ComboBox FontSize="14" SelectionChanged="TT2comboBox_SelectionChanged"
-            x:Name="TT2comboBox" Canvas.Left="381" Canvas.Top="235" Width="215" Height="35"/>
+            x:Name="TT2comboBox" Canvas.Left="252" Canvas.Top="232" Width="215" Height="35"/>
         <ComboBox FontSize="14" SelectionChanged="TT3comboBox_SelectionChanged"
-            x:Name="TT3comboBox" Canvas.Left="381" Canvas.Top="280" Width="214" Height="35"/>
-        <ComboBox FontSize="14" x:Name="TT4comboBox" Canvas.Left="380" Canvas.Top="325" Width="214" SelectionChanged="TT4comboBox_SelectionChanged" Height="36"/>
-        <Button FontSize="14" x:Name="button" Content="Hoàn tất" Canvas.Left="369" Canvas.Top="399" Width="98" Height="44" Background="#FF8B8E91" Click="button_Click"/>
+            x:Name="TT3comboBox" Canvas.Left="252" Canvas.Top="277" Width="214" Height="35"/>
+        <ComboBox FontSize="14" x:Name="TT4comboBox" Canvas.Left="251" Canvas.Top="322" Width="214" SelectionChanged="TT4comboBox_SelectionChanged" Height="36"/>
+        <Button FontSize="14" x:Name="button" Content="Hoàn tất" Canvas.Left="240" Canvas.Top="396" Width="98" Height="44" Background="#FF8B8E91" Click="button_Click"/>
     </Canvas>
 </UserControl>
