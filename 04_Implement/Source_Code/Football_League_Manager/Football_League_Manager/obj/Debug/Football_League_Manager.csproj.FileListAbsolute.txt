@@ -60,4 +60,7 @@ E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Ma
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.csproj.CopyComplete
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.exe
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.pdb
+<<<<<<< HEAD
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.csprojAssemblyReference.cache
+=======
+>>>>>>> master
