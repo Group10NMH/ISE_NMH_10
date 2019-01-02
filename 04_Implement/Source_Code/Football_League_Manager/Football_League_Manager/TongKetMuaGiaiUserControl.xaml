@@ -8,6 +8,8 @@
              Loaded="Window_Loaded"
              d:DesignHeight="498" d:DesignWidth="824">
     <Canvas>
+        <Image Source="image/fp.jpg" Height="546" Width="824" Canvas.Top="-42"/>
+
         <TextBlock Text="Đội vô địch:" FontSize="14" Canvas.Left="26" Canvas.Top="24"           
                    ></TextBlock>
         <TextBlock Text="Top 3:" FontSize="14" Canvas.Left="26" Canvas.Top="64"

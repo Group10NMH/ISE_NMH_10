@@ -8,21 +8,23 @@
              mc:Ignorable="d" 
              d:DesignHeight="498" d:DesignWidth="824">
     <Canvas>
-        <Image Source="key.png" Canvas.Left="190" Canvas.Top="88" Height="79" Width="462"/>
+        <Image Source="image/fp.jpg" Height="546" Width="824" Canvas.Top="-30"/>
+
+        <Image Source="image\key.png" Canvas.Left="51" Canvas.Top="83" Height="79" Width="462"/>
         <PasswordBox 
-         materialDesign:HintAssist.Hint="Mật khẩu cũ"   x:Name="PassOld" Width="561" Canvas.Left="145" Canvas.Top="167"/>
-        <PasswordBox  materialDesign:HintAssist.Hint="Mật khẩu mới"  x:Name="PassNew"  Width="562" Canvas.Left="144" Canvas.Top="217"/>
-        <PasswordBox  materialDesign:HintAssist.Hint="Nhập lại mật khẩu mới"  x:Name="PassNewagain"  Width="562" Canvas.Left="144" Canvas.Top="267" RenderTransformOrigin="0.5,0.5">
+         materialDesign:HintAssist.Hint="Mật khẩu cũ"   x:Name="PassOld" Width="375" Canvas.Left="82" Canvas.Top="167"/>
+        <PasswordBox  materialDesign:HintAssist.Hint="Mật khẩu mới"  x:Name="PassNew"  Width="376" Canvas.Left="81" Canvas.Top="217"/>
+        <PasswordBox  materialDesign:HintAssist.Hint="Nhập lại mật khẩu mới"  x:Name="PassNewagain"  Width="376" Canvas.Left="81" Canvas.Top="267" RenderTransformOrigin="0.5,0.5">
             <PasswordBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.033"/>
+                    <SkewTransform AngleY="-0.027"/>
+                    <RotateTransform Angle="-0.022"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </PasswordBox.RenderTransform>
         </PasswordBox>
-        <Button Content="Thay đổi" Canvas.Left="349" Canvas.Top="336"  Style="{StaticResource MaterialDesignRaisedButton}"
+        <Button Content="Thay đổi" Canvas.Left="220" Canvas.Top="336"  Style="{StaticResource MaterialDesignRaisedButton}"
     materialDesign:ButtonProgressAssist.Value="-1"
     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
     materialDesign:ButtonProgressAssist.IsIndeterminate="True" Width="134" Background="Blue" Foreground="White" Click="Change_Password_click" RenderTransformOrigin="0.6,-0.438" Height="40" />

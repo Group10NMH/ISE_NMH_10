@@ -8,15 +8,18 @@
              d:DesignHeight="498" d:DesignWidth="824"
              Loaded="Window_Loaded">
     <Canvas>
-        <TextBlock  FontSize="12" x:Name="DoiNha" TextWrapping="Wrap" Height="37" Canvas.Left="298" Canvas.Top="169" Width="120"  FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Right"/>
-        <TextBlock  FontSize="20"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Canvas.Left="455" Canvas.Top="202" Width="10" Text="-" FontWeight="Bold"/>
-        <TextBlock FontSize="12" x:Name="DoiKhach" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Canvas.Left="483" Canvas.Top="169" Width="118" FontWeight="Bold"/>
-        <TextBlock  FontSize="20"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Canvas.Left="455" Canvas.Top="263" Width="10" Text="-" FontWeight="Bold" RenderTransformOrigin="0.4,1.185"/>
+
+        <Image Source="image/fp.jpg" Height="546" Width="824" Canvas.Top="-42"/>
+
+        <TextBlock  FontSize="12" x:Name="DoiNha" TextWrapping="Wrap" Height="37" Canvas.Left="166" Canvas.Top="173" Width="120"  FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Right"/>
+        <TextBlock  FontSize="20"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Canvas.Left="323" Canvas.Top="206" Width="10" Text="-" FontWeight="Bold"/>
+        <TextBlock FontSize="12" x:Name="DoiKhach" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Canvas.Left="351" Canvas.Top="173" Width="118" FontWeight="Bold"/>
+        <TextBlock  FontSize="20"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Canvas.Left="323" Canvas.Top="267" Width="10" Text="-" FontWeight="Bold" RenderTransformOrigin="0.4,1.185"/>
 
 
         <ComboBox 
            
-            Name="VDCombobox" Width="102" Height="25" Canvas.Left="246" Canvas.Top="122" SelectionChanged="VDCombobox_SelectionChanged">
+            Name="VDCombobox" Width="102" Height="25" Canvas.Left="114" Canvas.Top="126" SelectionChanged="VDCombobox_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -30,7 +33,7 @@
         <ComboBox 
             SelectionChanged="TDcomboBox_SelectionChanged"
             
-            x:Name="TDcomboBox" Canvas.Left="423" Canvas.Top="123" Width="179" Height="25">
+            x:Name="TDcomboBox" Canvas.Left="291" Canvas.Top="127" Width="179" Height="25">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -42,16 +45,16 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBlock FontSize="14" x:Name="textBlock" Canvas.Left="243" TextWrapping="Wrap" Text="Chọn vòng đấu" Canvas.Top="91" Width="109" FontWeight="Bold"/>
-        <TextBlock FontSize="14"  Canvas.Left="422" TextWrapping="Wrap" Text="Chọn trận đấu" Canvas.Top="91" Width="120" FontWeight="Bold"/>
-        <TextBlock FontSize="14" x:Name="textBlock1" Canvas.Left="266" TextWrapping="Wrap" Text="Tỉ số" Canvas.Top="207" FontWeight="Bold" RenderTransformOrigin="-0.229,0.69"/>
-        <TextBox FontSize="14" x:Name="SBTNTextBox" Height="27" Canvas.Left="376" TextWrapping="Wrap" Canvas.Top="203" Width="43" TextChanged="SBTNTextBox_TextChanged" />
-        <TextBox FontSize="14" x:Name="SBTKTextBox" Height="27" Canvas.Left="492" TextWrapping="Wrap"  Canvas.Top="202" Width="42" TextChanged="SBTKTextBox_TextChanged" />
-        <TextBlock FontSize="14" x:Name="textBlock2" Canvas.Left="263" TextWrapping="Wrap" Text="Số thẻ vàng" Canvas.Top="267" FontWeight="Bold" RenderTransformOrigin="-0.229,0.69"/>
-        <TextBox FontSize="14" x:Name="STVNTextBox" Height="27" Canvas.Left="375" TextWrapping="Wrap" Canvas.Top="268" Width="43" TextChanged="STVNTextBox_TextChanged"/>
-        <TextBox FontSize="14" x:Name="STVKTextBox" Height="27" Canvas.Left="492" TextWrapping="Wrap"  Canvas.Top="266" Width="42" TextChanged="STVKTextBox_TextChanged"/>
-        <Button  FontSize="15" x:Name="button" Content="Nhập thông số trận đấu" Canvas.Left="393" Canvas.Top="329" Width="171" Click="button_Click" Height="32" Background="#FF8B8C91"/>
-        <Button FontSize="15" x:Name="button1" Content="Lưu lại" Canvas.Left="271" Canvas.Top="330" Width="86" Height="30" Click="button1_Click"/>
+        <TextBlock FontSize="14" x:Name="textBlock" Canvas.Left="111" TextWrapping="Wrap" Text="Chọn vòng đấu" Canvas.Top="95" Width="109" FontWeight="Bold"/>
+        <TextBlock FontSize="14"  Canvas.Left="290" TextWrapping="Wrap" Text="Chọn trận đấu" Canvas.Top="95" Width="120" FontWeight="Bold"/>
+        <TextBlock FontSize="14" x:Name="textBlock1" Canvas.Left="134" TextWrapping="Wrap" Text="Tỉ số" Canvas.Top="211" FontWeight="Bold" RenderTransformOrigin="-0.229,0.69"/>
+        <TextBox FontSize="14" x:Name="SBTNTextBox" Height="27" Canvas.Left="244" TextWrapping="Wrap" Canvas.Top="207" Width="43" TextChanged="SBTNTextBox_TextChanged" />
+        <TextBox FontSize="14" x:Name="SBTKTextBox" Height="27" Canvas.Left="360" TextWrapping="Wrap"  Canvas.Top="206" Width="42" TextChanged="SBTKTextBox_TextChanged" />
+        <TextBlock FontSize="14" x:Name="textBlock2" Canvas.Left="131" TextWrapping="Wrap" Text="Số thẻ vàng" Canvas.Top="271" FontWeight="Bold" RenderTransformOrigin="-0.229,0.69"/>
+        <TextBox FontSize="14" x:Name="STVNTextBox" Height="27" Canvas.Left="243" TextWrapping="Wrap" Canvas.Top="272" Width="43" TextChanged="STVNTextBox_TextChanged"/>
+        <TextBox FontSize="14" x:Name="STVKTextBox" Height="27" Canvas.Left="360" TextWrapping="Wrap"  Canvas.Top="270" Width="42" TextChanged="STVKTextBox_TextChanged"/>
+        <Button FontSize="15" x:Name="button" Content="Nhập thông số trận đấu" Canvas.Left="261" Canvas.Top="333" Width="171" Click="button_Click" Height="32" Background="#FF8B8C91"/>
+        <Button FontSize="15" x:Name="button1" Content="Lưu lại" Canvas.Left="139" Canvas.Top="334" Width="86" Height="30" Click="button1_Click"/>
 
 
     </Canvas>

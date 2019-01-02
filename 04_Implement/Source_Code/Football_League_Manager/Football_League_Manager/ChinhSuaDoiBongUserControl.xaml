@@ -7,8 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="498" d:DesignWidth="824">
     <Canvas>
-        <TextBlock Text="Chọn đội bóng: " Canvas.Left="199" Canvas.Top="104" Width="240"/>
-        <ComboBox Name="itemsCombobox" Width="271" Height="30" Canvas.Left="371" Canvas.Top="98" SelectionChanged="itemsCombobox_SelectionChanged">
+        <Image Source="image/fp.jpg" Height="546" Width="824" Canvas.Top="-42"/>
+        <TextBlock Text="Chọn đội bóng: " Canvas.Left="154" Canvas.Top="107" Width="240"/>
+        <ComboBox Name="itemsCombobox" Width="271" Height="30" Canvas.Left="326" Canvas.Top="101" SelectionChanged="itemsCombobox_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -20,16 +21,16 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <TextBlock Text="Tên HLV: " Canvas.Left="199" Canvas.Top="167" Width="135"/>
-        <TextBox Name="TenHLVText" Width="271" Height="30" Canvas.Left="371" Canvas.Top="158"/>
+        <TextBlock Text="Tên HLV: " Canvas.Left="154" Canvas.Top="170" Width="135"/>
+        <TextBox Name="TenHLVText" Width="271" Height="30" Canvas.Left="326" Canvas.Top="161"/>
 
-        <TextBlock Text="Sân nhà: " Canvas.Left="199" Canvas.Top="228" Width="135"/>
-        <TextBox Name="TenSanNhaText" Width="271" Height="30" Canvas.Left="371" Canvas.Top="219"/>
+        <TextBlock Text="Sân nhà: " Canvas.Left="154" Canvas.Top="231" Width="135"/>
+        <TextBox Name="TenSanNhaText" Width="271" Height="30" Canvas.Left="326" Canvas.Top="222"/>
 
-        <TextBlock Text="Danh sách cầu thủ: " Canvas.Left="199" Canvas.Top="306" Width="135"/>
-        <Button Content="Chỉnh sửa danh sách cầu thủ" Name="DanhSachCauThuButton" Width="271" Height="30" Canvas.Left="371" Canvas.Top="297" Click="DanhSachCauThuButton_Click"/>
-        <Button Content="Cập nhật" x:Name="LuuButton" Width="124" Height="30" Canvas.Left="518" Canvas.Top="351" Click="LuuButton_Click" />
-        <Button Content="Xoá đội bóng" x:Name="XoaButton" Width="124" Height="30" Canvas.Left="371" Canvas.Top="351" Click="XoaButton_Click" />
+        <TextBlock Text="Danh sách cầu thủ: " Canvas.Left="154" Canvas.Top="309" Width="135"/>
+        <Button Content="Chỉnh sửa danh sách cầu thủ" Name="DanhSachCauThuButton" Width="271" Height="30" Canvas.Left="326" Canvas.Top="300" Click="DanhSachCauThuButton_Click"/>
+        <Button Content="Cập nhật" x:Name="LuuButton" Width="124" Height="30" Canvas.Left="473" Canvas.Top="354" Click="LuuButton_Click" />
+        <Button Content="Xoá đội bóng" x:Name="XoaButton" Width="124" Height="30" Canvas.Left="326" Canvas.Top="354" Click="XoaButton_Click" />
 
     </Canvas>
 </UserControl>

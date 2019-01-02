@@ -331,5 +331,11 @@ namespace Football_League_Manager
             TittleTextBlock.Text = "Bảng xếp hạng mùa giải";
             tabs.SelectedIndex = 16;
         }
+
+        private void DoiMatKhauButton_Click(object sender, RoutedEventArgs e)
+        {
+            TittleTextBlock.Text = "Đổi mật khẩu";
+            tabs.SelectedIndex = 1;
+        }
     }
 }
