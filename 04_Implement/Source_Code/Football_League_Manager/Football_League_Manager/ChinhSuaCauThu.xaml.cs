@@ -221,13 +221,16 @@ namespace Football_League_Manager
 
         private void NgaySinhDatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            DateTime now = DateTime.Now;
-            DateTime ns = (DateTime)NgaySinhDatePicker.SelectedDate;
-
-            if (KiemTraNSHopLe(now, ns) == false)
+            if (NgaySinhDatePicker.SelectedDate != null)
             {
-                MessageBox.Show("Ngày sinh cầu thủ không hợp lệ!");
-                //NgaySinhDatePicker.SelectedDate = null;
+                DateTime now = DateTime.Now;
+                DateTime ns = (DateTime)NgaySinhDatePicker.SelectedDate;
+
+                if (KiemTraNSHopLe(now, ns) == false)
+                {
+                    MessageBox.Show("Ngày sinh cầu thủ không hợp lệ!");
+                    //NgaySinhDatePicker.SelectedDate = null;
+                }
             }
         }
 
