@@ -209,7 +209,7 @@ namespace Football_League_Manager
             App.Current.Shutdown();
         }
 
-        public static bool isLogin = true;
+        public static bool isLogin = false;
         private void PopupBox_Opened(object sender, RoutedEventArgs e)
         {
             if (!isLogin)
