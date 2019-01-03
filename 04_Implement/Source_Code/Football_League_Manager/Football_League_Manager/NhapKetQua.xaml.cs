@@ -53,9 +53,12 @@ namespace Football_League_Manager
 
         private void VDCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+            TDcomboBox.SelectedIndex = -1;
+
             DataProvider dataProvider = new DataProvider();
 
-            SqlCommand sqlCommand = dataProvider.ExcuteQuery("select DB.TenDB,DB1.TenDB,LTD.MaTran from DoiBong DB, LichThiDau LTD, DoiBong DB1 where DB.MaDB = LTD.MaDoi1 and DB1.MaDB = LTD.MaDoi2 and LTD.VongDau = @Vong ", new object[] { VDCombobox.SelectedIndex + 1 });
+            SqlCommand sqlCommand = dataProvider.ExcuteQuery("select DB.TenDB,DB1.TenDB,LTD.MaTran from DoiBong DB, LichThiDau LTD, DoiBong DB1 where DB.MaDB = LTD.MaDoi1 and DB1.MaDB = LTD.MaDoi2 and LTD.VongDau = @Vong and MaTran not in (select kq.Matran from KetQua kq)", new object[] { VDCombobox.SelectedIndex + 1 });
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             DSTranDau = new List<DataObject>();
 
@@ -75,8 +78,11 @@ namespace Football_League_Manager
 
         private void TDcomboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DoiNha.Text = DSTranDau[TDcomboBox.SelectedIndex].TenDoiNha;
-            DoiKhach.Text = DSTranDau[TDcomboBox.SelectedIndex].TenDoiKhach;
+            if (TDcomboBox.SelectedIndex != -1)
+            {
+                DoiNha.Text = DSTranDau[TDcomboBox.SelectedIndex].TenDoiNha;
+                DoiKhach.Text = DSTranDau[TDcomboBox.SelectedIndex].TenDoiKhach;
+            }
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

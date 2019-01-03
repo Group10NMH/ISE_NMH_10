@@ -68,7 +68,11 @@ namespace Football_League_Manager
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            int SoTheVang = DSCauThu[comboBox1.SelectedIndex].SoTheVang + int.Parse(comboBox2.SelectedItem.ToString());
+            int SoTheVang = DSCauThu[comboBox1.SelectedIndex].SoTheVang;
+            if (comboBox2.SelectedIndex != -1)
+            {
+                SoTheVang += int.Parse(comboBox2.SelectedItem.ToString());
+            }
             string MaCT = DSCauThu[DBcomboBox.SelectedIndex].MaCauThu;
             string MaDB = DSCauThu[DBcomboBox.SelectedIndex].MaDB;
             int SoBanThang =int.Parse(comboBox3.SelectedItem.ToString());
@@ -78,8 +82,7 @@ namespace Football_League_Manager
             
             int b = dataProvider.ExcuteNonQuery("update CauThu set SoTheVang= @SoTheVang where MaDB= @MaDB and MaCT= @MaCT ", new object[] { SoTheVang, MaDB, MaCT });
             MessageBox.Show("Lưu thành công");
-
-
+            
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

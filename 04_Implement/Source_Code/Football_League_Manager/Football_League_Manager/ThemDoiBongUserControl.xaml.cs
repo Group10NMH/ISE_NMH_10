@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aspose.Cells;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -170,6 +171,7 @@ namespace Football_League_Manager
                 }
             }
         }
+
         private void Them_cau_thu_Click(object sender, RoutedEventArgs e)
         {
             bool checkTenDB = true;
@@ -244,5 +246,50 @@ namespace Football_League_Manager
             }
         }
 
+        private void Import_Click(object sender, RoutedEventArgs e)
+        {
+            // Create OpenFileDialog 
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter for file extension and default file extension 
+            
+            dlg.Filter = "Excel Files (*.xls;*.xlsx)|*.xls;*.xlsx";
+
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+
+            // Get the selected file name and display in a TextBox 
+            if (result == true)
+            {
+                // Open document 
+                TenFileTextBlock.Text = dlg.FileName;
+                DongYImport.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void DongYImport_Click(object sender, RoutedEventArgs e)
+        {
+            Workbook wb = new Workbook(TenFileTextBlock.Text);
+            Worksheet sheet = wb.Worksheets[0];
+
+            // Usually we read based on our template
+            Cell cell = sheet.Cells[$"A1"];
+            TenDB.Text = cell.Value.ToString();
+
+            cell = sheet.Cells[$"A2"];
+            HLV.Text = cell.Value.ToString();
+
+            cell = sheet.Cells[$"A3"];
+            SanNha.Text = cell.Value.ToString();
+
+            cell = sheet.Cells[$"A5"];
+
+            while (cell.Value != null)
+            {
+
+            }
+        }
     }
 }

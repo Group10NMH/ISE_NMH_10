@@ -28,19 +28,32 @@ namespace Football_League_Manager
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
-            DataProvider dataProvider = new DataProvider();
-            SqlCommand sqlCommand = dataProvider.ExcuteQuery("select TenCT from CauThu where TenCT LIKE @ten", new object[] { "%" + TenSearch.Text + "%" });
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-
-            List<string> CauThus = new List<string>();
-
-            while (sqlDataReader.Read())
+            if (TenSearch.Text != "")
             {
-                CauThus.Add(sqlDataReader.GetString(0));
-            }
+                DataProvider dataProvider = new DataProvider();
+                SqlCommand sqlCommand = dataProvider.ExcuteQuery("select ct.TenCT, db.TenDB, ct.NgaySinh, vt.TenVT, ct.QuocTich from CauThu ct join DoiBong db on ct.MaDB = db.MaDB join ViTri vt on ct.MaVT = vt.MaVT where ct.TenCT LIKE @ten", new object[] { "%" + TenSearch.Text + "%" });
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-            BXHListView.ItemsSource = CauThus;
+                List<CauThu> cauThus = new List<CauThu>();
+
+                while (sqlDataReader.Read())
+                {
+                    CauThu cauThu = new CauThu();
+                    cauThu.TenCauThu = sqlDataReader.GetString(0);
+                    cauThu.TenDoiBong = sqlDataReader.GetString(1);
+                    cauThu.NgaySinhCauThu = sqlDataReader.GetDateTime(2).ToString("dd/MM/yyyy");
+                    cauThu.ViTri = sqlDataReader.GetString(3);
+                    cauThu.QuocTichCT = sqlDataReader.GetString(4);
+
+                    cauThus.Add(cauThu);
+                }
+
+                BXHListView.ItemsSource = cauThus;
+            }
+            else
+            {
+                BXHListView.ItemsSource = null;
+            }
         }
     }
 }

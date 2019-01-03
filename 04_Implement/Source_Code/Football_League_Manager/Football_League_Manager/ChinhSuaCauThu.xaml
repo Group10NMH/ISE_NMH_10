@@ -24,9 +24,9 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=TenCauThu}" Width="200" CanUserResize="False" Header="Tên cầu thủ"/>
-                <DataGridTextColumn Binding="{Binding Path=NgaySinh}" Width="150" CanUserResize="False" Header="Ngày sinh"/>
+                <DataGridTextColumn Binding="{Binding Path=NgaySinhCauThu}" Width="150" CanUserResize="False" Header="Ngày sinh"/>
                 <DataGridTextColumn Binding="{Binding Path=SoAo}" Width="100" CanUserResize="False" Header="Số áo"/>
-                <DataGridTextColumn Binding="{Binding Path=QuocTich}" Width="150" CanUserResize="False" Header="Quốc tịch"/>
+                <DataGridTextColumn Binding="{Binding Path=QuocTichCT}" Width="150" CanUserResize="False" Header="Quốc tịch"/>
                 <DataGridTextColumn Binding="{Binding Path=ViTri}" Width="200" CanUserResize="False" Header="Vị trí"/>
             </DataGrid.Columns>
         </DataGrid>

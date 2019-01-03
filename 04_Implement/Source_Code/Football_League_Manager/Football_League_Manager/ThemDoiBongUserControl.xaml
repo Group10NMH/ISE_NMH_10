@@ -7,6 +7,23 @@
              xmlns:local="clr-namespace:Football_League_Manager"
              mc:Ignorable="d" 
              d:DesignHeight="498" d:DesignWidth="824">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <ContentPresenter/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+            </Style>
+            <Color x:Key="Color1">Black</Color>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
     <Canvas>
         <Image Source="image/fp.jpg" Height="546" Width="824" Canvas.Top="-45"/>
 
@@ -17,13 +34,18 @@
         <TextBox   materialDesign:HintAssist.Hint="Sân nhà"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="84" Canvas.Top="179" Width="361" x:Name="SanNha"/>
         <Button  Style="{StaticResource MaterialDesignRaisedButton}"
-             materialDesign:ButtonProgressAssist.Value="-1"
-             materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-             materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Thêm danh sách cầu thủ" Background="BlueViolet" Foreground="White" Canvas.Left="84" Canvas.Top="242" Height="30" Width="362" Click="Them_cau_thu_Click" />
+            Content="Thêm danh sách cầu thủ" Background="BlueViolet" Foreground="White" Canvas.Left="84" Canvas.Top="242" Height="30" Width="362" Click="Them_cau_thu_Click" />
         <Button  Style="{StaticResource MaterialDesignRaisedButton}"
-             materialDesign:ButtonProgressAssist.Value="-1"
-             materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-             materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Hoàn tất" Canvas.Left="231" Background="LightBlue" Canvas.Top="318" Height="30" Width="100" Click="Hoan_tat"/>
+             Content="Hoàn tất" Canvas.Left="224" Background="LightBlue" Canvas.Top="308" Height="30" Width="100" Click="Hoan_tat"/>
 
+        <TextBlock Text="hoặc" Canvas.Left="261" Canvas.Top="353"/>
+        <WrapPanel Canvas.Left="84" Canvas.Top="381" Orientation="Horizontal">
+            <Button Cursor="Hand" Style="{StaticResource ImageButtonStyle}" Click="Import_Click" Canvas.Left="103" Height="36" Width="43" RenderTransformOrigin="-1.86,2.417" Canvas.Top="382">
+                <Image Source="image/import.png" Canvas.Top="100" Canvas.Left="109" RenderTransformOrigin="2.7,0.639"/>
+            </Button>
+
+            <TextBlock Text="Nhập từ file Excel" Canvas.Left="152" Canvas.Top="390" Margin="10" Name="TenFileTextBlock"/>
+            <Button Content="Đồng ý" Visibility="Hidden" Name="DongYImport" Click="DongYImport_Click"/>
+        </WrapPanel>
     </Canvas>
 </UserControl>
