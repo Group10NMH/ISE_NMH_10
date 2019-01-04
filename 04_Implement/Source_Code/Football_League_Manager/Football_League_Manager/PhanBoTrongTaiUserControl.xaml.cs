@@ -134,16 +134,29 @@ namespace Football_League_Manager
         private void button_Click(object sender, RoutedEventArgs e)
         {
             DataProvider dataProvider = new DataProvider();
-
-            for (int i = 0; i < 4; i++)
+            int a = 0;
+            if (VDComboBox.SelectedIndex == -1 || TDComboBox.SelectedIndex == -1 || TT1comboBox.SelectedIndex == -1 || TT2comboBox.SelectedIndex == -1 || TT3comboBox.SelectedIndex == -1 || TT4comboBox.SelectedIndex == -1)
             {
-                dataProvider.ExcuteNonQuery("insert into LichCamCoi values ( @MaTT , @MaTran )", new object[] { matt[i], MaTran });
+                MessageBox.Show("Vui lòng chọn đủ thông tin!");
+            }
+            else
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    a += dataProvider.ExcuteNonQuery("insert into LichCamCoi values ( @MaTT , @MaTran )", new object[] { matt[i], MaTran });
+                }
+                if(a==4)
+                {
+                    MessageBox.Show("Lưu thành công.");
+                }
             }
         }
+        
 
         private void TT4comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             matt[3] = TT.DanhSachTrongTais.ElementAt(TT4comboBox.SelectedIndex).Key;
         }
+        
     }
 }
