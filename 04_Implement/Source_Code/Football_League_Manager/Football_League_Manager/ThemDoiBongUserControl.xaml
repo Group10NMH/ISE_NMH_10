@@ -33,7 +33,7 @@
              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="84" Canvas.Top="129" Width="363" x:Name="HLV"  />
         <TextBox   materialDesign:HintAssist.Hint="Sân nhà"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" Canvas.Left="84" Canvas.Top="179" Width="361" x:Name="SanNha"/>
-        <Button  Style="{StaticResource MaterialDesignRaisedButton}"
+        <Button Name="ThemCauThuButton" Style="{StaticResource MaterialDesignRaisedButton}"
             Content="Thêm danh sách cầu thủ" Background="BlueViolet" Foreground="White" Canvas.Left="84" Canvas.Top="242" Height="30" Width="362" Click="Them_cau_thu_Click" />
         <Button  Style="{StaticResource MaterialDesignRaisedButton}"
              Content="Hoàn tất" Canvas.Left="224" Background="LightBlue" Canvas.Top="308" Height="30" Width="100" Click="Hoan_tat"/>

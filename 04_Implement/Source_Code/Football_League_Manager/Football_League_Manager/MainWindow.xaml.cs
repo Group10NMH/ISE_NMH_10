@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
@@ -29,6 +30,8 @@ namespace Football_League_Manager
         static public TextBlock dn;
         static public WrapPanel ai;
 
+        static int N;
+        int[,] a;
 
         public MainWindow()
         {
@@ -39,6 +42,13 @@ namespace Football_League_Manager
 
             tabs.SelectedIndex = 0;
 
+            DataProvider dataProvider = new DataProvider();
+            int SoTran = (int)dataProvider.ExcuteScalar("select count(*) from LichThiDau");
+            if (SoTran == 0) TaoLichThiDauButton.IsEnabled = true;
+
+            N = (int)dataProvider.ExcuteScalar("select count(*) from DoiBong");
+
+            a = new int[N, N + 1];
         }
 
         private void PowerOffButton_Click(object sender, RoutedEventArgs e)
@@ -86,9 +96,102 @@ namespace Football_League_Manager
             tabs.SelectedIndex = 3;
         }
 
+        
+
+        public class TD
+        {
+            public int d1, d2, vong;
+        }
+
         private void TaoLichThiDauButton_Click(object sender, RoutedEventArgs e)
         {
+            DataProvider dataProvider = new DataProvider();
+            SqlCommand sqlCommand = dataProvider.ExcuteQuery("select MaDB from DoiBong");
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            List<string> MaDB = new List<string>();
+            MaDB.Add("");
+            while (sqlDataReader.Read())
+            {
+                MaDB.Add(sqlDataReader.GetString(0));
 
+            }
+
+            for (int i = 1; i < N; i++)
+            {
+                for (int j = 1; j < N + 1; j++)
+                {
+                    a[i, j] = GenerateY(N, j, i);
+                }
+            }
+
+            List<TD> tDs = new List<TD>();
+            for (int i = 1; i < N; i++)
+            {
+                for (int j = 1; j < N + 1; j++)
+                {
+                    if (a[i, j] != 0)
+                    {
+                        TD tD = new TD();
+                        tD.d1 = j;
+                        tD.d2 = a[i, j];
+                        tD.vong = i;
+                        tDs.Add(tD);
+                    }
+                }
+            }
+
+            int dem = 0;
+            for (int i = 0; i < tDs.Count; i++)
+            {
+                string maTran = GenerateMaTran(i + 1);
+                string doiNha = MaDB[tDs[i].d1];
+                string doiKhach = MaDB[tDs[i].d2];
+                int vongDau = tDs[i].vong;
+
+                dataProvider = new DataProvider();
+                dem += dataProvider.ExcuteNonQuery("insert into LichThiDau values ( @MaTran , @DoiNha , @DoiKhach , @VongDau , @ThoiGian )", new object[] { maTran, doiNha, doiKhach, vongDau, "1-1-1" });
+
+            }
+        }
+
+        public string GenerateMaTran(int x)
+        {
+            string result = "TD";
+
+            if (x < 10) result += "0";
+
+            result += x.ToString();
+
+            return result;
+        }
+
+        public int GenerateY(int n, int x, int r)
+        {
+            bool check = false;
+
+            for (int j = 1; j < x; j++)
+            {
+                if (a[r, j] == x)
+                {
+                    return 0;
+                }
+            }
+
+            for (int i = x; i <= n; i++)
+            {
+                if ((x + i) % (n - 1) == r)
+                {
+                    check = true;
+                    if (i != x) return i;
+                }
+            }
+
+            if (check == false && r - x > 0 && r - x <= n)
+            {
+                return r - x;
+            }
+
+            return n;
         }
 
         private void SapXepLichThiDauButton_Click(object sender, RoutedEventArgs e)

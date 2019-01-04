@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="Quản lý giải vô địch quốc gia" Height="535.35" Width="1001.5"
-        WindowStyle="None" 
+        
         >
     <Window.Resources>
         <ResourceDictionary>
