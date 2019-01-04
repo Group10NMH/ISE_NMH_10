@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="Quản lý giải vô địch quốc gia" Height="535.35" Width="1001.5"
-        
+        WindowStyle="None"
         >
     <Window.Resources>
         <ResourceDictionary>
@@ -198,7 +198,13 @@
                     <Frame Source="BangXepHangUserControl.xaml"/>
                 </Grid>
             </TabItem>
-
+            <!--17 Màn hình chính-->
+            <TabItem >
+                <Grid>
+                    <Frame Source="Home.xaml"/>
+                </Grid>
+            </TabItem>
+            
         </TabControl>
         
         <Border Width="827" Height="36" Canvas.Left="174" BorderThickness="1" BorderBrush="DarkBlue"/>

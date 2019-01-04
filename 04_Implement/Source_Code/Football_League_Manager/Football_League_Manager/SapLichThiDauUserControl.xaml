@@ -47,12 +47,8 @@
         <Button x:Name="ThemLich_Button"
                 Height="40" Width="120"
                 Content="Thêm lịch" FontSize="14" 
-                Canvas.Left="200" Canvas.Top="387"
+                Canvas.Left="218" Canvas.Top="376"
                 Click="ThemLich_Button_Click"
-                ></Button>
-        <Button Height="40" Width="120"
-                Content="Hoàn tất" FontSize="14"
-                Canvas.Left="357" Canvas.Top="387" RenderTransformOrigin="-0.529,0.862"
                 ></Button>
 
         <DatePicker Name="NgayThiDauDP"

@@ -25,7 +25,7 @@ namespace Football_League_Manager
     /// </summary>
     public partial class MainWindow : Window
     {
-        public TabControl tab;
+        static public TabControl tab;
         static public MaterialDesignThemes.Wpf.PopupBox st;
         static public TextBlock dn;
         static public WrapPanel ai;
@@ -39,8 +39,9 @@ namespace Football_League_Manager
             st = SettingPopup;
             dn = DangNhapTextBlock;
             ai = AcountInfo;
+            tab = tabs;
 
-            tabs.SelectedIndex = 0;
+            tabs.SelectedIndex = 17;
 
             DataProvider dataProvider = new DataProvider();
             int SoTran = (int)dataProvider.ExcuteScalar("select count(*) from LichThiDau");
@@ -56,7 +57,7 @@ namespace Football_League_Manager
             App.Current.Shutdown();
         }
 
-        public static bool isLogin = true;
+        public static bool isLogin = false;
         private void PopupBox_Opened(object sender, RoutedEventArgs e)
         {
             if (!isLogin)

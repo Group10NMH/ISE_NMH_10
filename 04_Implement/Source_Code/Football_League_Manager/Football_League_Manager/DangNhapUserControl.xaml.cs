@@ -72,6 +72,7 @@ namespace Football_League_Manager
                 MainWindow.st.Visibility = Visibility.Visible;
                 MainWindow.dn.Visibility = Visibility.Hidden;
                 MainWindow.ai.Visibility = Visibility.Visible;
+                MainWindow.tab.SelectedIndex = 17;
             }
             else if (ktTK == false)
             {

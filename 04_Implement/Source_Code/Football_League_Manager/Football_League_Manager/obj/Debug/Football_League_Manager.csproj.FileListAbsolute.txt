@@ -1,66 +1,3 @@
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\Football_League_Manager.exe.config
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\Football_League_Manager.exe
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\Football_League_Manager.pdb
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\Aspose.Cells.dll
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\MaterialDesignColors.dll
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\MaterialDesignThemes.Wpf.dll
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\Aspose.Cells.xml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\MaterialDesignThemes.Wpf.pdb
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\MaterialDesignThemes.Wpf.xml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.csprojAssemblyReference.cache
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\AddListCT.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\BangXepHangUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ChinhSuaCauThu.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ChinhSuaDoiBongUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\DangNhapUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\DoiMatKhauUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\MainWindow.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\NhapKetQua.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\NhapThongSoTranDau.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\NhapTrongTaiUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\PhanBoTrongTaiUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\SapLichThiDauUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCCauThuUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCKetQuaTranUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCLichThiDauUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCThongTinDoiUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCTruocTranUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCVuaPhaLuoiUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ThayDoiLuatUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ThemDoiBongUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TongKetMuaGiaiUserControl.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\App.g.cs
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager_MarkupCompile.cache
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager_MarkupCompile.lref
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\App.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\AddListCT.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\BangXepHangUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ChinhSuaCauThu.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ChinhSuaDoiBongUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\DangNhapUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\DoiMatKhauUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\MainWindow.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\NhapKetQua.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\NhapThongSoTranDau.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\NhapTrongTaiUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\PhanBoTrongTaiUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\SapLichThiDauUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCCauThuUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCKetQuaTranUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCLichThiDauUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCThongTinDoiUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCTruocTranUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TCVuaPhaLuoiUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ThayDoiLuatUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ThemDoiBongUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\TongKetMuaGiaiUserControl.baml
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.g.resources
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.Properties.Resources.resources
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.csproj.GenerateResource.cache
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.csproj.CoreCompileInputs.cache
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.csproj.CopyComplete
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.exe
-G:\Program Files\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.pdb
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\Football_League_Manager.exe.config
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\Football_League_Manager.exe
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\Football_League_Manager.pdb
@@ -70,13 +7,13 @@ E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Ma
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\Aspose.Cells.xml
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\MaterialDesignThemes.Wpf.pdb
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\bin\Debug\MaterialDesignThemes.Wpf.xml
-E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Football_League_Manager.csprojAssemblyReference.cache
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\AddListCT.g.cs
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\BangXepHangUserControl.g.cs
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ChinhSuaCauThu.g.cs
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ChinhSuaDoiBongUserControl.g.cs
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\DangNhapUserControl.g.cs
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\DoiMatKhauUserControl.g.cs
+E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Home.g.cs
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\MainWindow.g.cs
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\NhapKetQua.g.cs
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\NhapThongSoTranDau.g.cs
@@ -102,6 +39,7 @@ E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Ma
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\ChinhSuaDoiBongUserControl.baml
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\DangNhapUserControl.baml
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\DoiMatKhauUserControl.baml
+E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\Home.baml
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\MainWindow.baml
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\NhapKetQua.baml
 E:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\obj\Debug\NhapThongSoTranDau.baml

@@ -14,16 +14,6 @@ namespace Football_League_Manager
         public string Username { get; set; }
         public string Password { get; set; }
 
-        void LoadAdmin()
-        {
-
-        }
-
-        bool Login(string user, string pass)
-        {
-
-            return false;
-        }
     }
 
     class DanhSachDoiBong
