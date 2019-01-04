@@ -123,7 +123,7 @@ namespace Football_League_Manager
                 }
                 else
                 {
-                    if (listCT.cauThus.Count == 0)
+                    if (doiBong.CauThus.Count == 0)
                     {
                         MessageBox.Show("Bạn phải thêm cầu thủ cho đội");
                     }
@@ -158,10 +158,8 @@ namespace Football_League_Manager
                             ct.MaCauThu, doiBong.MaDoiBong ,ct.TenCauThu, DateTime.Parse(ct.NgaySinhCauThu) , ct.SoAo, ct.MaVT , ct.QuocTichCT });
                         }
 
-                        if (dem == 1 && demdb == 1)
-                        {
-                            MessageBox.Show("Thêm đội bóng và cầu thủ thành công");
-                        }
+                        if (demdb == 1) MessageBox.Show("Thêm đội bóng và cầu thủ thành công");
+
                         SanNha.Text = "";
                         TenDB.Text = "";
                         HLV.Text = "";
@@ -271,25 +269,65 @@ namespace Football_League_Manager
 
         private void DongYImport_Click(object sender, RoutedEventArgs e)
         {
+            doiBong = new DoiBong();
+            doiBong.CauThus = new List<CauThu>();
             Workbook wb = new Workbook(TenFileTextBlock.Text);
             Worksheet sheet = wb.Worksheets[0];
 
             // Usually we read based on our template
-            Cell cell = sheet.Cells[$"A1"];
+            Cell cell = sheet.Cells[$"B1"];
             TenDB.Text = cell.Value.ToString();
 
-            cell = sheet.Cells[$"A2"];
+            cell = sheet.Cells[$"B2"];
             HLV.Text = cell.Value.ToString();
 
-            cell = sheet.Cells[$"A3"];
+            cell = sheet.Cells[$"B3"];
             SanNha.Text = cell.Value.ToString();
 
-            cell = sheet.Cells[$"A5"];
+            cell = sheet.Cells[$"A6"];
 
+            string maCT = "CT";
+
+            int row = 6;
+            int ID = 1;
             while (cell.Value != null)
             {
+                
 
+                CauThu cauThu = new CauThu();
+
+                if (ID < 10) cauThu.MaCauThu = maCT + "0" + ID.ToString();
+                else cauThu.MaCauThu = maCT + ID.ToString();
+                ID++;
+
+                cell = sheet.Cells[$"A{row}"];
+                cauThu.TenCauThu = cell.Value.ToString();
+
+                cell = sheet.Cells[$"B{row}"];
+                string ns = cell.Value.ToString();
+                cauThu.NgaySinhCauThu = DateTime.Parse(ns).ToString("dd/MM/yyyy");
+
+                cell = sheet.Cells[$"C{row}"];
+                cauThu.SoAo = int.Parse(cell.Value.ToString());
+
+
+                cell = sheet.Cells[$"D{row}"];
+
+                if (cell.Value.ToString() == "Hậu vệ") { cauThu.MaVT = "HV"; }
+                if (cell.Value.ToString() == "Tiền đạo") { cauThu.MaVT = "TĐ"; }
+                if (cell.Value.ToString() == "Tiền vệ") { cauThu.MaVT = "TV"; }
+                if (cell.Value.ToString() == "Thủ môn") { cauThu.MaVT = "TM"; }
+
+                cell = sheet.Cells[$"E{row}"];
+                cauThu.QuocTichCT = cell.Value.ToString();
+
+                doiBong.CauThus.Add(cauThu);
+
+                row++;
+                cell = sheet.Cells[$"A{row}"];
             }
+
+            ThemCauThuButton.Visibility = Visibility.Hidden;
         }
     }
 }
