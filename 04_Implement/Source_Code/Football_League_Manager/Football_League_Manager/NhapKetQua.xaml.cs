@@ -87,12 +87,19 @@ namespace Football_League_Manager
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            string maTran = DSTranDau[TDcomboBox.SelectedIndex].MaTran;
-            int SoBanNha = int.Parse(SBTNTextBox.Text);
-            int SoBanKhach = int.Parse(SBTKTextBox.Text);
-            DataProvider dataProvider = new DataProvider();
-            int a = dataProvider.ExcuteNonQuery("insert into KetQua values ( @MaTran , @SoBanNha , @SoBanKhach )", new object[] { maTran, SoBanNha, SoBanKhach });
-            if (a == 1) MessageBox.Show("Lưu thành công");
+            if (SBTNTextBox.Text == "" || SBTKTextBox.Text == "" || STVNTextBox.Text == "" || STVKTextBox.Text == "" || VDCombobox.SelectedIndex == -1 || TDcomboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+            }
+            else
+            {
+                string maTran = DSTranDau[TDcomboBox.SelectedIndex].MaTran;
+                int SoBanNha = int.Parse(SBTNTextBox.Text);
+                int SoBanKhach = int.Parse(SBTKTextBox.Text);
+                DataProvider dataProvider = new DataProvider();
+                int a = dataProvider.ExcuteNonQuery("insert into KetQua values ( @MaTran , @SoBanNha , @SoBanKhach )", new object[] { maTran, SoBanNha, SoBanKhach });
+                if (a == 1) MessageBox.Show("Lưu thành công");
+            }
 
         }
 

@@ -68,20 +68,27 @@ namespace Football_League_Manager
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            int SoTheVang = DSCauThu[comboBox1.SelectedIndex].SoTheVang;
-            if (comboBox2.SelectedIndex != -1)
+            if (DBcomboBox.SelectedIndex == -1 || comboBox1.SelectedIndex == -1 || comboBox2.SelectedIndex == -1 || comboBox3.SelectedIndex == -1)
             {
-                SoTheVang += int.Parse(comboBox2.SelectedItem.ToString());
+                MessageBox.Show("Vui lòng chọn đầy đủ thông tin!");
             }
-            string MaCT = DSCauThu[DBcomboBox.SelectedIndex].MaCauThu;
-            string MaDB = DSCauThu[DBcomboBox.SelectedIndex].MaDB;
-            int SoBanThang =int.Parse(comboBox3.SelectedItem.ToString());
-            string maTran = MaTran;
-            DataProvider dataProvider = new DataProvider();
-            int a = dataProvider.ExcuteNonQuery("insert into GhiBan values ( @MaCT , @MaTran , @MaDB , @soban )",new object[] {MaCT,maTran,MaDB,SoBanThang});
-            
-            int b = dataProvider.ExcuteNonQuery("update CauThu set SoTheVang= @SoTheVang where MaDB= @MaDB and MaCT= @MaCT ", new object[] { SoTheVang, MaDB, MaCT });
-            MessageBox.Show("Lưu thành công");
+            else
+            {
+                int SoTheVang = DSCauThu[comboBox1.SelectedIndex].SoTheVang;
+                if (comboBox2.SelectedIndex != -1)
+                {
+                    SoTheVang += int.Parse(comboBox2.SelectedItem.ToString());
+                }
+                string MaCT = DSCauThu[DBcomboBox.SelectedIndex].MaCauThu;
+                string MaDB = DSCauThu[DBcomboBox.SelectedIndex].MaDB;
+                int SoBanThang = int.Parse(comboBox3.SelectedItem.ToString());
+                string maTran = MaTran;
+                DataProvider dataProvider = new DataProvider();
+                int a = dataProvider.ExcuteNonQuery("insert into GhiBan values ( @MaCT , @MaTran , @MaDB , @soban )", new object[] { MaCT, maTran, MaDB, SoBanThang });
+
+                int b = dataProvider.ExcuteNonQuery("update CauThu set SoTheVang= @SoTheVang where MaDB= @MaDB and MaCT= @MaCT ", new object[] { SoTheVang, MaDB, MaCT });
+                MessageBox.Show("Lưu thành công");
+            }
             
         }
 
