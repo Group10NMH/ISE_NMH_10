@@ -1,4 +1,5 @@
 ﻿
+<<<<<<< HEAD
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\App.xaml;;
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\AddListCT.xaml;;
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\BangXepHangUserControl.xaml;;
@@ -22,4 +23,29 @@ FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_M
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\ThayDoiLuatUserControl.xaml;;
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\ThemDoiBongUserControl.xaml;;
 FE:\IT\HK_5\Project\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\TongKetMuaGiaiUserControl.xaml;;
+=======
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\App.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\AddListCT.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\BangXepHangUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\ChinhSuaCauThu.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\ChinhSuaDoiBongUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\DangNhapUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\DoiMatKhauUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\Home.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\MainWindow.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\NhapKetQua.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\NhapThongSoTranDau.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\NhapTrongTaiUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\PhanBoTrongTaiUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\SapLichThiDauUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\TCCauThuUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\TCKetQuaTranUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\TCLichThiDauUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\TCThongTinDoiUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\TCTruocTranUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\TCVuaPhaLuoiUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\ThayDoiLuatUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\ThemDoiBongUserControl.xaml;;
+FD:\NMCNPM\ISE_NMH_10\04_Implement\Source_Code\Football_League_Manager\Football_League_Manager\TongKetMuaGiaiUserControl.xaml;;
+>>>>>>> master
 
