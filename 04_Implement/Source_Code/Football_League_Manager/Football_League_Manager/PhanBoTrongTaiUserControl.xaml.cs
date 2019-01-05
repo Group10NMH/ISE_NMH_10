@@ -157,6 +157,7 @@ namespace Football_League_Manager
         {
             matt[3] = TT.DanhSachTrongTais.ElementAt(TT4comboBox.SelectedIndex).Key;
         }
+
         
     }
 }

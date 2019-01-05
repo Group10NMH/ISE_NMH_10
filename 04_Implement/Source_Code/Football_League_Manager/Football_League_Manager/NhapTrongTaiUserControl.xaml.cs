@@ -85,13 +85,14 @@ namespace Football_League_Manager
             }
             else
             {
-                MessageBox.Show("Bạn chưa nhập tên trọng tài!");
+                if (TenTrongTai_TextBox.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên trọng tài!");
+                }
+                else { MessageBox.Show("Tên không được có số!"); }
             }
         }
 
-        private void HoanTat_Button_Click(object sender, RoutedEventArgs e)
-        {
-            //Close();
-        }
+       
     }
 }

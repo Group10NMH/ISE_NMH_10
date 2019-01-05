@@ -90,13 +90,8 @@
                  />
         <Button Content="Lưu"
                 FontSize="14"
-                Height="40" Width="95" Canvas.Left="168" Canvas.Top="412"
+                Height="40" Width="95" Canvas.Left="213" Canvas.Top="412"
                x:Name="Luu_Button" Click="Luu_Button_Click" 
-                ></Button>
-        <Button Content="Hoàn tất"
-                FontSize="14"
-                Height="40" Width="95"
-                x:Name="HoanTat_Button" Canvas.Left="277" Canvas.Top="412" Click="HoanTat_Button_Click"
                 ></Button>
 
 

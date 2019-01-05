@@ -17,15 +17,10 @@
         <Button x:Name="Them_Button"
                 Height="34" Width="90"
                 Content="Thêm" FontSize="16" 
-                Canvas.Left="171" Canvas.Top="125"
+                Canvas.Left="258" Canvas.Top="125"
                 Click="add_Click"
                 ></Button>
-        <Button x:Name="HoanTat_Button"
-                Height="34" Width="90"
-                Content="Hoàn tất" FontSize="15"
-                Canvas.Left="299" Canvas.Top="125" 
-                Click="HoanTat_Button_Click"
-                ></Button>
+        
         <DataGrid AutoGenerateColumns="False" 
           Height="191" 
           HorizontalAlignment="Left" 

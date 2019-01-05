@@ -41,8 +41,11 @@ namespace Football_League_Manager
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             BangXepHangUserControl traCuuBangXepHang = new BangXepHangUserControl();
+            DataProvider dataProvider = new DataProvider();
+            int soDoi = (int)dataProvider.ExcuteScalar("select count(*) from DoiBong");
+            int soTran = (int)dataProvider.ExcuteScalar("select count(*) from KetQua");
 
-            if (traCuuBangXepHang.bangXepHangs.Count() == 10)
+            if (soTran == (soDoi*(soDoi-1))/2)
             {
                 DoiVoDich_TextBlock.Text = traCuuBangXepHang.bangXepHangs[0].TenDoiBong;
                 DoiXuongHang_TextBlock.Text = traCuuBangXepHang.bangXepHangs[traCuuBangXepHang.bangXepHangs.Count() - 1].TenDoiBong;
