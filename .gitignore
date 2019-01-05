@@ -6,3 +6,7 @@
 *.cache
 
 04_Implement/Source_Code/Football_League_Manager/Football_League_Manager/obj/
+
+*.ide-shm
+
+*.pdb
