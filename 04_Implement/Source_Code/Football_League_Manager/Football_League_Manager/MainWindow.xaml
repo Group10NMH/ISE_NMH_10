@@ -32,9 +32,10 @@
 
 
         <DockPanel Width="174" Height="533" Canvas.Left="1" Canvas.Top="1" Background="#FF292728"/>
-
-        <Image Source="image/Home.png" Height="150" VerticalAlignment="Center" Canvas.Top="20" Canvas.Left="20"/>
-
+        <Button Cursor="Hand" Style="{StaticResource ImageButtonStyle}" Click="Button_Click" Canvas.Top="20" Canvas.Left="20">
+            <Image Source="image/Home.png" Height="150" VerticalAlignment="Center" Canvas.Top="20" Canvas.Left="20"/>
+        </Button>
+        
         <Button Name="QuanLyButton" Width="175" Height="60" Canvas.Left="0" Canvas.Top="190" Background="#292728" BorderThickness="1" materialDesign:ShadowAssist.ShadowDepth="Depth0" >
             <WrapPanel Orientation="Horizontal">
                 <Image Source="image/quanly.png" Margin="0, 2, 12,0" Height="30"/>

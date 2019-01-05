@@ -278,5 +278,10 @@ namespace Football_League_Manager
             TittleTextBlock.Text = "Đổi mật khẩu";
             tabs.SelectedIndex = 1;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            tabs.SelectedIndex = 17;
+        }
     }
 }
