@@ -25,6 +25,11 @@ namespace Football_League_Manager
         public TCVuaPhaLuoiUserControl()
         {
             InitializeComponent();
+            UserControl_Loaded(null, null);
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
             string query = "select ct.TenCT, db.TenDB, vt.TenVT, ct.SoTheVang, sum(SoBan) as SoBanThang " +
                            "from GhiBan gb join CauThu ct on gb.MaCT = ct.MaCT and gb.MaDB = ct.MaDB " +
                            "join DoiBong db on ct.MaDB = db.MaDB " +

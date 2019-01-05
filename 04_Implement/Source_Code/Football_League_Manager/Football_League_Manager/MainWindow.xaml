@@ -176,7 +176,7 @@
                 </Grid>
             </TabItem>
             <!--13 Tra cứu kết quả trận-->
-            <TabItem Name="TraCuuKetQuaTran">
+            <TabItem Name="TraCuuKetQuaTran" >
                 <Grid>
                     <Frame Source="TCKetQuaTranUserControl.xaml"/>
                 </Grid>

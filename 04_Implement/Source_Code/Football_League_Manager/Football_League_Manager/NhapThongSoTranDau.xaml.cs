@@ -42,6 +42,7 @@ namespace Football_League_Manager
         List<CauThu> DSCauThu = new List<CauThu>();
         private void DBcomboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            DSCauThu = new List<CauThu>();
             DataProvider dataProvider = new DataProvider();
             string ten = DBcomboBox.SelectedItem.ToString();
             SqlCommand sqlCommand = dataProvider.ExcuteQuery("select CT.TenCT, CT.SoAo,CT.MaCT,CT.MaDB,CT.SoTheVang from DoiBong DB, CauThu CT where DB.MaDB = CT.MaDB and DB.TenDB = @TenDoiBong", new object[] { ten });
@@ -68,7 +69,7 @@ namespace Football_League_Manager
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (DBcomboBox.SelectedIndex == -1 || comboBox1.SelectedIndex == -1 || comboBox2.SelectedIndex == -1 || comboBox3.SelectedIndex == -1)
+            if (DBcomboBox.SelectedIndex == -1 || comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn đầy đủ thông tin!");
             }

@@ -89,6 +89,7 @@ namespace Football_League_Manager
             SettingPopup.Visibility = Visibility.Hidden;
             DangNhapTextBlock.Visibility = Visibility.Visible;
             AcountInfo.Visibility = Visibility.Hidden;
+            tabs.SelectedIndex = 17;
         }
 
         private void ThemTrongTaiButton_Click(object sender, RoutedEventArgs e)
@@ -271,6 +272,7 @@ namespace Football_League_Manager
         {
             TittleTextBlock.Text = "Bảng xếp hạng mùa giải";
             tabs.SelectedIndex = 16;
+
         }
 
         private void DoiMatKhauButton_Click(object sender, RoutedEventArgs e)

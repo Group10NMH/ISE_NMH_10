@@ -24,6 +24,63 @@ namespace Football_League_Manager
         public BangXepHangUserControl()
         {
             InitializeComponent();
+            UserControl_Loaded(null, null);
+
+        }
+
+        List<TranDau> TranDaus;
+        public List<DataObject> bangXepHangs { get; set; }
+        public class DataObject
+        {
+            public int ViTri { get; set; }
+            public string TenDoiBong { get; set; }
+            public int SoTran { get; set; }
+            public int SoTranThang { get; set; }
+            public int SoTranThua { get; set; }
+            public int SoTranHoa { get; set; }
+            public int SoBanThang { get; set; }
+            public int SoBanThua { get; set; }
+            public int HieuSo { get; set; }
+            public int Diem { get; set; }
+
+            public int SoSanh(DataObject d)
+            {
+                if (Diem > d.Diem)
+                {
+                    return 1;
+                }
+                else if (Diem < d.Diem)
+                {
+                    return -1;
+                }
+                else
+                {
+                    if (HieuSo > d.HieuSo)
+                    {
+                        return 1;
+                    }
+                    else if (HieuSo < d.HieuSo)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        if (SoBanThang > d.SoBanThang)
+                        {
+                            return 1;
+                        }
+                        else if (SoBanThang < d.SoBanThang)
+                        {
+                            return -1;
+                        }
+                        else return 0;
+                    }
+                }
+            }
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
             bangXepHangs = new List<DataObject>();
 
             DataProvider dataProvider = new DataProvider();
@@ -119,10 +176,15 @@ namespace Football_League_Manager
 
                         dataObject.Diem = dataObject.SoTranThang * 3 + dataObject.SoTranHoa * 1;
 
-                        list.Add(dataObject);
-                    }
-                }
 
+                    }
+                    else
+                    {
+                        dataObject.SoBanThang = dataObject.SoBanThua = dataObject.SoTranHoa = dataObject.SoTranThang = dataObject.SoTranThua = dataObject.SoTran = 0;
+                    }
+
+                    list.Add(dataObject);
+                }
 
                 for (int i = 0; i < list.Count; i++)
                 {
@@ -143,57 +205,5 @@ namespace Football_League_Manager
             }
 
         }
-
-        List<TranDau> TranDaus;
-        public List<DataObject> bangXepHangs { get; set; }
-        public class DataObject
-        {
-            public int ViTri { get; set; }
-            public string TenDoiBong { get; set; }
-            public int SoTran { get; set; }
-            public int SoTranThang { get; set; }
-            public int SoTranThua { get; set; }
-            public int SoTranHoa { get; set; }
-            public int SoBanThang { get; set; }
-            public int SoBanThua { get; set; }
-            public int HieuSo { get; set; }
-            public int Diem { get; set; }
-
-            public int SoSanh(DataObject d)
-            {
-                if (Diem > d.Diem)
-                {
-                    return 1;
-                }
-                else if (Diem < d.Diem)
-                {
-                    return -1;
-                }
-                else
-                {
-                    if (HieuSo > d.HieuSo)
-                    {
-                        return 1;
-                    }
-                    else if (HieuSo < d.HieuSo)
-                    {
-                        return -1;
-                    }
-                    else
-                    {
-                        if (SoBanThang > d.SoBanThang)
-                        {
-                            return 1;
-                        }
-                        else if (SoBanThang < d.SoBanThang)
-                        {
-                            return -1;
-                        }
-                        else return 0;
-                    }
-                }
-            }
-        }
-
     }
 }
